@@ -180,9 +180,9 @@
             "type": "Click"
         },
         "next": [
-            "DormFriendStop",
             "DormFriendLike",
             "DormFriendBattery",
+            "DormFriendStop",
             "DormFriendNext"
         ]
     },

@@ -1,6 +1,6 @@
 {
     "name": "FMddl-MAA",
-    "version":  "1.0.0",
+    "version":  "0.1.0",
     "mirrorchyan_rid":  "FMddl-MAAutoGirlsFrontLine",
     "mirrorchyan_multiplatform":  false, 
     "url":  "https://github.com/Fufu-OuO/FMddl-MAAutoGirlsFrontLine",
@@ -47,7 +47,7 @@
         },
         {
             "name": "前进营地（已出发则不操作）",
-            "entry": "RoomData"
+            "entry": "RoomExplore"
         },
         {
             "name": "领取奖励",
@@ -61,15 +61,22 @@
                     "name": "[官服] M4A1",
                     "pipeline_override": {
                         "ServerSelection": {
-                            "action": {
+                            "recognition": {
+                                "type": "TemplateMatch",
                                 "param": {
-                                    "target": [
-                                        60,
-                                        225,
-                                        600,
-                                        80
+                                    "roi" : [
+                                        0,
+                                        0,
+                                        389,
+                                        579
+                                    ],
+                                    "template": [
+                                        "EnterGame/ServerM4A1.png"
                                     ]
                                 }
+                            },
+                            "action": {
+                                "type": "Click"
                             }
                         }
                     }
@@ -78,15 +85,22 @@
                     "name": "[应用宝服] M16A1",
                     "pipeline_override": {
                         "ServerSelection": {
-                            "action": {
+                            "recognition": {
+                                "type": "TemplateMatch",
                                 "param": {
-                                    "target": [
-                                        60,
-                                        410,
-                                        600,
-                                        80
+                                    "roi" : [
+                                        0,
+                                        0,
+                                        389,
+                                        579
+                                    ],
+                                    "template": [
+                                        "EnterGame/ServerM16A1.png"
                                     ]
                                 }
+                            },
+                            "action": {
+                                "type": "Click"
                             }
                         }
                     }
@@ -95,15 +109,22 @@
                     "name": "[iOS服] M4 SOPMODII",
                     "pipeline_override": {
                         "ServerSelection": {
-                            "action": {
+                            "recognition": {
+                                "type": "TemplateMatch",
                                 "param": {
-                                    "target": [
-                                        60,
-                                        600,
-                                        600,
-                                        80
+                                    "roi" : [
+                                        0,
+                                        0,
+                                        389,
+                                        579
+                                    ],
+                                    "template": [
+                                        "EnterGame/ServerM4SOPMODII.png"
                                     ]
                                 }
+                            },
+                            "action": {
+                                "type": "Click"
                             }
                         }
                     }
@@ -112,15 +133,22 @@
                     "name": "[渠道服] RO635",
                     "pipeline_override": {
                         "ServerSelection": {
-                            "action": {
+                            "recognition": {
+                                "type": "TemplateMatch",
                                 "param": {
-                                    "target": [
-                                        60,
-                                        790,
-                                        600,
-                                        80
+                                    "roi" : [
+                                        0,
+                                        0,
+                                        389,
+                                        579
+                                    ],
+                                    "template": [
+                                        "EnterGame/ServerRO635.png"
                                     ]
                                 }
+                            },
+                            "action": {
+                                "type": "Click"
                             }
                         }
                     }
@@ -129,15 +157,22 @@
                     "name": "[B服] ST AR-15",
                     "pipeline_override": {
                         "ServerSelection": {
-                            "action": {
+                            "recognition": {
+                                "type": "TemplateMatch",
                                 "param": {
-                                    "target": [
-                                        60,
-                                        990,
-                                        600,
-                                        80
+                                    "roi" : [
+                                        0,
+                                        0,
+                                        389,
+                                        579
+                                    ],
+                                    "template": [
+                                        "EnterGame/ServerSTAR15.png"
                                     ]
                                 }
+                            },
+                            "action": {
+                                "type": "Click"
                             }
                         }
                     }

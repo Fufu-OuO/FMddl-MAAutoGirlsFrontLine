@@ -4,19 +4,18 @@
             "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    82,
-                    53,
-                    479,
-                    247
+                    0,
+                    31,
+                    950,
+                    676
                 ],
                 "template": [
                     "EnterGame/GameStartA.png",
                     "EnterGame/GameStartA1.png",
                     "EnterGame/GameStartB.png",
-                    "EnterGame/GameStartB1.png"
-                ],
-                "threshold": 0.55,
-                "green_mask": true
+                    "EnterGame/GameStartB1.png",
+                    "EnterGame/GameStartC.png"
+                ]
             }
         },
         "action": {

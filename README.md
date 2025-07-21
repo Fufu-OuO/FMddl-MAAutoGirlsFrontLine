@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-  <img alt="LOGO" src="./assets/images/logo/ymfm-logo_1280×1280.png" width="256" height="256" />
+  <img alt="LOGO" src="./assets/images/logo/FMddl-logo_1280×1280.png" width="256" height="256" />
 </p>
 
 <div align="center">
@@ -28,7 +28,7 @@ FM<sup>费马</sup>Deadline<sup>大定理</sup>，基于 [MaaFramework](https://
 
 | 图像设置                            | 值   |
 | ----------------------------------- | ---- |
-| 分辨率                               | 2560×1600、1920×1080、1280×720 |
+| 分辨率                               | 21:9 或 21:10 |
 | 显示模式                             | 无边框窗口！！！ |
 | 高帧数模式                           | 开 |
 | 兵棋画面模式                         | 帧率优先 |
