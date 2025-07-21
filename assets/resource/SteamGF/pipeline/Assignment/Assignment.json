@@ -1,0 +1,93 @@
+{
+    "AssignmentAgain": {
+        "doc": "全体出征",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    800,
+                    600,
+                    480,
+                    120
+                ],
+                "template": [
+                    "Assignment/AssignmentAgainA.png",
+                    "Assignment/AssignmentAgainB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "target": [
+                1047,
+                550,
+                84,
+                19
+            ]
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "AssignmentButtonYes",
+            "AssignmentAgain"
+        ]
+    },
+    "AssignmentButtonYes": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    193,
+                    300,
+                    855,
+                    420
+                ],
+                "template": [
+                    "Button/ButtonYesA.png",
+                    "Button/ButtonYesB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "AssignmentButtonYes",
+            "AssignmentAgain"
+        ]
+    },
+    "Reward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    944,
+                    197,
+                    190,
+                    127
+                ],
+                "template": [
+                    "Rewardget/Reward.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    231,
+                    102,
+                    218,
+                    109
+                ]
+            }
+        }
+    }
+}

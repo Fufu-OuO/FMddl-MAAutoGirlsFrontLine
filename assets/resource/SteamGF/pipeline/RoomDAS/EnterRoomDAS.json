@@ -1,0 +1,140 @@
+{
+    "RoomDAS": {
+        "next": [
+            "DASEnterTeam",
+            "DASOpenTeamMenu",
+            "DASSwipeBackTeamMenu",
+            "ButtonRoomDAS"
+        ]
+    },
+    "DASEnterTeam": {
+        "doc":"组合任务",
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1015,
+                    318,
+                    137,
+                    167
+                ],
+            "template": [
+                "Button/ButtonTeamA.png",
+                "Button/ButtonTeamB.png"
+            ],
+            "threshold": 0.55,
+            "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay":1000,
+        "next": [
+            "DASEnterTeam",
+            "DASOpenTeamMenu",
+            "DASSwipeBackTeamMenu",
+            "ButtonRoomDAS"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "DASOpenTeamMenu": {
+        "doc":"尚未点击的Home",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    122,
+                    10,
+                    161,
+                    158
+                ],
+                "template": [
+                    "Button/ButtonHomeAtoB.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    0,
+                    -30,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "DASEnterTeam",
+            "DASSwipeBackTeamMenu",
+            "ButtonRoomDAS"
+        ]
+    },
+    "DASSwipeBackTeamMenu": {
+        "doc":"拖动导航菜单至右",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    31,
+                    80,
+                    162,
+                    160
+                ],
+                "template": [
+                    "Button/ButtonHomeY.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1037,
+                    274,
+                    1,
+                    1
+                ],
+                "end": [
+                    383,
+                    271,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "DASEnterTeam",
+            "DASOpenTeamMenu",
+            "ButtonRoomDAS"
+        ]
+    },
+    "ButtonRoomDAS": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    20,
+                    120,
+                    1169,
+                    377
+                ],
+                "template": [
+                    "Button/ButtonRoomDAS.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ButtonRoomDAS",
+            "DASSwipeBackTeamMenu"
+        ]
+    }
+}

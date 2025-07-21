@@ -1,0 +1,246 @@
+{
+    "DormFriend": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    557,
+                    157,
+                    154
+                ],
+                "template": [
+                    "Dorm/DormFriendVisit.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormLove",
+            "DormFriendVisitMine",
+            "DormFriendVisitGo"
+        ]
+    },
+    "DormFriendVisitMine": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    337,
+                    102,
+                    220,
+                    144
+                ],
+                "template": [
+                    "Dorm/DormFriendVisitMine.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormLove",
+            "DormFriendVisitGo",
+            "DormFriend"
+        ]
+    },
+    "DormFriendVisitGo": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    816,
+                    177,
+                    262,
+                    154
+                ],
+                "template": [
+                    "Dorm/DormFriendVisitGo.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormFriendVisitGo",
+            "DormFriendLike",
+            "DormFriendBattery",
+            "DormFriendBatteryButtonNo",
+            "DormFriendNext"
+        ]
+    },
+    "DormFriendLike": {
+        "pre_wait_freezes": 3000,
+        "post_wait_freezes": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    939,
+                    558,
+                    147,
+                    152
+                ],
+                "template": [
+                    "Dorm/DormFriendLike.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormFriendLike",
+            "DormFriendBattery",
+            "DormFriendNext"
+        ]
+    },
+    "DormFriendBattery": {
+        "pre_wait_freezes": 1000,
+        "post_wait_freezes": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    70,
+                    201,
+                    505,
+                    334
+                ],
+                "template": [
+                    "Dorm/DormBatteryA.png",
+                    "Dorm/DormBatteryB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormFriendBatteryButtonNo",
+            "DormFriendLike",
+            "DormFriendBattery",
+            "DormFriendNext"
+        ]
+    },
+    "DormFriendBatteryButtonNo": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    193,
+                    300,
+                    855,
+                    420
+                ],
+                "template": [
+                    "Button/ButtonNoA.png",
+                    "Button/ButtonNoB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "DormFriendLike",
+            "DormFriendBattery",
+            "DormFriendNext"
+        ]
+    },
+    "DormFriendNext": {
+        "pre_wait_freezes": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    137,
+                    557,
+                    150,
+                    150
+                ],
+                "template": [
+                    "Dorm/DormFriendNext.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormFriendStop",
+            "DormFriendLike",
+            "DormFriendBattery",
+            "DormFriendNext"
+        ]
+    },
+    "DormFriendStop": {
+        "pre_wait_freezes":1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    932,
+                    559,
+                    162,
+                    151
+                ],
+                "template": [
+                    "Dorm/DormFriendMessage.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    34,
+                    56,
+                    72,
+                    34
+                ]
+            }
+        },
+        "next": [
+            "DormButtonCancel",
+            "DormFriendStop",
+            "EnterHome"
+        ]
+    },
+    "DormButtonCancel": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    66,
+                    54,
+                    600,
+                    300
+                ],
+                "template": [
+                    "Room/RoomButtonCancel.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormButtonCancel",
+            "DormFriendStop",
+            "EnterHome"
+        ]
+    }
+}

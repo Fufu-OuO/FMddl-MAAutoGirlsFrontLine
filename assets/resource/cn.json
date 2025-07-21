@@ -1,0 +1,18 @@
+{
+    "9.0": {
+        "version_name": "溯源回归",
+        "start_time": 1749700800000,
+        "end_time": 1754495940000,
+        "activity": {
+            "combat": {
+                "event_type": "SideStory",
+                "start_time": 1749700800000,
+                "end_time": 1753927200000
+            },
+            "anecdote": {
+                "start_time": 1741208400000,
+                "end_time": 1753891140000
+            }
+        }
+    }
+ }

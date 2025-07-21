@@ -1,0 +1,317 @@
+{
+    "Rewardget": {
+        "next": [
+            "MenuBtoA",
+            "ButtonMail"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "MenuAtoB": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    826,
+                    143
+                ],
+                "template": [
+                    "Button/ButtonMail.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    1102,
+                    633,
+                    23,
+                    18
+                ]
+            }
+        }
+    },
+    "MenuBtoA": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    826,
+                    143
+                ],
+                "template": [
+                    "Button/ButtonSetting.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    1102,
+                    633,
+                    23,
+                    18
+                ]
+            }
+        },
+        "next": [
+            "MenuBtoA",
+            "ButtonMail"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "ButtonMail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    826,
+                    143
+                ],
+                "template": [
+                    "Button/ButtonMail.png"
+                ]
+            }
+        }, 
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ButtonMail",
+            "RewardgetMail"
+        ]
+    },
+    "RewardgetMail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    208,
+                    0,
+                    203,
+                    171
+                ],
+                "template": [
+                    "Rewardget/RewardgetMail.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    42,
+                    609,
+                    131,
+                    33
+                ]
+            }
+        },
+        "next": [
+            "MailOut",
+            "ButtonTask"
+        ]
+    },
+    "MailOut": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    208,
+                    0,
+                    203,
+                    171
+                ],
+                "template": [
+                    "Rewardget/RewardgetMail.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    54,
+                    55,
+                    114,
+                    33
+                ]
+            }
+        },
+        "next": [
+            "MailOut",
+            "ButtonTask"
+        ]
+    },
+    "ButtonTask": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    826,
+                    143
+                ],
+                "template": [
+                    "Button/ButtonTask.png"
+                ]
+            }
+        }, 
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ButtonTask",
+            "RewardgetTask",
+            "RewardgetTaskGift",
+            "RewardgetTaskVitality",
+            "RewardgetTaskToPass",
+            "EnterHome"
+        ]
+    }, 
+    "RewardgetTask": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    915,
+                    584,
+                    237,
+                    136
+                ],
+                "template": [
+                    "Rewardget/RewardgetTask.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ButtonTask",
+            "RewardgetTask",
+            "RewardgetTaskGift",
+            "RewardgetTaskVitality",
+            "RewardgetTaskToPass",
+            "EnterHome"
+        ]
+    }, 
+    "RewardgetTaskGift": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    888,
+                    426,
+                    186,
+                    182
+                ],
+                "template": [
+                    "Rewardget/RewardgetTaskGift.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ButtonTask",
+            "RewardgetTask",
+            "RewardgetTaskGift",
+            "RewardgetTaskVitality",
+            "RewardgetTaskToPass",
+            "EnterHome"
+        ]
+    }, 
+    "RewardgetTaskVitality": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    393,
+                    60,
+                    758,
+                    244
+                ],
+                "template": [
+                    "Rewardget/RewardgetTaskVitality.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ButtonTask",
+            "RewardgetTask",
+            "RewardgetTaskGift",
+            "RewardgetTaskVitality",
+            "RewardgetTaskToPass",
+            "EnterHome"
+        ]
+    }, 
+    "RewardgetTaskToPass": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    747,
+                    152,
+                    177,
+                    163
+                ],
+                "template": [
+                    "Rewardget/RewardgetTaskToPass.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RewardgetPass",
+            "EnterHome"
+        ]
+    },
+    "RewardgetPass": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    711,
+                    529,
+                    285,
+                    170
+                ],
+                "template": [
+                    "Rewardget/RewardgetPass.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RewardgetPass",
+            "EnterHome"
+        ]
+    }
+}

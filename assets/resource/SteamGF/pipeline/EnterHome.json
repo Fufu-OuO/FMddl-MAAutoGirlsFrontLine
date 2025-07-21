@@ -1,0 +1,137 @@
+{
+    "EnterHome": {
+        "doc":"组合任务",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    122,
+                    10,
+                    161,
+                    158
+                ],
+                "template": [
+                    "Button/ButtonHomeAtoB.png"
+                ],
+                "threshold":0.8
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "EnterHomePage",
+            "HomeAlready"
+        ],
+        "interrupt":[
+            "RoomStuck"
+        ]
+    },
+    "EnterHomePage":{
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    31,
+                    80,
+                    162,
+                    160
+                ],
+                "template": [
+                    "Button/ButtonHomeY.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "EnterHome",
+            "EnterHomePage",
+            "HomeAlready"
+        ],
+        "interrupt":[
+            "RoomStuck"
+        ]
+    },
+    "RoomStuck": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    155,
+                    18,
+                    216,
+                    158
+                ],
+                "template": [
+                    "Room/RoomStuckA.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RoomStuckBack",
+            "EnterHome"
+        ]
+    },
+    "RoomStuckBack": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    155,
+                    18,
+                    216,
+                    158
+                ],
+                "template": [
+                    "Room/RoomStuckB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param":{
+                "target" : [
+                    36,
+                    49,
+                    103,
+                    44
+                ]
+            }
+        },
+        "next": [
+            "RoomStuckBack",
+            "EnterHome"
+        ]
+    },
+    "Loading": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    25,
+                    617,
+                    324,
+                    273
+                ],
+                "template": [
+                    "EnterGame/Loading.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "post_wait_freezes": {
+            "time": 5000,
+            "target": [
+                1043,
+                501,
+                165,
+                219
+            ]
+        }
+    }
+}

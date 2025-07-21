@@ -1,0 +1,12 @@
+{
+    "EnterGame":{
+        "doc":"组合任务：顺序执行GameLoading、Server、GameStart",
+        "post_wait_freezes": 300,
+        "next": [
+            "GameLoading",
+            "Server",
+            "GameStart"
+        ],
+        "post_delay":1000
+    }
+}

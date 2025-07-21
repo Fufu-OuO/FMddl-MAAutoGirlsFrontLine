@@ -1,0 +1,362 @@
+{
+    "GameStart": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    82,
+                    53,
+                    479,
+                    247
+                ],
+                "template": [
+                    "EnterGame/GameStartA.png",
+                    "EnterGame/GameStartA1.png",
+                    "EnterGame/GameStartB.png",
+                    "EnterGame/GameStartB1.png"
+                ],
+                "threshold": 0.55,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "target" : [
+                389,
+                295,
+                365,
+                339
+            ]
+        },
+        "next": [
+            "GameStart",
+            "LoadingHome",
+            "GameLogin1",
+            "GameLogin2",
+            "HomeAlready"
+        ],
+        "interrupt": [
+            "ServerClose",
+            "ServerEmpty",
+            "EnterHome",
+            "CloseAnnouncement",
+            "CloseEvent"
+        ]
+    },
+    "GameLogin1": {
+        "post_wait_freezes": 500,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1064,
+                    633,
+                    167,
+                    87
+                ],
+                "expected": [
+                    "正在",
+                    "登陆"
+                ]
+            }
+        },
+        "next": [
+            "LoadingHome",
+            "GameLogin1",
+            "GameLogin2",
+            "HomeAlready"
+        ]
+    },
+    "GameLogin2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1064,
+                    633,
+                    167,
+                    87
+                ],
+                "expected": [
+                    "获取",
+                    "用户",
+                    "信息",
+                    "商城"
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "LoadingHome",
+            "GameLogin1",
+            "GameLogin2",
+            "HomeAlready"
+        ]
+    },
+    "LoadingHome": {
+        "doc": "专供启动时使用，与Loading分开以防止EnterHome大面积报错",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    459,
+                    359,
+                    364,
+                    152
+                ],
+                "template": [
+                    "EnterGame/Loading.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "DoNothing"
+        },
+        "next": [
+            "LoadingHome",
+            "GameLogin1",
+            "GameLogin2",
+            "HomeAlready"
+        ]
+    },
+    "ReturnHome": {
+        "doc": "返回主界面（专供任务开始前使用）",
+        "next": [
+            "HomeAlready"
+        ],
+        "interrupt": [
+            "HomeAssignmentAgain",
+            "HomeRewardgetReward",
+            "CloseAnnouncement",
+            "CloseEvent"
+        ]
+    },
+    "HomeAlready": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1015,
+                    318,
+                    137,
+                    167
+                ],
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png"
+                ],
+                "threshold": 0.55,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "HomeAlready"
+                }
+            }
+        },
+        "next": [
+            "DoNothing"
+        ]
+    },
+    "DoNothing": {
+        "action":{
+            "type": "DoNothing"
+        }
+    },
+    "CloseAnnouncement": {
+        "doc": "关闭通知",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1034,
+                    49,
+                    132,
+                    129
+                ],
+                "template": [
+                    "EnterGame/CloseAnnouncement.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    3,
+                    2,
+                    -4,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "CloseAnnouncement",
+            "CloseEvent",
+            "ClickZone11",
+            "HomeAlready",
+            "HomeAssignmentAgain",
+            "HomeRewardgetReward"
+        ]
+    },
+    "CloseEvent": {
+        "doc": "防卡活动",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    97,
+                    0,
+                    249,
+                    152
+                ],
+                "template": [
+                    "EnterGame/CloseEvent.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    0,
+                    50,
+                    100,
+                    40
+                ]
+            }
+        },
+        "next": [
+            "CloseEvent",
+            "HomeAlready",
+            "HomeAssignmentAgain",
+            "HomeRewardgetReward"
+        ]
+    },
+  "ClickZone11": {
+    "doc": "点击十一点钟方向",
+        "action": {
+        "type": "Click",
+            "param": {
+                "target": [
+                    231,
+                    102,
+                    218,
+                    109
+                ]
+            }
+        },
+        "next": [
+            "CloseEvent",
+            "HomeAlready",
+            "HomeAssignmentAgain",
+            "HomeRewardgetReward"
+        ]
+    },
+    "HomeAssignmentAgain": {
+        "doc": "全体出征",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    800,
+                    600,
+                    480,
+                    120
+                ],
+                "template": [
+                    "Assignment/AssignmentAgainA.png",
+                    "Assignment/AssignmentAgainB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "target": [
+                1047,
+                550,
+                84,
+                19
+            ]
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "HomeAssignmentButtonYes",
+            "HomeRewardgetReward",
+            "ReturnHome"
+        ]
+    },
+    "HomeAssignmentButtonYes": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    193,
+                    300,
+                    855,
+                    420
+                ],
+                "template": [
+                    "Button/ButtonYesA.png",
+                    "Button/ButtonYesB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "HomeAssignmentButtonYes",
+            "HomeRewardgetReward",
+            "HomeAlready"
+        ]
+    },
+    "HomeRewardgetReward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    944,
+                    197,
+                    190,
+                    127
+                ],
+                "template": [
+                    "Rewardget/Reward.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    231,
+                    102,
+                    218,
+                    109
+                ]
+            }
+        },
+        "next": [
+            "HomeRewardgetReward",
+            "HomeAssignmentAgain",
+            "HomeAlready"
+        ]
+    }
+}

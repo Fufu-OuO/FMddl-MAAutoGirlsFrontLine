@@ -1,0 +1,57 @@
+{
+    "DormLove": {
+        "pre_wait_freezes": 1000,
+        "post_wait_freezes": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "template": [
+                    "Dorm/DormLove.png"
+                ],
+                "threshold": 0.5,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormLove",
+            "DormBattery",
+            "DormFriend"
+        ]
+    },
+    "DormBattery": {
+        "pre_wait_freezes": 1000,
+        "post_wait_freezes": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    70,
+                    201,
+                    505,
+                    334
+                ],
+                "template": [
+                    "Dorm/DormBatteryA.png",
+                    "Dorm/DormBatteryB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormLove",
+            "DormBattery",
+            "DormFriend"
+        ]
+    }
+}

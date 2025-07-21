@@ -1,0 +1,28 @@
+{
+    "RoomDorm":{
+        "doc":"组合任务",
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1015,
+                    318,
+                    137,
+                    167
+                ],
+            "template": [
+                "Button/ButtonTeamA.png",
+                "Button/ButtonTeamB.png"
+            ],
+            "threshold": 0.55,
+            "green_mask": true
+            }
+        },
+        "next": [
+            "EnterRoomDorm",
+            "DormLove",
+            "DormFriend",
+            "EnterHome"
+        ]
+    }
+}
