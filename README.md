@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-  <img alt="LOGO" src="./docs/public/images/ymfm-logo_1280×1280.png" width="256" height="256" />
+  <img alt="LOGO" src="./assets/images/logo/ymfm-logo_1280×1280.png" width="256" height="256" />
 </p>
 
 <div align="center">
