@@ -1,0 +1,99 @@
+{
+    "FightRecycle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    166,
+                    133,
+                    462,
+                    268
+                ],
+                "expected": [
+                    "床位不足",
+                    "人形床位"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    599,
+                    351,
+                    85,
+                    171
+                ]
+            }
+        },
+        "next": [
+            "FightRecycle",
+            "FightRecycleCharacter"
+        ]
+    },
+    "FightRecycleCharacter": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    191,
+                    93,
+                    317,
+                    238
+                ],
+                "expected": [
+                    "角色"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "FightRecycleAutoChoose"
+        ]
+    },
+    "FightRecycleAutoChoose": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1012,
+                    495,
+                    267,
+                    224
+                ],
+                "expected": [
+                    "智能",
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "FightRecycleAutoChoose",
+            "FightRecycleYes"
+        ]
+    },
+    "FightRecycleYes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1012,
+                    495,
+                    267,
+                    224
+                ],
+                "expected": [
+                    "回收"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    }
+}

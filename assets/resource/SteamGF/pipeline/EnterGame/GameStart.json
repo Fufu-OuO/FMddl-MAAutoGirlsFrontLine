@@ -20,12 +20,14 @@
         },
         "action": {
             "type": "Click",
+            "param": {
             "target" : [
                 389,
                 295,
                 365,
                 339
             ]
+            }
         },
         "next": [
             "GameStart",
@@ -35,6 +37,7 @@
             "HomeAlready"
         ],
         "interrupt": [
+            "ServerChange",
             "ServerClose",
             "ServerEmpty",
             "EnterHome",
@@ -126,7 +129,7 @@
         ],
         "interrupt": [
             "HomeAssignmentAgain",
-            "HomeRewardgetReward",
+            "HomeReward",
             "CloseAnnouncement",
             "CloseEvent"
         ]
@@ -145,8 +148,7 @@
                     "Button/ButtonTeamA.png",
                     "Button/ButtonTeamB.png"
                 ],
-                "threshold": 0.55,
-                "green_mask": true
+                "threshold": 0.8
             }
         },
         "action": {
@@ -179,7 +181,8 @@
                     129
                 ],
                 "template": [
-                    "EnterGame/CloseAnnouncement.png"
+                    "EnterGame/CloseAnnouncementA.png",
+                    "EnterGame/CloseAnnouncementB.png"
                 ],
                 "green_mask": true
             }
@@ -201,7 +204,7 @@
             "ClickZone11",
             "HomeAlready",
             "HomeAssignmentAgain",
-            "HomeRewardgetReward"
+            "HomeReward"
         ]
     },
     "CloseEvent": {
@@ -216,9 +219,8 @@
                     152
                 ],
                 "template": [
-                    "EnterGame/CloseEvent.png"
-                ],
-                "green_mask": true
+                    "EnterGame/CloseEventA.png"
+                ]
             }
         },
         "action": {
@@ -234,13 +236,13 @@
         },
         "next": [
             "CloseEvent",
-            "HomeAlready",
             "HomeAssignmentAgain",
-            "HomeRewardgetReward"
+            "HomeReward",
+            "HomeAlready"
         ]
     },
-  "ClickZone11": {
-    "doc": "点击十一点钟方向",
+    "ClickZone11": {
+        "doc": "点击十一点钟方向",
         "action": {
         "type": "Click",
             "param": {
@@ -256,13 +258,13 @@
             "CloseEvent",
             "HomeAlready",
             "HomeAssignmentAgain",
-            "HomeRewardgetReward"
+            "HomeReward"
         ]
     },
     "HomeAssignmentAgain": {
         "doc": "全体出征",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     800,
@@ -270,9 +272,8 @@
                     480,
                     120
                 ],
-                "template": [
-                    "Assignment/AssignmentAgainA.png",
-                    "Assignment/AssignmentAgainB.png"
+                "expected": [
+                    "全体出征"
                 ]
             }
         },
@@ -288,13 +289,13 @@
         "post_wait_freezes": 500,
         "next": [
             "HomeAssignmentButtonYes",
-            "HomeRewardgetReward",
+            "HomeReward",
             "ReturnHome"
         ]
     },
     "HomeAssignmentButtonYes": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     193,
@@ -302,9 +303,8 @@
                     855,
                     420
                 ],
-                "template": [
-                    "Button/ButtonYesA.png",
-                    "Button/ButtonYesB.png"
+                "expected": [
+                    "确定"
                 ]
             }
         },
@@ -321,13 +321,13 @@
         },
         "next": [
             "HomeAssignmentButtonYes",
-            "HomeRewardgetReward",
+            "HomeReward",
             "HomeAlready"
         ]
     },
-    "HomeRewardgetReward": {
+    "HomeReward": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     944,
@@ -335,10 +335,9 @@
                     190,
                     127
                 ],
-                "template": [
-                    "Rewardget/Reward.png"
-                ],
-                "green_mask": true
+                "expected": [
+                    "REWARD"
+                ]
             }
         },
         "action": {
@@ -353,7 +352,7 @@
             }
         },
         "next": [
-            "HomeRewardgetReward",
+            "HomeReward",
             "HomeAssignmentAgain",
             "HomeAlready"
         ]

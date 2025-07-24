@@ -8,6 +8,7 @@
         ]
     },
     "DormEnterTeam": {
+        "post_wait_freezes": 1000,
         "doc":"组合任务",
         "recognition": {
         "type": "TemplateMatch",
@@ -22,14 +23,12 @@
                 "Button/ButtonTeamA.png",
                 "Button/ButtonTeamB.png"
             ],
-            "threshold": 0.55,
-            "green_mask": true
+            "threshold": 0.8
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_delay":1000,
         "next": [
             "DormEnterTeam",
             "DormOpenTeamMenu",
@@ -75,6 +74,15 @@
         ]
     },
     "ButtonRoomDorm": {
+        "post_wait_freezes": {
+            "time": 4000,
+            "target": [
+                500,
+                0,
+                780,
+                130
+            ]
+        },
         "recognition": {
             "type": "TemplateMatch",
             "param": {

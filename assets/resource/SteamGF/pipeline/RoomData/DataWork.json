@@ -2,7 +2,7 @@
     "DataSwipe": {
         "doc": "拉到房间最右侧",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     210,
@@ -10,8 +10,8 @@
                     425,
                     246
                 ],
-                "template": [
-                    "Room/RoomData.png"
+                "expected": [
+                    "资料室"
                 ]
             }
         },
@@ -39,7 +39,7 @@
     "DataWrite": {
         "doc": "大橘猫开工",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     210,
@@ -47,8 +47,8 @@
                     425,
                     246
                 ],
-                "template": [
-                    "Room/RoomData.png"
+                "expected": [
+                    "资料室"
                 ]
             }
         },

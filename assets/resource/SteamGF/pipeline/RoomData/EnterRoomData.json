@@ -22,8 +22,7 @@
                 "Button/ButtonTeamA.png",
                 "Button/ButtonTeamB.png"
             ],
-            "threshold": 0.55,
-            "green_mask": true
+            "threshold": 0.7
             }
         },
         "action": {
@@ -78,16 +77,17 @@
     "DataSwipeBackTeamMenu": {
         "doc":"拖动导航菜单至左",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
-                    31,
-                    80,
-                    162,
-                    160
+                    5,
+                    61,
+                    427,
+                    153
                 ],
-                "template": [
-                    "Button/ButtonHomeY.png"
+                "expected": [
+                    "返回基地",
+                    "RETURN"
                 ]
             }
         },

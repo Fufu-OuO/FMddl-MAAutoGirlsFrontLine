@@ -2,7 +2,7 @@
     "AssignmentAgain": {
         "doc": "全体出征",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     800,
@@ -10,9 +10,8 @@
                     480,
                     120
                 ],
-                "template": [
-                    "Assignment/AssignmentAgainA.png",
-                    "Assignment/AssignmentAgainB.png"
+                "expected": [
+                    "全体出征"
                 ]
             }
         },
@@ -33,7 +32,7 @@
     },
     "AssignmentButtonYes": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     193,
@@ -41,9 +40,8 @@
                     855,
                     420
                 ],
-                "template": [
-                    "Button/ButtonYesA.png",
-                    "Button/ButtonYesB.png"
+                "expected": [
+                    "确定"
                 ]
             }
         },
@@ -65,7 +63,7 @@
     },
     "Reward": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     944,
@@ -73,8 +71,8 @@
                     190,
                     127
                 ],
-                "template": [
-                    "Rewardget/Reward.png"
+                "expected": [
+                    "REWARD"
                 ]
             }
         },

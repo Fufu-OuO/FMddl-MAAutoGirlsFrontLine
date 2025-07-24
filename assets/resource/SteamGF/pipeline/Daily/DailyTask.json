@@ -1,0 +1,438 @@
+{
+    "DailyTask": {
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1015,
+                    318,
+                    137,
+                    167
+                ],
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "next": [
+            "DailyTaskMenuBtoA",
+            "KalinaLove",
+            "Send1Report"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "DailyTaskMenuBtoA": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    826,
+                    143
+                ],
+                "template": [
+                    "Button/ButtonSetting.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    1102,
+                    633,
+                    23,
+                    18
+                ]
+            }
+        },
+        "next": [
+            "DailyTask"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "KalinaLove": {
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1015,
+                    318,
+                    137,
+                    167
+                ],
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "next": [
+            "KalinaLove_ButtonShop",
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3"
+        ]
+    },
+    "KalinaLove_ButtonShop": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    826,
+                    143
+                ],
+                "template": [
+                    "Button/ButtonShop.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "KalinaLove_ButtonShop",
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3"
+        ]
+    },
+    "KalinaLove_ClickLove1": {
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    788,
+                    81,
+                    363,
+                    328
+                ],
+                "template": [
+                    "Dorm/DormLoveA.png",
+                    "Dorm/DormLoveB.png"
+                ],
+                "threshold": 0.5,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3",
+            "KalinaLove_ButtonBack"
+        ]
+    },
+    "KalinaLove_ClickLove2": {
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    788,
+                    81,
+                    363,
+                    328
+                ],
+                "template": [
+                    "Dorm/DormLoveA.png",
+                    "Dorm/DormLoveB.png"
+                ],
+                "threshold": 0.5,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3",
+            "KalinaLove_ButtonBack"
+        ]
+    },
+    "KalinaLove_ClickLove3": {
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    788,
+                    81,
+                    363,
+                    328
+                ],
+                "template": [
+                    "Dorm/DormLoveA.png",
+                    "Dorm/DormLoveB.png"
+                ],
+                "threshold": 0.5,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3",
+            "KalinaLove_ButtonBack"
+        ]
+    },
+    "KalinaLove_ButtonBack": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    200,
+                    100
+                ],
+                "template": [
+                    "Button/ButtonBackA.png"
+                ],
+                "threshold": 0.5
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "KalinaLove_ButtonBack",
+            "Send1Report"
+        ]
+    },
+    "Send1Report": {
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1015,
+                    318,
+                    137,
+                    167
+                ],
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "next": [
+            "Send1Report_ButtonWarehouse",
+            "Send1Report_DownAndUp"
+        ]
+    },
+    "Send1Report_ButtonWarehouse": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    826,
+                    143
+                ],
+                "expected": [
+                    "仓库"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "Send1Report_DownAndUp"
+        ]
+    },
+    "Send1Report_DownAndUp": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    943,
+                    337,
+                    208,
+                    178
+                ],
+                "expected": [
+                    "升序"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "Send1Report_DownAndUp",
+            "Send1Report_ClickTheFirst",
+            "Send1Report_ChooseGift"
+        ]
+    },
+    "Send1Report_ClickTheFirst": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    40,
+                    216,
+                    168
+                ],
+                "template": [
+                    "Girls/StarExtra.png",
+                    "Girls/Star2.png",
+                    "Girls/Star3.png",
+                    "Girls/Star4.png",
+                    "Girls/Star5.png",
+                    "Girls/Star6.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "Send1Report_ClickTheFirst",
+            "Send1Report_ChooseGift",
+            "Send1Report_ChooseReport"
+        ]
+    },
+    "Send1Report_ChooseGift": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1028,
+                    19,
+                    124,
+                    131
+                ],
+                "template": [
+                    "Girls/SendExp.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "Send1Report_ClickTheFirst",
+            "Send1Report_ChooseGift",
+            "Send1Report_ChooseReport"
+        ]
+    },
+    "Send1Report_ChooseReport": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    32,
+                    376,
+                    420
+                ],
+                "template": [
+                    "Gift/ExpReport_Common.png",
+                    "Gift/ExpReport_Fushion.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    65,
+                    325,
+                    136,
+                    7]
+            }
+        },
+        "next": [
+            "Send1Report_ClickTheFirst",
+            "Send1Report_ChooseGift",
+            "Send1Report_ChooseReport",
+            "Send1Report_ButtonYes"
+        ]
+    },
+    "Send1Report_ButtonYes": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    193,
+                    300,
+                    855,
+                    420
+                ],
+                "template": [
+                    "Button/ButtonYesA.png",
+                    "Button/ButtonYesB.png",
+                    "Button/ButtonYesC.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "Send1Report_SendThenBack"
+        ]
+    },
+    "Send1Report_SendThenBack": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    289,
+                    511
+                ],
+                "template": [
+                    "Girls/InformationBack.png",
+                    "Button/ButtonBackA.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "Send1Report_SendThenBack"
+        ]
+    }
+}

@@ -6,23 +6,26 @@
             "LogoMica",
             "LogoSunborn",
             "Server",
-            "GameStart"
+            "ServerSelection",
+            "GameStart",
+            "CloseAnnouncement",
+            "CloseEvent",
+            "HomeReward",
+            "HomeAssignmentAgain",
+            "HomeAlready"
         ],
         "interrupt": [
             "ServerAccount",
             "ServerLagging",
             "ServerNeedDownload",
             "ServerClose",
-            "ServerEmpty",
-            "HomeRewardgetReward",
-            "HomeAssignmentAgain",
-            "HomeAlready"
+            "ServerEmpty"
         ],
         "post_delay":1000
         },
     "LogoMica": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     313,
@@ -30,13 +33,11 @@
                     534,
                     303
                 ],
-                "template": [
-                    "EnterGame/LogoMica.png"
-                ],
-                "green_mask": true
+                "expected": [
+                    "云母组"
+                ]
             }
         },
-        "post_wait_freezes": 300,
         "next": [
             "LogoMica",
             "LogoSunborn",
@@ -44,7 +45,7 @@
             "GameStart"
         ],
         "interrupt": [
-            "HomeRewardgetReward",
+            "HomeReward",
             "HomeAssignmentAgain",
             "HomeAlready"
         ]
@@ -65,7 +66,6 @@
                 "green_mask": true
             }
         },
-        "post_wait_freezes": 900,
         "next": [
             "LogoMica",
             "LogoSunborn",
@@ -73,7 +73,7 @@
             "GameStart"
         ],
         "interrupt": [
-            "HomeRewardgetReward",
+            "HomeReward",
             "HomeAssignmentAgain",
             "HomeAlready"
         ]

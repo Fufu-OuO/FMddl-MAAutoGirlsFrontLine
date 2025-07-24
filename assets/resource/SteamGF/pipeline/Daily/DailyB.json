@@ -1,0 +1,343 @@
+{
+    "DailyB": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    561,
+                    195,
+                    591,
+                    453
+                ],
+            "expected": [
+                "战斗"
+            ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DailyB",
+            "DailyBSimulation",
+            "DailyBSwipe"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "DailyBSimulation": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    63,
+                    303,
+                    657
+                ],
+                "expected": [
+                    "模拟作战",
+                    "Simulation"
+            ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DailyBSimulation",
+            "DailyBSwipe"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "DailyBSwipe": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    63,
+                    303,
+                    657
+                ],
+                "template": [
+                "DailyAB/DailyABSimulationB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin" : [
+                    241,
+                    156,
+                    1,
+                    1
+                ],
+                "end" : [
+                    243,
+                    630,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "DailyBSelection"
+        ]
+    },
+    "DailyBSelection": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    75,
+                    33,
+                    293,
+                    687
+                ],
+                "expected": [
+                    "融合演习"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DailyBDifficulty"
+        ]
+    },
+    "DailyBDifficulty": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    342,
+                    195,
+                    937,
+                    523
+                ],
+                "expected": [
+                    "防卫构思集训"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "target_offset": [
+                0,
+                300,
+                10,
+                -10
+            ]
+        },
+        "next": [
+            "DailyBDataClick",
+            "DailyBTimeClickCenter"
+        ]
+    },
+    "DailyBDataClick": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    1006,
+                    247,
+                    247,
+                    283
+                ],
+                "expected": [
+                    "解密算法练习"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "target_offset": [
+                0,
+                300,
+                10,
+                -10
+            ]
+        },
+        "next": [
+            "DailyBDataClick",
+            "DailyBTimeClickCenter"
+        ]
+    },
+    "DailyBTimeClickCenter": {
+        "post_wait_freezes": 500,
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    600,
+                    300,
+                    680,
+                    400
+                ],
+                "template": [
+                    "DailyAB/DailyABasicPotentialEnergy.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DailyBDifficulty",
+            "DailyBTimeAll",
+            "DailyBTimeAuto"
+        ]
+    },
+    "DailyBTimeAll": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    626,
+                    487,
+                    593,
+                    232
+                ],
+                "expected": [
+                    "一",
+                    "——"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DailyBStart"
+        ]
+    },
+    "DailyBTimeAuto": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    626,
+                    487,
+                    593,
+                    232
+                ],
+                "expected": [
+                    "十"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DailyBTimeEnough",
+            "DailyBTimeAuto"
+        ]
+    },
+    "DailyBTimeEnough": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    772,
+                    330,
+                    178,
+                    75
+                ],
+                "expected": [
+                    "12"
+                ]
+            }
+        },
+        "next": [
+            "DailyBStart"
+        ]
+    },
+    "DailyBStart": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    689,
+                    412,
+                    408,
+                    281
+                ],
+                "expected": [
+                    "智能扫荡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DailyBButtonYes",
+            "DailyBStart",
+            "DailyBButtonCancel"
+        ]
+    },
+    "DailyBButtonYes": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    193,
+                    300,
+                    855,
+                    420
+                ],
+                "template": [
+                    "Button/ButtonYesA.png",
+                    "Button/ButtonYesB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "DailyBButtonYes",
+            "DailyBButtonCancel"
+        ],
+        "interrupt": [
+            "Reward"
+        ]
+    },
+
+    "DailyBButtonCancel":{
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    62,
+                    30,
+                    288,
+                    217
+                ],
+                "template": [
+                    "Room/RoomButtonCancel.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    }
+}

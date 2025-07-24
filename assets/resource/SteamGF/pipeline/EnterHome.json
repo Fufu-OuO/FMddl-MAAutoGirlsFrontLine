@@ -5,9 +5,9 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    122,
+                    30,
                     10,
-                    161,
+                    461,
                     158
                 ],
                 "template": [
@@ -29,16 +29,17 @@
     },
     "EnterHomePage":{
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
-                    31,
-                    80,
-                    162,
-                    160
+                    5,
+                    61,
+                    427,
+                    153
                 ],
-                "template": [
-                    "Button/ButtonHomeY.png"
+                "expected": [
+                    "返回基地",
+                    "RETURN"
                 ]
             }
         },
@@ -56,7 +57,7 @@
     },
     "RoomStuck": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     155,
@@ -64,11 +65,12 @@
                     216,
                     158
                 ],
-                "template": [
-                    "Room/RoomStuckA.png"
+                "expected": [
+                    "家具",
+                    "FURNITURE"
                 ]
             }
-        },
+        }, 
         "action": {
             "type": "Click"
         },
@@ -125,7 +127,7 @@
             }
         },
         "post_wait_freezes": {
-            "time": 5000,
+            "time": 1000,
             "target": [
                 1043,
                 501,

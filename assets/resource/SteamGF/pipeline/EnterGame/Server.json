@@ -6,16 +6,14 @@
             "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    0,
-                    0,
-                    0,
-                    0
+                    163,
+                    2,
+                    163,
+                    159
                 ],
                 "template": [
-                    "EnterGame/ServerChange.png", 
-                    "EnterGame/ServerChangeBackground.png"
-                ],
-                "green_mask": true
+                    "EnterGame/ServerChange.png"
+                ]
             }
         },
         "next": [
@@ -52,8 +50,7 @@
                 ],
                 "template": [
                     "EnterGame/ServerChange.png"
-                ],
-                "green_mask": true
+                ]
             }
         },
         "action": {
@@ -85,7 +82,7 @@
     "ServerSelection": {
         "doc": "服务器列表已展开，选择服务器",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     0,
@@ -93,8 +90,9 @@
                     389,
                     579
                 ],
-                "template": [
-                    "EnterGame/ServerM4A1.png"
+                "expected": [
+                    "M4A1",
+                    "安卓"
                 ]
             }
         },
@@ -120,7 +118,7 @@
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 3000,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     420,
@@ -128,22 +126,13 @@
                     309,
                     165
                 ],
-                "template": [
-                    "EnterGame/ServerClickToStart.png"
-                ],
-                "threshold": 0.55,
-                "green_mask": true
+                "expected": [
+                    "点击屏幕开始"
+                ]
             }
         },
-        "timeout": 2000000,
         "action": {
-                "type": "Click",
-            "target": [
-                0,
-                46,
-                168,
-                48
-            ]
+                "type": "Click"
         },
         "next": [
             "ServerEnter",
@@ -197,8 +186,7 @@
                 ],
                 "template": [
                     "EnterGame/ServerAccount.png"
-                ],
-                "green_mask": true
+                ]
             }
         },
         "action": {
@@ -279,8 +267,7 @@
             "ServerButtonNo",
             "Server",
             "GameStart"
-        ],
-        "timeout": 2000000
+        ]
         }
     },
     "ServerNeedDownload": {
@@ -303,8 +290,7 @@
         "next": [
             "ServerButtonYes",
             "ServerDownloading"
-        ],
-        "timeout": 2000000
+        ]
         }
     },
     "ServerDownloading": {
@@ -318,7 +304,7 @@
             ]
         },
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     420,
@@ -326,11 +312,9 @@
                     309,
                     165
                 ],
-                "template": [
-                    "EnterGame/ServerClickToStart.png"
-                ],
-                "threshold": 0.55,
-                "green_mask": true
+                "expected": [
+                    "点击屏幕开始"
+                ]
             }
         },
         "post_wait_freezes": 10000
@@ -360,13 +344,13 @@
                     -30,
                     -4
                 ]
+            }
         },
         "next": [
             "ServerButtonNo",
             "Server",
             "GameStart"
         ]
-        }
     },
     "ServerButtonNo": {
         "recognition": {

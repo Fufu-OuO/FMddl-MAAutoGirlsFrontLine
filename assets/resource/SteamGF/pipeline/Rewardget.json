@@ -1,7 +1,7 @@
 {
     "Rewardget": {
         "next": [
-            "MenuBtoA",
+            "RewardgetMenuBtoA",
             "ButtonMail"
         ],
         "interrupt": [
@@ -11,7 +11,7 @@
     },
     "MenuAtoB": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     325,
@@ -19,8 +19,8 @@
                     826,
                     143
                 ],
-                "template": [
-                    "Button/ButtonMail.png"
+                "expected": [
+                    "邮件"
                 ]
             }
         },
@@ -36,9 +36,9 @@
             }
         }
     },
-    "MenuBtoA": {
+    "RewardgetMenuBtoA": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     325,
@@ -46,8 +46,8 @@
                     826,
                     143
                 ],
-                "template": [
-                    "Button/ButtonSetting.png"
+                "expected": [
+                    "设置"
                 ]
             }
         },
@@ -63,7 +63,7 @@
             }
         },
         "next": [
-            "MenuBtoA",
+            "RewardgetMenuBtoA",
             "ButtonMail"
         ],
         "interrupt": [
@@ -73,7 +73,7 @@
     },
     "ButtonMail": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     325,
@@ -81,11 +81,11 @@
                     826,
                     143
                 ],
-                "template": [
-                    "Button/ButtonMail.png"
+                "expected": [
+                    "邮件"
                 ]
             }
-        }, 
+        },
         "action": {
             "type": "Click"
         },
@@ -96,7 +96,7 @@
     },
     "RewardgetMail": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     208,
@@ -104,8 +104,9 @@
                     203,
                     171
                 ],
-                "template": [
-                    "Rewardget/RewardgetMail.png"
+                "expected": [
+                    "邮件",
+                    "MAIL"
                 ]
             }
         },
@@ -123,11 +124,14 @@
         "next": [
             "MailOut",
             "ButtonTask"
+        ],
+        "interrupt": [
+            "Reward"
         ]
     },
     "MailOut": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     208,
@@ -135,8 +139,9 @@
                     203,
                     171
                 ],
-                "template": [
-                    "Rewardget/RewardgetMail.png"
+                "expected": [
+                    "邮件",
+                    "MAIL"
                 ]
             }
         },
@@ -154,11 +159,14 @@
         "next": [
             "MailOut",
             "ButtonTask"
+        ],
+        "interrupt": [
+            "Reward"
         ]
     },
     "ButtonTask": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     325,
@@ -166,8 +174,8 @@
                     826,
                     143
                 ],
-                "template": [
-                    "Button/ButtonTask.png"
+                "expected": [
+                    "任务"
                 ]
             }
         }, 
@@ -185,7 +193,7 @@
     }, 
     "RewardgetTask": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     915,
@@ -193,12 +201,11 @@
                     237,
                     136
                 ],
-                "template": [
-                    "Rewardget/RewardgetTask.png"
-                ],
-                "green_mask": true
+                "expected": [
+                    "任务结算"
+                ]
             }
-        },
+        }, 
         "action": {
             "type": "Click"
         },
@@ -209,21 +216,25 @@
             "RewardgetTaskVitality",
             "RewardgetTaskToPass",
             "EnterHome"
+        ],
+        "interrupt": [
+            "Reward"
         ]
-    }, 
+    },
     "RewardgetTaskGift": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    888,
-                    426,
-                    186,
-                    182
+                    800,
+                    400,
+                    480,
+                    300
                 ],
                 "template": [
                     "Rewardget/RewardgetTaskGift.png"
                 ],
+                "threshold": 0.85,
                 "green_mask": true
             }
         },
@@ -237,8 +248,11 @@
             "RewardgetTaskVitality",
             "RewardgetTaskToPass",
             "EnterHome"
+        ],
+        "interrupt": [
+            "Reward"
         ]
-    }, 
+    },
     "RewardgetTaskVitality": {
         "recognition": {
             "type": "TemplateMatch",
@@ -265,8 +279,11 @@
             "RewardgetTaskVitality",
             "RewardgetTaskToPass",
             "EnterHome"
+        ],
+        "interrupt": [
+            "Reward"
         ]
-    }, 
+    },
     "RewardgetTaskToPass": {
         "recognition": {
             "type": "TemplateMatch",
@@ -293,7 +310,7 @@
     },
     "RewardgetPass": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     711,
@@ -301,17 +318,20 @@
                     285,
                     170
                 ],
-                "template": [
-                    "Rewardget/RewardgetPass.png"
+                "expected": [
+                    "一键领取"
                 ]
             }
-        },
+        }, 
         "action": {
             "type": "Click"
         },
         "next": [
             "RewardgetPass",
             "EnterHome"
+        ],
+        "interrupt": [
+            "Reward"
         ]
     }
 }

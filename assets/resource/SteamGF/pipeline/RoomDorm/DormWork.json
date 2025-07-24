@@ -1,7 +1,23 @@
 {
     "DormLove": {
-        "pre_wait_freezes": 1000,
-        "post_wait_freezes": 1000,
+        "pre_wait_freezes": {
+            "time": 2000,
+            "target": [
+                500,
+                0,
+                780,
+                130
+            ]
+        },
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                500,
+                0,
+                780,
+                130
+            ]
+        },
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -12,7 +28,8 @@
                     0
                 ],
                 "template": [
-                    "Dorm/DormLove.png"
+                    "Dorm/DormLoveA.png",
+                    "Dorm/DormLoveB.png"
                 ],
                 "threshold": 0.5,
                 "green_mask": true
@@ -28,10 +45,26 @@
         ]
     },
     "DormBattery": {
-        "pre_wait_freezes": 1000,
-        "post_wait_freezes": 1000,
+        "pre_wait_freezes": {
+            "time": 500,
+            "target": [
+                500,
+                0,
+                780,
+                130
+            ]
+        },
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                500,
+                0,
+                780,
+                130
+            ]
+        },
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     70,
@@ -39,18 +72,78 @@
                     505,
                     334
                 ],
+                "expected": [
+                    "电容容量"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [-93,68,-10,-10]
+            }
+        },
+        "next": [
+            "DormBatteryButtonNo",
+            "DormLove",
+            "DormBattery",
+            "DormFriend"
+        ],
+        "interrupt": [
+            "DormBatteryButtonCancel"
+        ]
+    },
+    "DormBatteryButtonCancel": {
+        "pre_wait_freezes": 1000,
+        "post_wait_freezes": 500,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    62,
+                    30,
+                    288,
+                    217
+                ],
                 "template": [
-                    "Dorm/DormBatteryA.png",
-                    "Dorm/DormBatteryB.png"
+                    "Room/RoomButtonCancel.png"
                 ]
             }
         },
         "action": {
             "type": "Click"
+        }
+    },
+    "DormBatteryButtonNo": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    193,
+                    300,
+                    855,
+                    420
+                ],
+                "template": [
+                    "Button/ButtonNoA.png",
+                    "Button/ButtonNoB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
         },
         "next": [
+            "DormBatteryButtonNo",
             "DormLove",
-            "DormBattery",
             "DormFriend"
         ]
     }

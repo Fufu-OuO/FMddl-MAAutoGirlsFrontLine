@@ -1,10 +1,10 @@
 {
     "name": "FMddl-MAA",
-    "version":  "0.1.0",
+    "version":  "v0.1.0",
     "mirrorchyan_rid":  "FMddl-MAAutoGirlsFrontLine",
     "mirrorchyan_multiplatform":  false, 
     "url":  "https://github.com/Fufu-OuO/FMddl-MAAutoGirlsFrontLine",
-    "custom_title": "费马",
+    "custom_title": "费马 FMddl-MAA",
     "controller": [
         {
             "name": "Steam",
@@ -38,8 +38,45 @@
             ]
         },
         {
+            "name": "模拟作战（人形材料）",
+            "entry": "DailyA",
+            "option": [
+                "人形材料关卡",
+                "模拟作战难度",
+                "模拟作战次数"
+            ]
+        },
+        {
+            "name": "融合演习（融合材料）",
+            "entry": "DailyB",
+            "option": [
+                "融合材料关卡",
+                "融合演习次数"
+            ]
+        },
+        {
+            "name": "每日任务",
+            "entry": "DailyTask",
+            "option": [
+                "[其他] 送经验书×1"
+            ]
+        },
+        {
+            "name": "[溯源回归] 当期活动打捞",
+            "entry": "EventSalvage",
+            "option": [
+                "活动打捞人形",
+                "活动打捞作战难度",
+                "活动打捞出战梯队",
+                "活动打捞梯队所部署的机场位置"
+            ]
+        },
+        {
             "name": "宿舍（好感、点赞、电池）",
-            "entry": "RoomDorm"
+            "entry": "RoomDorm",
+            "option": [
+                "好友点赞"
+            ]
         },
         {
             "name": "资料室（人形经验书）",
@@ -62,7 +99,7 @@
                     "pipeline_override": {
                         "ServerSelection": {
                             "recognition": {
-                                "type": "TemplateMatch",
+                                "type": "OCR",
                                 "param": {
                                     "roi" : [
                                         0,
@@ -70,13 +107,11 @@
                                         389,
                                         579
                                     ],
-                                    "template": [
-                                        "EnterGame/ServerM4A1.png"
+                                    "expected": [
+                                        "M4A1",
+                                        "安卓"
                                     ]
                                 }
-                            },
-                            "action": {
-                                "type": "Click"
                             }
                         }
                     }
@@ -86,7 +121,7 @@
                     "pipeline_override": {
                         "ServerSelection": {
                             "recognition": {
-                                "type": "TemplateMatch",
+                                "type": "OCR",
                                 "param": {
                                     "roi" : [
                                         0,
@@ -94,13 +129,11 @@
                                         389,
                                         579
                                     ],
-                                    "template": [
-                                        "EnterGame/ServerM16A1.png"
+                                    "expected": [
+                                        "M16A1",
+                                        "应用宝"
                                     ]
                                 }
-                            },
-                            "action": {
-                                "type": "Click"
                             }
                         }
                     }
@@ -110,7 +143,7 @@
                     "pipeline_override": {
                         "ServerSelection": {
                             "recognition": {
-                                "type": "TemplateMatch",
+                                "type": "OCR",
                                 "param": {
                                     "roi" : [
                                         0,
@@ -118,13 +151,11 @@
                                         389,
                                         579
                                     ],
-                                    "template": [
-                                        "EnterGame/ServerM4SOPMODII.png"
+                                    "expected": [
+                                        "SOPMOD",
+                                        "iOS"
                                     ]
                                 }
-                            },
-                            "action": {
-                                "type": "Click"
                             }
                         }
                     }
@@ -134,7 +165,7 @@
                     "pipeline_override": {
                         "ServerSelection": {
                             "recognition": {
-                                "type": "TemplateMatch",
+                                "type": "OCR",
                                 "param": {
                                     "roi" : [
                                         0,
@@ -142,13 +173,12 @@
                                         389,
                                         579
                                     ],
-                                    "template": [
-                                        "EnterGame/ServerRO635.png"
+                                    "expected": [
+                                        "RO635",
+                                        "其他",
+                                        "渠道"
                                     ]
                                 }
-                            },
-                            "action": {
-                                "type": "Click"
                             }
                         }
                     }
@@ -158,7 +188,7 @@
                     "pipeline_override": {
                         "ServerSelection": {
                             "recognition": {
-                                "type": "TemplateMatch",
+                                "type": "OCR",
                                 "param": {
                                     "roi" : [
                                         0,
@@ -166,13 +196,842 @@
                                         389,
                                         579
                                     ],
-                                    "template": [
-                                        "EnterGame/ServerSTAR15.png"
+                                    "expected": [
+                                        "ST",
+                                        "AR",
+                                        "bilibili"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "人形材料关卡": {
+            "cases": [
+                {
+                    "name": "[人形胶囊] 强化练习",
+                    "pipeline_override": {
+                        "DailyASelection": {
+                            "recognition": {
+                                "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            75,
+                                            33,
+                                            293,
+                                            687
+                                        ],
+                                        "expected": [
+                                            "强化练习"
+                                    ]
+                                    }
+                                },
+                            "action": {
+                                "type": "Click"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "[人形资料] 资料采样",
+                    "pipeline_override": {
+                        "DailyASelection": {
+                            "recognition": {
+                                "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            75,
+                                            33,
+                                            293,
+                                            687
+                                        ],
+                                        "expected": [
+                                            "资料采样"
+                                    ]
+                                    }
+                                },
+                            "action": {
+                                "type": "Click"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "[人形经验] 经验特训",
+                    "pipeline_override": {
+                        "DailyASelection": {
+                            "recognition": {
+                                "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            75,
+                                            33,
+                                            293,
+                                            687
+                                        ],
+                                        "expected": [
+                                            "经验特训"
+                                    ]
+                                    }
+                                },
+                            "action": {
+                                "type": "Click"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "[人形心智] 云图回廊",
+                    "pipeline_override": {
+                        "DailyASelection": {
+                            "recognition": {
+                                "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            75,
+                                            33,
+                                            293,
+                                            687
+                                        ],
+                                        "expected": [
+                                            "云图回廊"
+                                    ]
+                                    }
+                                },
+                            "action": {
+                                "type": "Click"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "模拟作战难度": {
+            "cases": [
+                {
+                    "name": "[高级] 4点每次",
+                    "pipeline_override": {
+                        "DailyADifficulty": {
+                            "recognition": {
+                            "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        502,
+                                        247,
+                                        337,
+                                        371
+                                    ],
+                                    "expected": [
+                                        "高级"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "[中级] 2点每次",
+                    "pipeline_override": {
+                        "DailyADifficulty": {
+                            "recognition": {
+                            "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        502,
+                                        247,
+                                        337,
+                                        371
+                                    ],
+                                    "expected": [
+                                        "中级"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "[初级] 1点每次",
+                    "pipeline_override": {
+                        "DailyADifficulty": {
+                            "recognition": {
+                            "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        502,
+                                        247,
+                                        337,
+                                        371
+                                    ],
+                                    "expected": [
+                                        "初级"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "模拟作战次数": {
+            "cases": [
+                {
+                    "name": "消耗全部势能",
+                    "pipeline_override": {
+                        "DailyATimeClickCenter": {
+                            "next": [
+                                "DailyADifficulty",
+                                "DailyATimeAll"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "消耗12点基础势能",
+                    "pipeline_override": {
+                        "DailyATimeClickCenter": {
+                            "next": [
+                                "DailyADifficulty",
+                                "DailyATimeAuto"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "融合材料关卡": {
+            "cases": [
+                {
+                    "name": "[融合经验] 防卫构思集训",
+                    "pipeline_override": {
+                        "DailyBDifficulty": {
+                            "recognition": {
+                            "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        342,
+                                        195,
+                                        937,
+                                        523
+                                    ],
+                                    "expected": [
+                                        "防卫构思集训"
                                     ]
                                 }
                             },
                             "action": {
-                                "type": "Click"
+                                "type": "Click",
+                                "target_offset": [
+                                    0,
+                                    300,
+                                    10,
+                                    -10
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "[融合升星] 开发调节操练",
+                    "pipeline_override": {
+                        "DailyBDifficulty": {
+                            "recognition": {
+                            "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        342,
+                                        195,
+                                        937,
+                                        523
+                                    ],
+                                    "expected": [
+                                        "开发调节操练"
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "Click",
+                                "target_offset": [
+                                    0,
+                                    300,
+                                    10,
+                                    -10
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "[融合初资] 解密算法练习",
+                    "pipeline_override": {
+                        "DailyBDifficulty": {
+                            "recognition": {
+                            "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        342,
+                                        195,
+                                        937,
+                                        523
+                                    ],
+                                    "expected": [
+                                        "解密算法练习"
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "Click",
+                                "target_offset": [
+                                    -54,
+                                    160,
+                                    10,
+                                    -10
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "[融合高资] 解密算法练习",
+                    "pipeline_override": {
+                        "DailyBDifficulty": {
+                            "recognition": {
+                            "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        342,
+                                        195,
+                                        937,
+                                        523
+                                    ],
+                                    "expected": [
+                                        "解密算法练习"
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "Click",
+                                "target_offset": [
+                                    54,
+                                    160,
+                                    10,
+                                    -10
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "融合演习次数": {
+            "cases": [
+                {
+                    "name": "消耗全部势能",
+                    "pipeline_override": {
+                        "DailyBTimeClickCenter": {
+                            "next": [
+                                "DailyBDifficulty",
+                                "DailyBTimeAll"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "消耗12点基础势能",
+                    "pipeline_override": {
+                        "DailyBTimeClickCenter": {
+                            "next": [
+                                "DailyBDifficulty",
+                                "DailyBTimeAuto"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "活动打捞人形": {
+            "cases": [
+                {
+"name": "[4★] APC556",
+                        "pipeline_override": {
+                            "EventSalvageSwipetoTarget": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+"begin" : [640,69,1,1],
+"end" : [640,687,1,1]
+                                        }
+                                }
+                            }
+                        }
+                },
+                {
+"name": "[5★] DSR-50",
+                        "pipeline_override": {
+                            "EventSalvageSwipetoTarget": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+"begin" : [857,188,1,1],
+"end" : [689,356,1,1]
+                                        }
+                                }
+                            }
+                        }
+                },
+                {
+"name": "[4★]P290",
+                        "pipeline_override": {
+                            "EventSalvageSwipetoTarget": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+"begin" : [640,697,1,1],
+"end" : [640,68,1,1]
+                                        }
+                                }
+                            }
+                        }
+                },
+                {
+"name": "[5★] 蜂鸟",
+                        "pipeline_override": {
+                            "EventSalvageSwipetoTarget": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+"begin" : [680,484,1,1],
+"end" : [517,286,1,1]
+                                        }
+                                }
+                            }
+                        }
+                }
+            ]
+        },
+        "活动打捞作战难度": {
+            "cases": [
+                {
+                    "name": "噩梦",
+                        "pipeline_override": {
+                            "EventDifficulty": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "expected": [
+                                            "普通",
+                                            "困难"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "困难",
+                        "pipeline_override": {
+                            "EventDifficulty": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "expected": [
+                                            "普通",
+                                            "噩梦"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "普通",
+                        "pipeline_override": {
+                            "EventDifficulty": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "expected": [
+                                            "困难",
+                                            "噩梦"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                }
+            ]
+        },
+        "活动打捞出战梯队": {
+            "cases": [
+                {
+                    "name": "1",
+                        "pipeline_override": {
+                            "EventSalvageChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution1A.png",
+                                            "Fight/TeamCaution1B.png",
+                                            "Fight/TeamEchelon1A.png",
+                                            "Fight/TeamEchelon1B.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "2",
+                        "pipeline_override": {
+                            "EventSalvageChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution2A.png",
+                                            "Fight/TeamCaution2B.png",
+                                            "Fight/TeamEchelon2A.png",
+                                            "Fight/TeamEchelon2B.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "3",
+                        "pipeline_override": {
+                            "EventSalvageChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution3A.png",
+                                            "Fight/TeamCaution3B.png",
+                                            "Fight/TeamEchelon3A.png",
+                                            "Fight/TeamEchelon3B.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "4",
+                        "pipeline_override": {
+                            "EventSalvageChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution4A.png",
+                                            "Fight/TeamCaution4B.png",
+                                            "Fight/TeamEchelon4A.png",
+                                            "Fight/TeamEchelon4B.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "5",
+                        "pipeline_override": {
+                            "EventSalvageChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution5A.png",
+                                            "Fight/TeamCaution5B.png",
+                                            "Fight/TeamEchelon5A.png",
+                                            "Fight/TeamEchelon5B.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "6",
+                        "pipeline_override": {
+                            "EventSalvageChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution6A.png",
+                                            "Fight/TeamCaution6B.png",
+                                            "Fight/TeamEchelon6A.png",
+                                            "Fight/TeamEchelon6B.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "7",
+                        "pipeline_override": {
+                            "EventSalvageChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution7A.png",
+                                            "Fight/TeamCaution7B.png",
+                                            "Fight/TeamEchelon7A.png",
+                                            "Fight/TeamEchelon7B.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "8",
+                        "pipeline_override": {
+                            "EventSalvageChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution8A.png",
+                                            "Fight/TeamCaution8B.png",
+                                            "Fight/TeamEchelon8A.png",
+                                            "Fight/TeamEchelon8B.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "9",
+                        "pipeline_override": {
+                            "EventSalvageChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution9A.png",
+                                            "Fight/TeamCaution9B.png",
+                                            "Fight/TeamEchelon9A.png",
+                                            "Fight/TeamEchelon9B.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                }
+            ]
+        },
+        "活动打捞梯队所部署的机场位置": {
+            "cases": [
+                {
+                    "name": "[左] 1号机场",
+                        "pipeline_override": {
+                            "EventSalvagePrepare": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+"roi" : [410,259,435,391],
+                                        "template": [
+                                            "EventNow/EventAirport1.png",
+                                            "EventNow/EventAirport2.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "[右] 2号机场",
+                        "pipeline_override": {
+                            "EventSalvagePrepare": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+"roi" : [842,165,373,466],
+                                        "template": [
+                                            "EventNow/EventAirport1.png",
+                                            "EventNow/EventAirport2.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                }
+            ]
+        },
+        "好友点赞":  {
+            "cases": [
+                {
+                    "name": "10个人",
+                    "pipeline_override": {
+                        "DormFriendStop": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1036,
+                                        555,
+                                        243,
+                                        164
+                                    ],
+                                    "expected": [
+                                        "10/10",
+                                        "留言",
+                                        "MESSAGE"
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "Click",
+                                "param": {
+                                    "target": [
+                                        34,
+                                        56,
+                                        72,
+                                        34
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "所有人",
+                    "pipeline_override": {
+                        "DormFriendStop": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1036,
+                                        555,
+                                        243,
+                                        164
+                                    ],
+                                    "expected": [
+                                        "留言",
+                                        "MESSAGE"
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "Click",
+                                "param": {
+                                    "target": [
+                                        34,
+                                        56,
+                                        72,
+                                        34
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "[其他] 送经验书×1": {
+            "cases": [
+                {
+                    "name": "等级最高人形",
+                    "pipeline_override": {
+                        "Send1Report_DownAndUp": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        943,
+                                        337,
+                                        208,
+                                        178
+                                    ],
+                                    "expected": [
+                                        "升序"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "等级最低人形",
+                    "pipeline_override": {
+                        "Send1Report_DownAndUp": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        943,
+                                        337,
+                                        208,
+                                        178
+                                    ],
+                                    "expected": [
+                                        "降序"
+                                    ]
+                                }
                             }
                         }
                     }
