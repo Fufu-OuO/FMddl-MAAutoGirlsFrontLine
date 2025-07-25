@@ -2,11 +2,23 @@
     "EnterGame":{
         "doc":"组合任务：顺序执行GameLoading、Server、GameStart",
         "post_wait_freezes": 300,
+        "post_delay":1000,
         "next": [
+            "HomeAlready",
+            "GameStart",
             "GameLoading",
-            "Server",
-            "GameStart"
+            "Server"
         ],
-        "post_delay":1000
+        "interrupt": [
+            "ServerChange",
+            "ServerClose",
+            "ServerEmpty",
+            "EnterHome",
+            "CloseAnnouncement",
+            "CloseEvent",
+            "HomeAssignmentAgain",
+            "HomeReward",
+            "GetGirl"
+        ]
     }
 }

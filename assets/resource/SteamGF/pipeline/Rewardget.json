@@ -1,5 +1,32 @@
 {
     "Rewardget": {
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1000,
+                    318,
+                    900,
+                    167
+                ],
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png"
+                ],
+                "threshold": 0.55
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    464,
+                    257,
+                    146,
+                    120
+                ]
+            }
+        },
         "next": [
             "RewardgetMenuBtoA",
             "ButtonMail"
@@ -16,7 +43,7 @@
                 "roi" : [
                     325,
                     576,
-                    826,
+                    1600,
                     143
                 ],
                 "expected": [
@@ -34,7 +61,11 @@
                     18
                 ]
             }
-        }
+        },
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
     },
     "RewardgetMenuBtoA": {
         "recognition": {
@@ -43,7 +74,7 @@
                 "roi" : [
                     325,
                     576,
-                    826,
+                    1600,
                     143
                 ],
                 "expected": [
@@ -78,7 +109,7 @@
                 "roi" : [
                     325,
                     576,
-                    826,
+                    1600,
                     143
                 ],
                 "expected": [
@@ -171,7 +202,7 @@
                 "roi" : [
                     325,
                     576,
-                    826,
+                    1600,
                     143
                 ],
                 "expected": [
@@ -189,8 +220,12 @@
             "RewardgetTaskVitality",
             "RewardgetTaskToPass",
             "EnterHome"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
         ]
-    }, 
+    },
     "RewardgetTask": {
         "recognition": {
             "type": "OCR",
@@ -232,9 +267,10 @@
                     300
                 ],
                 "template": [
-                    "Rewardget/RewardgetTaskGift.png"
+                    "Rewardget/RewardgetTaskGiftA.png",
+                    "Rewardget/RewardgetTaskGiftB.png"
                 ],
-                "threshold": 0.85,
+                "threshold": 0.75,
                 "green_mask": true
             }
         },
@@ -244,7 +280,6 @@
         "next": [
             "ButtonTask",
             "RewardgetTask",
-            "RewardgetTaskGift",
             "RewardgetTaskVitality",
             "RewardgetTaskToPass",
             "EnterHome"
@@ -291,11 +326,12 @@
                 "roi" : [
                     747,
                     152,
-                    177,
+                    477,
                     163
                 ],
                 "template": [
-                    "Rewardget/RewardgetTaskToPass.png"
+                    "Rewardget/RewardgetTaskToPassA.png",
+                    "Rewardget/RewardgetTaskToPassB.png"
                 ],
                 "green_mask": true
             }
@@ -315,7 +351,7 @@
                 "roi" : [
                     711,
                     529,
-                    285,
+                    485,
                     170
                 ],
                 "expected": [
@@ -331,6 +367,7 @@
             "EnterHome"
         ],
         "interrupt": [
+            "AssignmentAgain",
             "Reward"
         ]
     }

@@ -19,7 +19,6 @@
             "type": "Click"
         },
         "next": [
-            "DormLove",
             "DormFriendVisitMine",
             "DormFriendVisitGo"
         ]
@@ -43,7 +42,6 @@
             "type": "Click"
         },
         "next": [
-            "DormLove",
             "DormFriendVisitGo",
             "DormFriend"
         ]
@@ -53,9 +51,9 @@
             "type": "OCR",
             "param": {
                 "roi" : [
-                    816,
+                    800,
                     177,
-                    262,
+                    1100,
                     154
                 ],
                 "expected": [
@@ -77,30 +75,34 @@
     "DormFriendLike": {
         "pre_wait_freezes": {
             "time": 500,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
+            "param": {
+                "target": [
+                    500,
+                    0,
+                    780,
+                    130
+                ]
+            }
         },
         "post_wait_freezes": {
             "time": 500,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
+            "param": {
+                "target": [
+                    500,
+                    0,
+                    780,
+                    130
+                ]
+            }
         },
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    939,
-                    558,
-                    147,
-                    152
+                    900,
+                    559,
+                    380,
+                    151
                 ],
                 "expected": [
                     "点赞",
@@ -120,21 +122,25 @@
     "DormFriendBattery": {
         "pre_wait_freezes": {
             "time": 500,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
+            "param": {
+                "target": [
+                    500,
+                    0,
+                    780,
+                    130
+                ]
+            }
         },
         "post_wait_freezes": {
             "time": 500,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
+            "param": {
+                "target": [
+                    500,
+                    0,
+                    780,
+                    130
+                ]
+            }
         },
         "recognition": {
             "type": "TemplateMatch",
@@ -197,21 +203,25 @@
     "DormFriendNext": {
         "pre_wait_freezes": {
             "time": 500,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
+            "param": {
+                "target": [
+                    500,
+                    0,
+                    780,
+                    130
+                ]
+            }
         },
         "post_wait_freezes": {
             "time": 700,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
+            "param": {
+                "target": [
+                    500,
+                    0,
+                    780,
+                    130
+                ]
+            }
         },
         "recognition": {
             "type": "TemplateMatch",

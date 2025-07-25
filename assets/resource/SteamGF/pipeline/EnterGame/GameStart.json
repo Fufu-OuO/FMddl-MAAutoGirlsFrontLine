@@ -10,23 +10,27 @@
                     676
                 ],
                 "template": [
-                    "EnterGame/GameStartA.png",
                     "EnterGame/GameStartA1.png",
-                    "EnterGame/GameStartB.png",
+                    "EnterGame/GameStartA2.png",
                     "EnterGame/GameStartB1.png",
-                    "EnterGame/GameStartC.png"
-                ]
+                    "EnterGame/GameStartB2.png",
+                    "EnterGame/GameStartC1.png",
+                    "EnterGame/GameStartC2.png",
+                    "EnterGame/GameStartD1.png",
+                    "EnterGame/GameStartD2.png"
+                ],
+                "threshold": 0.6
             }
         },
         "action": {
             "type": "Click",
             "param": {
-            "target" : [
-                389,
-                295,
-                365,
-                339
-            ]
+                "target" : [
+                    389,
+                    295,
+                    365,
+                    339
+                ]
             }
         },
         "next": [
@@ -42,7 +46,8 @@
             "ServerEmpty",
             "EnterHome",
             "CloseAnnouncement",
-            "CloseEvent"
+            "CloseEvent",
+            "GetGirl"
         ]
     },
     "GameLogin1": {
@@ -107,7 +112,8 @@
                     152
                 ],
                 "template": [
-                    "EnterGame/Loading.png"
+                    "EnterGame/LoadingA.png",
+                    "EnterGame/LoadingB.png"
                 ],
                 "green_mask": true
             }
@@ -122,33 +128,21 @@
             "HomeAlready"
         ]
     },
-    "ReturnHome": {
-        "doc": "返回主界面（专供任务开始前使用）",
-        "next": [
-            "HomeAlready"
-        ],
-        "interrupt": [
-            "HomeAssignmentAgain",
-            "HomeReward",
-            "CloseAnnouncement",
-            "CloseEvent"
-        ]
-    },
     "HomeAlready": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    1015,
+                    1000,
                     318,
-                    137,
+                    900,
                     167
                 ],
                 "template": [
                     "Button/ButtonTeamA.png",
                     "Button/ButtonTeamB.png"
                 ],
-                "threshold": 0.8
+                "threshold": 0.55
             }
         },
         "action": {
@@ -279,18 +273,20 @@
         },
         "action": {
             "type": "Click",
-            "target": [
-                1047,
-                550,
-                84,
-                19
-            ]
+            "param": {
+                "target": [
+                    1047,
+                    550,
+                    84,
+                    19
+                ]
+            }
         },
         "post_wait_freezes": 500,
         "next": [
             "HomeAssignmentButtonYes",
             "HomeReward",
-            "ReturnHome"
+            "HomeAlready"
         ]
     },
     "HomeAssignmentButtonYes": {
@@ -326,17 +322,20 @@
         ]
     },
     "HomeReward": {
+        "rate_limit": 200,
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    944,
-                    197,
-                    190,
-                    127
+                    900,
+                    100,
+                    380,
+                    350
                 ],
                 "expected": [
-                    "REWARD"
+                    "REW",
+                    "REV",
+                    "ARD"
                 ]
             }
         },

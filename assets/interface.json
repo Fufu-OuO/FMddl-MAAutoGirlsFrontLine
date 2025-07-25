@@ -378,24 +378,18 @@
         "模拟作战次数": {
             "cases": [
                 {
-                    "name": "消耗全部势能",
+                    "name": "消耗全部动能",
                     "pipeline_override": {
-                        "DailyATimeClickCenter": {
-                            "next": [
-                                "DailyADifficulty",
-                                "DailyATimeAll"
-                            ]
+                        "DailyATimeAll": {
+                            "enabled": true
                         }
                     }
                 },
                 {
-                    "name": "消耗12点基础势能",
+                    "name": "（Bug勿选！）消耗12点基础动能",
                     "pipeline_override": {
-                        "DailyATimeClickCenter": {
-                            "next": [
-                                "DailyADifficulty",
-                                "DailyATimeAuto"
-                            ]
+                        "DailyATimeAll": {
+                            "enabled": false
                         }
                     }
                 }
@@ -423,12 +417,14 @@
                             },
                             "action": {
                                 "type": "Click",
-                                "target_offset": [
-                                    0,
-                                    300,
-                                    10,
-                                    -10
-                                ]
+                                "param":{
+                                    "target_offset": [
+                                        0,
+                                        300,
+                                        0,
+                                        0
+                                    ]
+                                }
                             }
                         }
                     }
@@ -453,12 +449,14 @@
                             },
                             "action": {
                                 "type": "Click",
-                                "target_offset": [
-                                    0,
-                                    300,
-                                    10,
-                                    -10
-                                ]
+                                "param":{
+                                    "target_offset": [
+                                        0,
+                                        300,
+                                        0,
+                                        0
+                                    ]
+                                }
                             }
                         }
                     }
@@ -483,12 +481,14 @@
                             },
                             "action": {
                                 "type": "Click",
-                                "target_offset": [
-                                    -54,
-                                    160,
-                                    10,
-                                    -10
-                                ]
+                                "param":{
+                                    "target_offset": [
+                                        -54,
+                                        160,
+                                        0,
+                                        0
+                                    ]
+                                }
                             }
                         }
                     }
@@ -513,12 +513,14 @@
                             },
                             "action": {
                                 "type": "Click",
-                                "target_offset": [
-                                    54,
-                                    160,
-                                    10,
-                                    -10
-                                ]
+                                "param":{
+                                    "target_offset": [
+                                        54,
+                                        160,
+                                        0,
+                                        0
+                                    ]
+                                }
                             }
                         }
                     }
@@ -530,22 +532,16 @@
                 {
                     "name": "消耗全部势能",
                     "pipeline_override": {
-                        "DailyBTimeClickCenter": {
-                            "next": [
-                                "DailyBDifficulty",
-                                "DailyBTimeAll"
-                            ]
+                        "DailyBTimeAll": {
+                            "enabled": true
                         }
                     }
                 },
                 {
-                    "name": "消耗12点基础势能",
+                    "name": "（Bug勿选！）消耗12点基础势能",
                     "pipeline_override": {
-                        "DailyBTimeClickCenter": {
-                            "next": [
-                                "DailyBDifficulty",
-                                "DailyBTimeAuto"
-                            ]
+                        "DailyBTimeAll": {
+                            "enabled": false
                         }
                     }
                 }
@@ -574,8 +570,8 @@
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
-"begin" : [857,188,1,1],
-"end" : [689,356,1,1]
+"begin" : [886,251,1,1],
+"end" : [750,376,1,1]
                                         }
                                 }
                             }
@@ -602,8 +598,8 @@
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
-"begin" : [680,484,1,1],
-"end" : [517,286,1,1]
+"begin" : [1005,503,1,1],
+"end" : [860,370,1,1]
                                         }
                                 }
                             }
@@ -894,8 +890,10 @@
                                     "param": {
 "roi" : [410,259,435,391],
                                         "template": [
-                                            "EventNow/EventAirport1.png",
-                                            "EventNow/EventAirport2.png"
+                                            "EventNow/EventAirport1A.png",
+                                            "EventNow/EventAirport1B.png",
+                                            "EventNow/EventAirport2A.png",
+                                            "EventNow/EventAirport2B.png"
                                         ]
                                     }
                                 }
@@ -911,8 +909,10 @@
                                     "param": {
 "roi" : [842,165,373,466],
                                         "template": [
-                                            "EventNow/EventAirport1.png",
-                                            "EventNow/EventAirport2.png"
+                                            "EventNow/EventAirport1A.png",
+                                            "EventNow/EventAirport1B.png",
+                                            "EventNow/EventAirport2A.png",
+                                            "EventNow/EventAirport2B.png"
                                         ]
                                     }
                                 }
@@ -1002,10 +1002,10 @@
                                 "type": "OCR",
                                 "param": {
                                     "roi" : [
-                                        943,
-                                        337,
-                                        208,
-                                        178
+                                        1062,
+                                        344,
+                                        217,
+                                        239
                                     ],
                                     "expected": [
                                         "升序"
@@ -1023,10 +1023,10 @@
                                 "type": "OCR",
                                 "param": {
                                     "roi" : [
-                                        943,
-                                        337,
-                                        208,
-                                        178
+                                        1062,
+                                        344,
+                                        217,
+                                        239
                                     ],
                                     "expected": [
                                         "降序"

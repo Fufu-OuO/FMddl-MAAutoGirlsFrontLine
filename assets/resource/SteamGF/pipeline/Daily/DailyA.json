@@ -47,8 +47,8 @@
             "type": "Click"
         },
         "next": [
-            "DailyASimulation",
-            "DailyASwipe"
+            "DailyASwipe",
+            "DailyASimulation"
         ],
         "interrupt": [
             "AssignmentAgain",
@@ -57,16 +57,17 @@
     },
     "DailyASwipe": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
-                    0,
-                    63,
-                    303,
-                    657
+                    667,
+                    65,
+                    287,
+                    177
                 ],
-                "template": [
-                    "DailyAB/DailyABSimulationB.png"
+                "expected": [
+                "基础动能",
+                "基础势能"
                 ]
             }
         },
@@ -111,25 +112,6 @@
         },
         "next": [
             "DailyADifficulty"
-        ]
-    },
-    "DailyABNone": {
-        "recognition": {
-        "type": "OCR",
-            "param": {
-                "roi" : [
-                    700,
-                    60,
-                    309,
-                    194
-                ],
-                "expected": [
-                    "0点发放"
-                ]
-            }
-        },
-        "next": [
-            "EnterHome"
         ]
     },
     "DailyADifficulty": {
@@ -182,7 +164,7 @@
     },
     "DailyATimeAll": {
         "recognition": {
-        "type": "OCR",
+        "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     626,
@@ -190,9 +172,8 @@
                     593,
                     232
                 ],
-                "expected": [
-                    "一",
-                    "——"
+                "template": [
+                    "DailyAB/DailyABTimeMinus.png"
                 ]
             }
         },
@@ -205,7 +186,7 @@
     },
     "DailyATimeAuto": {
         "recognition": {
-        "type": "OCR",
+        "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     626,
@@ -213,8 +194,8 @@
                     593,
                     232
                 ],
-                "expected": [
-                    "十"
+                "template": [
+                    "DailyAB/DailyABTimePlus.png"
                 ]
             }
         },
@@ -223,6 +204,7 @@
         },
         "next": [
             "DailyATimeEnough",
+            "DailyABNone",
             "DailyATimeAuto"
         ]
     },
@@ -322,6 +304,29 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "next": [
+            "DailyAButtonCancel",
+            "EnterHome"
+        ]
+    },
+    "DailyABNone": {
+        "recognition": {
+        "type": "OCR",
+            "param": {
+                "roi" : [
+                    902,
+                    453,
+                    71,
+                    49
+                ],
+                "expected": [
+                    "0"
+                ]
+            }
+        },
+        "next": [
+            "EnterHome"
+        ]
     }
 }

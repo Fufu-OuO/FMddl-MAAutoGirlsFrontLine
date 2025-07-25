@@ -1,31 +1,14 @@
 {
     "DormLove": {
-        "pre_wait_freezes": {
-            "time": 2000,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
-        },
-        "post_wait_freezes": {
-            "time": 500,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
-        },
+        "rate_limit": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     0,
-                    0,
-                    0,
-                    0
+                    100,
+                    1900,
+                    480
                 ],
                 "template": [
                     "Dorm/DormLoveA.png",
@@ -47,21 +30,25 @@
     "DormBattery": {
         "pre_wait_freezes": {
             "time": 500,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
+            "param": {
+                "target": [
+                    500,
+                    0,
+                    780,
+                    130
+                ]
+            }
         },
         "post_wait_freezes": {
             "time": 500,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
+            "param": {
+                "target": [
+                    500,
+                    0,
+                    780,
+                    130
+                ]
+            }
         },
         "recognition": {
             "type": "OCR",
@@ -85,8 +72,6 @@
         },
         "next": [
             "DormBatteryButtonNo",
-            "DormLove",
-            "DormBattery",
             "DormFriend"
         ],
         "interrupt": [
@@ -126,7 +111,9 @@
                 ],
                 "template": [
                     "Button/ButtonNoA.png",
-                    "Button/ButtonNoB.png"
+                    "Button/ButtonNoB.png",
+                    "Button/ButtonNoC.png",
+                    "Button/ButtonNoD.png"
                 ]
             }
         },

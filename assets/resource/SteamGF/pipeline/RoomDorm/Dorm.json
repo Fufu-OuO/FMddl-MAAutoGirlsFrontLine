@@ -5,16 +5,27 @@
         "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    1015,
+                    1000,
                     318,
-                    137,
+                    900,
                     167
                 ],
-            "template": [
-                "Button/ButtonTeamA.png",
-                "Button/ButtonTeamB.png"
-            ],
-            "threshold": 0.8
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png"
+                ],
+                "threshold": 0.55
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    464,
+                    257,
+                    146,
+                    120
+                ]
             }
         },
         "next": [

@@ -1,5 +1,32 @@
 {
     "RoomExplore": {
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1000,
+                    318,
+                    900,
+                    167
+                ],
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png"
+                ],
+                "threshold": 0.55
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    464,
+                    257,
+                    146,
+                    120
+                ]
+            }
+        },
         "next": [
             "ExploreEnterTeam",
             "ExploreOpenTeamMenu",
@@ -13,16 +40,16 @@
         "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    1015,
+                    1000,
                     318,
-                    137,
+                    900,
                     167
                 ],
-            "template": [
-                "Button/ButtonTeamA.png",
-                "Button/ButtonTeamB.png"
-            ],
-            "threshold": 0.8
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png"
+                ],
+                "threshold": 0.55
             }
         },
         "action": {
@@ -52,7 +79,8 @@
                     158
                 ],
                 "template": [
-                    "Button/ButtonHomeAtoB.png"
+                    "Button/ButtonHomeAtoB1.png",
+                    "Button/ButtonHomeAtoB2.png"
                 ],
                 "threshold": 0.8
             }
@@ -69,9 +97,9 @@
             }
         },
         "next": [
+            "ButtonRoomExplore",
             "ExploreEnterTeam",
-            "ExploreSwipeBackTeamMenu",
-            "ButtonRoomExplore"
+            "ExploreSwipeBackTeamMenu"
         ]
     },
     "ExploreSwipeBackTeamMenu": {
@@ -109,14 +137,14 @@
             }
         },
         "next": [
+            "ButtonRoomExplore",
             "ExploreEnterTeam",
-            "ExploreOpenTeamMenu",
-            "ButtonRoomExplore"
+            "ExploreOpenTeamMenu"
         ]
     },
     "ButtonRoomExplore": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     20,
@@ -124,8 +152,8 @@
                     1169,
                     377
                 ],
-                "template": [
-                    "Button/ButtonRoomExplore.png"
+                "expected": [
+                    "前进营地"
                 ]
             }
         },

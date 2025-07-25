@@ -76,11 +76,12 @@
                 "roi" : [
                     790,
                     328,
-                    165,
+                    565,
                     147
                 ],
             "template": [
-                "Room/DataWork.png"
+                "Room/DataWorkA.png",
+                "Room/DataWorkB.png"
             ]
             }
         },
@@ -106,7 +107,9 @@
                 ],
                 "template": [
                     "Button/ButtonYesA.png",
-                    "Button/ButtonYesB.png"
+                    "Button/ButtonYesB.png",
+                    "Button/ButtonYesC.png",
+                    "Button/ButtonYesD.png"
                 ]
             }
         },

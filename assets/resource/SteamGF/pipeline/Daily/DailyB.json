@@ -47,8 +47,8 @@
             "type": "Click"
         },
         "next": [
-            "DailyBSimulation",
-            "DailyBSwipe"
+            "DailyBSwipe",
+            "DailyBSimulation"
         ],
         "interrupt": [
             "AssignmentAgain",
@@ -57,16 +57,17 @@
     },
     "DailyBSwipe": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
-                    0,
-                    63,
-                    303,
-                    657
+                    667,
+                    65,
+                    287,
+                    177
                 ],
-                "template": [
-                "DailyAB/DailyABSimulationB.png"
+                "expected": [
+                "基础动能",
+                "基础势能"
                 ]
             }
         },
@@ -74,14 +75,14 @@
             "type": "Swipe",
             "param": {
                 "begin" : [
-                    241,
-                    156,
+                    243,
+                    630,
                     1,
                     1
                 ],
                 "end" : [
-                    243,
-                    630,
+                    241,
+                    156,
                     1,
                     1
                 ]
@@ -130,12 +131,14 @@
         },
         "action": {
             "type": "Click",
-            "target_offset": [
-                0,
-                300,
-                10,
-                -10
-            ]
+            "param":{
+                "target_offset": [
+                    0,
+                    300,
+                    0,
+                    0
+                ]
+            }
         },
         "next": [
             "DailyBDataClick",
@@ -147,24 +150,18 @@
         "type": "OCR",
             "param": {
                 "roi" : [
-                    1006,
-                    247,
-                    247,
-                    283
+                    1008,
+                    527,
+                    271,
+                    192
                 ],
                 "expected": [
-                    "解密算法练习"
+                    "出击"
                 ]
             }
         },
         "action": {
-            "type": "Click",
-            "target_offset": [
-                0,
-                300,
-                10,
-                -10
-            ]
+            "type": "Click"
         },
         "next": [
             "DailyBDataClick",
@@ -198,7 +195,7 @@
     },
     "DailyBTimeAll": {
         "recognition": {
-        "type": "OCR",
+        "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     626,
@@ -206,9 +203,8 @@
                     593,
                     232
                 ],
-                "expected": [
-                    "一",
-                    "——"
+                "template": [
+                    "DailyAB/DailyABTimeMinus.png"
                 ]
             }
         },
@@ -221,7 +217,7 @@
     },
     "DailyBTimeAuto": {
         "recognition": {
-        "type": "OCR",
+        "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     626,
@@ -229,8 +225,8 @@
                     593,
                     232
                 ],
-                "expected": [
-                    "十"
+                "template": [
+                    "DailyAB/DailyABTimePlus.png"
                 ]
             }
         },
@@ -239,6 +235,7 @@
         },
         "next": [
             "DailyBTimeEnough",
+            "DailyABNone",
             "DailyBTimeAuto"
         ]
     },
@@ -338,6 +335,10 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "next": [
+            "DailyAButtonCancel",
+            "EnterHome"
+        ]
     }
 }

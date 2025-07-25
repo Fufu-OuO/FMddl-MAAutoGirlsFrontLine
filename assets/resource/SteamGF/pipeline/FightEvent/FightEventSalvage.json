@@ -1,14 +1,5 @@
 {
     "EventSalvagePrepare": {
-        "post_wait_freezes": {
-            "time": 400,
-            "target": [
-                0,
-                0,
-                329,
-                286
-            ]
-        },
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -19,8 +10,10 @@
                     594
                 ],
                 "template": [
-                    "EventNow/EventAirport1.png",
-                    "EventNow/EventAirport2.png"
+                    "EventNow/EventAirport1A.png",
+                    "EventNow/EventAirport1B.png",
+                    "EventNow/EventAirport2A.png",
+                    "EventNow/EventAirport2B.png"
                 ]
             }
         },
@@ -30,7 +23,8 @@
         "next": [
             "EventSalvageChooseTeam",
             "EventSalvagePrepare"
-        ]
+        ],
+        "timeout": 60000
     },
     "EventSalvageChooseTeam": {
         "recognition": {
@@ -71,7 +65,8 @@
                     250
                 ],
                 "expected": [
-                    "一键修复"
+                    "一键",
+                    "修复"
                 ]
             }
         },
@@ -120,7 +115,7 @@
     },
     "EventSalvageStartFight": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     600,
@@ -128,8 +123,10 @@
                     680,
                     420
                 ],
-                "template": [
-                    "Fight/FightStart.png"
+                "expected": [
+                    "开始作战",
+                    "点击指挥部",
+                    "进行部署"
                 ]
             }
         },
@@ -296,18 +293,8 @@
         "action": {
             "type": "Swipe",
             "param": {
-                "begin" : [
-                    640,
-                    697,
-                    1,
-                    1
-                ],
-                "end" : [
-                    640,
-                    68,
-                    1,
-                    1
-                ]
+                "begin" : [1005,503,1,1],
+                "end" : [860,370,1,1]
             }
         },
         "next": [

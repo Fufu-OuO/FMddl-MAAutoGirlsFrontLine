@@ -16,13 +16,7 @@
             }
         },
         "action": {
-            "type": "Click",
-            "target": [
-                1047,
-                550,
-                84,
-                19
-            ]
+            "type": "Click"
         },
         "post_wait_freezes": 500,
         "next": [
@@ -62,17 +56,47 @@
         ]
     },
     "Reward": {
+        "rate_limit": 200,
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    944,
-                    197,
-                    190,
-                    127
+                    900,
+                    100,
+                    380,
+                    350
                 ],
                 "expected": [
-                    "REWARD"
+                    "REW",
+                    "REV",
+                    "ARD"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    231,
+                    102,
+                    218,
+                    109
+                ]
+            }
+        }
+    },
+    "GetGirl": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    400,
+                    400
+                ],
+                "expected": [
+                    "枪种"
                 ]
             }
         },

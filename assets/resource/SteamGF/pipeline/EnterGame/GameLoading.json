@@ -6,6 +6,7 @@
             "LogoMica",
             "LogoSunborn",
             "Server",
+            "ServerChange",
             "ServerSelection",
             "GameStart",
             "CloseAnnouncement",
@@ -19,7 +20,8 @@
             "ServerLagging",
             "ServerNeedDownload",
             "ServerClose",
-            "ServerEmpty"
+            "ServerEmpty",
+            "GetGirl"
         ],
         "post_delay":1000
         },
@@ -39,15 +41,16 @@
             }
         },
         "next": [
+            "GameStart",
             "LogoMica",
             "LogoSunborn",
-            "Server",
-            "GameStart"
+            "Server"
         ],
         "interrupt": [
             "HomeReward",
             "HomeAssignmentAgain",
-            "HomeAlready"
+            "HomeAlready",
+            "GetGirl"
         ]
     },
     "LogoSunborn": {

@@ -4,16 +4,27 @@
         "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    1015,
+                    1000,
                     318,
-                    137,
+                    900,
                     167
                 ],
                 "template": [
                     "Button/ButtonTeamA.png",
                     "Button/ButtonTeamB.png"
                 ],
-                "threshold": 0.8
+                "threshold": 0.55
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    464,
+                    257,
+                    146,
+                    120
+                ]
             }
         },
         "next": [
@@ -28,7 +39,7 @@
     },
     "DailyTaskMenuBtoA": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     325,
@@ -36,8 +47,8 @@
                     826,
                     143
                 ],
-                "template": [
-                    "Button/ButtonSetting.png"
+                "expected": [
+                    "设置"
                 ]
             }
         },
@@ -65,16 +76,27 @@
         "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    1015,
+                    1000,
                     318,
-                    137,
+                    900,
                     167
                 ],
                 "template": [
                     "Button/ButtonTeamA.png",
                     "Button/ButtonTeamB.png"
                 ],
-                "threshold": 0.8
+                "threshold": 0.55
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    464,
+                    257,
+                    146,
+                    120
+                ]
             }
         },
         "next": [
@@ -82,11 +104,15 @@
             "KalinaLove_ClickLove1",
             "KalinaLove_ClickLove2",
             "KalinaLove_ClickLove3"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
         ]
     },
     "KalinaLove_ButtonShop": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     325,
@@ -94,8 +120,8 @@
                     826,
                     143
                 ],
-                "template": [
-                    "Button/ButtonShop.png"
+                "expected": [
+                    "商城"
                 ]
             }
         },
@@ -106,7 +132,12 @@
             "KalinaLove_ButtonShop",
             "KalinaLove_ClickLove1",
             "KalinaLove_ClickLove2",
-            "KalinaLove_ClickLove3"
+            "KalinaLove_ClickLove3",
+            "KalinaLove_ClickKalina"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
         ]
     },
     "KalinaLove_ClickLove1": {
@@ -136,6 +167,7 @@
             "KalinaLove_ClickLove1",
             "KalinaLove_ClickLove2",
             "KalinaLove_ClickLove3",
+            "KalinaLove_ClickKalina",
             "KalinaLove_ButtonBack"
         ]
     },
@@ -166,6 +198,7 @@
             "KalinaLove_ClickLove1",
             "KalinaLove_ClickLove2",
             "KalinaLove_ClickLove3",
+            "KalinaLove_ClickKalina",
             "KalinaLove_ButtonBack"
         ]
     },
@@ -196,6 +229,40 @@
             "KalinaLove_ClickLove1",
             "KalinaLove_ClickLove2",
             "KalinaLove_ClickLove3",
+            "KalinaLove_ClickKalina",
+            "KalinaLove_ButtonBack"
+        ]
+    },
+    "KalinaLove_ClickKalina": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    981,
+                    0,
+                    298,
+                    296
+                ],
+                "expected": [
+                    "换装"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    1150,
+                    460,
+                    56,
+                    182
+                ]
+            }
+        },
+        "next": [
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3",
             "KalinaLove_ButtonBack"
         ]
     },
@@ -221,6 +288,10 @@
         "next": [
             "KalinaLove_ButtonBack",
             "Send1Report"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
         ]
     },
     "Send1Report": {
@@ -228,21 +299,36 @@
         "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    1015,
+                    1000,
                     318,
-                    137,
+                    900,
                     167
                 ],
                 "template": [
                     "Button/ButtonTeamA.png",
                     "Button/ButtonTeamB.png"
                 ],
-                "threshold": 0.8
+                "threshold": 0.55
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    464,
+                    257,
+                    146,
+                    120
+                ]
             }
         },
         "next": [
             "Send1Report_ButtonWarehouse",
             "Send1Report_DownAndUp"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
         ]
     },
     "Send1Report_ButtonWarehouse": {
@@ -264,7 +350,14 @@
             "type": "Click"
         },
         "next": [
-            "Send1Report_DownAndUp"
+            "Send1Report",
+            "Send1Report_ButtonWarehouse",
+            "Send1Report_DownAndUp",
+            "Send1Report_ClickTheFirst"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
         ]
     },
     "Send1Report_DownAndUp": {
@@ -272,10 +365,10 @@
             "type": "OCR",
             "param": {
                 "roi" : [
-                    943,
-                    337,
-                    208,
-                    178
+                    1062,
+                    344,
+                    217,
+                    239
                 ],
                 "expected": [
                     "升序"
@@ -316,67 +409,71 @@
         },
         "next": [
             "Send1Report_ClickTheFirst",
-            "Send1Report_ChooseGift",
-            "Send1Report_ChooseReport"
+            "Send1Report_Exp",
+            "Send1Report_ChooseGift"
         ]
     },
-    "Send1Report_ChooseGift": {
+    "Send1Report_Exp": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
-                    1028,
-                    19,
-                    124,
-                    131
+                    761,
+                    2,
+                    518,
+                    475
                 ],
-                "template": [
-                    "Girls/SendExp.png"
-                ],
-                "threshold": 0.8
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "Send1Report_ClickTheFirst",
-            "Send1Report_ChooseGift",
-            "Send1Report_ChooseReport"
-        ]
-    },
-    "Send1Report_ChooseReport": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    0,
-                    32,
-                    376,
-                    420
-                ],
-                "template": [
-                    "Gift/ExpReport_Common.png",
-                    "Gift/ExpReport_Fushion.png"
-                ],
-                "threshold": 0.8
+                "expected": [
+                    "等级"
+                ]
             }
         },
         "action": {
             "type": "Click",
             "param": {
-                "target" : [
-                    65,
-                    325,
-                    136,
-                    7]
+                "target_offset": [
+                    200,
+                    -5,
+                    -3,
+                    -3
+                ]
             }
         },
         "next": [
-            "Send1Report_ClickTheFirst",
-            "Send1Report_ChooseGift",
-            "Send1Report_ChooseReport",
-            "Send1Report_ButtonYes"
+            "Send1Report_Exp",
+            "Send1Report_ChooseGift"
+        ]
+    },
+    "Send1Report_ChooseGift": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    20,
+                    1900,
+                    500
+                ],
+                "expected": [
+                    "作战报告书",
+                    "突击成长存储"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    11,
+                    54,
+                    3,
+                    3
+                ]
+            }
+        },
+        "next": [
+            "Send1Report_ButtonYes",
+            "Send1Report_ChooseGift"
         ]
     },
     "Send1Report_ButtonYes": {
@@ -413,7 +510,7 @@
     },
     "Send1Report_SendThenBack": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     0,
@@ -421,18 +518,30 @@
                     289,
                     511
                 ],
-                "template": [
-                    "Girls/InformationBack.png",
-                    "Button/ButtonBackA.png"
-                ],
-                "threshold": 0.8
+                "expected": [
+                    "编号"
+                ]
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -13,
+                    111,
+                    -2,
+                    -2
+                ]
+            }
         },
         "next": [
-            "Send1Report_SendThenBack"
+            "Send1Report_SendThenBack",
+            "EnterHome",
+            "HomeAlready"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
         ]
     }
 }

@@ -2,7 +2,7 @@
     "ExploreSwipe": {
         "doc": "拉到房间最右侧",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     210,
@@ -10,8 +10,8 @@
                     425,
                     246
                 ],
-                "template": [
-                    "Room/RoomExplore.png"
+                "expected": [
+                    "前进营地"
                 ]
             }
         },
@@ -42,7 +42,7 @@
     },
     "ExploreGet": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     210,
@@ -50,8 +50,8 @@
                     425,
                     246
                 ],
-                "template": [
-                    "Room/RoomExplore.png"
+                "expected": [
+                    "前进营地"
                 ]
             }
         },
@@ -67,45 +67,14 @@
             }
         },
         "next": [
-            "ExploreReward",
-            "ExploreConductor",
-            "ExploreFormation",
             "ExploreButtonCancel1",
-            "ExploreStart",
-            "EnterHome"
-        ]
-    },
-    "ExploreReward": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    944,
-                    197,
-                    190,
-                    127
-                ],
-                "template": [
-                    "Rewardget/Reward.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    231,
-                    102,
-                    218,
-                    109
-                ]
-            }
-        },
-        "next": [
             "ExploreConductor",
             "ExploreFormation",
             "ExploreStart",
             "EnterHome"
+        ],
+        "interrupt": [
+            "Reward"
         ]
     },
     "ExploreConductor": {
@@ -114,13 +83,14 @@
             "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    892,
+                    800,
                     565,
-                    260,
+                    900,
                     155
                 ],
                 "template": [
-                    "Room/ExploreStart.png"
+                    "Room/ExploreStartA.png",
+                    "Room/ExploreStartB.png"
                 ]
             }
         },
@@ -145,18 +115,19 @@
     "ExploreFormation": {
         "doc": "自动编队",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
-                    1015,
+                    800,
                     158,
-                    137,
+                    900,
                     208
                 ],
-                "template": [
-                    "Room/ExploreFormation.png"
-                ],
-                "green_mask": true
+                "expected": [
+                    "自",
+                    "动",
+                    "编"
+                ]
             }
         },
         "action": {
@@ -181,7 +152,9 @@
                 ],
                 "template": [
                     "Button/ButtonYesA.png",
-                    "Button/ButtonYesB.png"
+                    "Button/ButtonYesB.png",
+                    "Button/ButtonYesC.png",
+                    "Button/ButtonYesD.png"
                 ]
             }
         },
@@ -205,7 +178,7 @@
     "ExploreStart": {
         "doc": "立即出发",
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     803,
@@ -213,10 +186,11 @@
                     299,
                     162
                 ],
-                "template": [
-                    "Room/ExploreStart.png"
-                ],
-                "green_mask": true
+                "expected": [
+                    "立即出发",
+                    "START",
+                    "ONCE"
+                ]
             }
         },
         "action": {
@@ -247,7 +221,6 @@
             "type": "Click"
         },
         "next": [
-            "ExploreReward",
             "ExploreConductor",
             "ExploreFormation",
             "ExploreStart",

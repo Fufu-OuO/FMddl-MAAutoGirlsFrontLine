@@ -87,8 +87,24 @@
             }
         },
         "next": [
-            "EventSwipetoTarget",
+            "EventSalvageStage",
+            "EventFirstStage",
             "EventSwipetoLeft"
+        ]
+    },
+    "EventFirstStage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [0,320,1280,235],
+                "expected": [
+                    "逃出生天"
+                ]
+            }
+        },
+        "next": [
+            "EventSalvageStage",
+            "EventSwipetoTarget"
         ]
     },
     "EventSwipetoTarget": {
@@ -131,6 +147,7 @@
         ]
     },
     "EventSalvageStage": {
+        "rate_limit": 500,
         "recognition": {
             "type": "OCR",
             "param": {

@@ -1,4 +1,33 @@
 {
+    "ReturnHome": {
+        "doc": "返回主界面（专供任务开始前使用）",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    30,
+                    10,
+                    461,
+                    158
+                ],
+                "template": [
+                    "Button/ButtonHomeAtoB1.png",
+                    "Button/ButtonHomeAtoB2.png"
+                ],
+                "threshold":0.8
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "EnterHomePage",
+            "HomeAlready"
+        ],
+        "interrupt":[
+            "RoomStuck"
+        ]
+    },
     "EnterHome": {
         "doc":"组合任务",
         "recognition": {
@@ -11,7 +40,8 @@
                     158
                 ],
                 "template": [
-                    "Button/ButtonHomeAtoB.png"
+                    "Button/ButtonHomeAtoB1.png",
+                    "Button/ButtonHomeAtoB2.png"
                 ],
                 "threshold":0.8
             }
@@ -52,7 +82,9 @@
             "HomeAlready"
         ],
         "interrupt":[
-            "RoomStuck"
+            "RoomStuck",
+            "AssignmentAgain",
+            "Reward"
         ]
     },
     "RoomStuck": {
@@ -121,19 +153,22 @@
                     273
                 ],
                 "template": [
-                    "EnterGame/Loading.png"
+                    "EnterGame/LoadingA.png", 
+                    "EnterGame/LoadingB.png"
                 ],
                 "green_mask": true
             }
         },
         "post_wait_freezes": {
-            "time": 1000,
-            "target": [
-                1043,
-                501,
-                165,
-                219
-            ]
+            "param": {
+                "time": 1000,
+                "target": [
+                    1043,
+                    501,
+                    165,
+                    219
+                ]
+            }
         }
     }
 }

@@ -24,14 +24,15 @@
             "GameStart",
             "HomeAlready",
             "Reward",
-            "AssignmentAgain"
+            "HomeAssignmentAgain"
         ],
         "interrupt": [
             "ServerAccount",
             "ServerLagging",
             "ServerNeedDownload",
             "ServerClose",
-            "ServerEmpty"
+            "ServerEmpty",
+            "GetGirl"
         ],
         "post_delay":1000
     },
@@ -40,7 +41,7 @@
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 2000,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     163,
@@ -48,19 +49,21 @@
                     163,
                     159
                 ],
-                "template": [
-                    "EnterGame/ServerChange.png"
+                "expected": [
+                    "变更"
                 ]
             }
         },
         "action": {
             "type": "Click",
-            "target" : [
-                30,
-                0,
-                139,
-                20
-            ]
+            "param": {
+                "target" : [
+                    30,
+                    0,
+                    139,
+                    20
+                ]
+            }
         },
         "next": [
             "ServerSelection",
@@ -191,12 +194,14 @@
         },
         "action": {
             "type": "Click",
-            "target" : [
-                450,
-                394,
-                282,
-                16
-            ]
+            "param": {
+                "target" : [
+                    450,
+                    394,
+                    282,
+                    16
+                ]
+            }
         }
     },
     "ServerLagging": {
@@ -296,12 +301,14 @@
     "ServerDownloading": {
         "pre_wait_freezes": {
             "time": 3000000,
-            "target" : [
-                16,
-                596,
-                85,
-                69
-            ]
+            "param": {
+                "target" : [
+                    16,
+                    596,
+                    85,
+                    69
+                ]
+            }
         },
         "recognition": {
             "type": "OCR",

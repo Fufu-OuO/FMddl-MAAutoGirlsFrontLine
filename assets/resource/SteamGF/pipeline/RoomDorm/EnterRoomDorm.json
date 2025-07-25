@@ -14,16 +14,16 @@
         "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    1015,
+                    1000,
                     318,
-                    137,
+                    900,
                     167
                 ],
-            "template": [
-                "Button/ButtonTeamA.png",
-                "Button/ButtonTeamB.png"
-            ],
-            "threshold": 0.8
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png"
+                ],
+                "threshold": 0.55
             }
         },
         "action": {
@@ -52,7 +52,8 @@
                     158
                 ],
                 "template": [
-                    "Button/ButtonHomeAtoB.png"
+                    "Button/ButtonHomeAtoB1.png",
+                    "Button/ButtonHomeAtoB2.png"
                 ]
             }
         },
@@ -74,17 +75,8 @@
         ]
     },
     "ButtonRoomDorm": {
-        "post_wait_freezes": {
-            "time": 4000,
-            "target": [
-                500,
-                0,
-                780,
-                130
-            ]
-        },
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
                     16,
@@ -92,8 +84,8 @@
                     1183,
                     163
                 ],
-                "template": [
-                    "Button/ButtonRoomDormA.png"
+                "expected": [
+                    "宿舍"
                 ]
             }
         },
