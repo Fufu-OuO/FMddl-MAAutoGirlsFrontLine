@@ -1,4 +1,4 @@
-name: install
+name: Install FMddl-MAAutoGirlsFrontLine
 
 on:
   push:
@@ -68,23 +68,23 @@ jobs:
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
 
-      - name: Download MFA
-        if: ${{ matrix.os != 'android' }}
+      - name: Download FMddl-MAA Release
         uses: robinraju/release-downloader@v1
         with:
           repository: Fufu-OuO/FMddl-MAAutoGirlsFrontLine
-          fileName: "MFAAvalonia-*-${{ matrix.os }}-${{ matrix.arch }}*"
+          fileName: "FMddl-MAA-*-${{ matrix.os }}-${{ matrix.arch }}.zip"
           latest: true
-          out-file-path: "MFAAvalonia"
+          out-file-path: "download"
           extract: true
 
-      - name: Install MFAAvalonia
-        if: ${{ matrix.os != 'android' }}
-        shell: bash
-        run: |
-          rm -rf MFAAvalonia/resource/base/model
-          cp -r MFAAvalonia/* install
+          # 复制下载的文件到安装目录
+          cp -r download/* install/
+          
+          # 复制资源文件
+          cp -r assets install/
+          cp -r resource install/
 
+      # 上传生成的安装包
       - uses: actions/upload-artifact@v4
         with:
           name: FMddl-MAA-${{ matrix.os }}-${{ matrix.arch }}
@@ -97,16 +97,19 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          path: assets
+          path: artifacts
 
-      - run: |
-          cd assets
-          for f in *; do
-            (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
+      - name: Package Installers
+        run: |
+          cd artifacts
+          for dir in *; do
+            # 压缩包命名为 FMddl-MAA-v0.1.1-win-x64.zip 格式
+            zip -r "../FMddl-MAA-${{ needs.meta.outputs.tag }}-${dir}.zip" "$dir"
           done
 
-      - uses: softprops/action-gh-release@v2
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          files: assets/*
+          files: artifacts/*.zip
           tag_name: ${{ needs.meta.outputs.tag }}
           generate_release_notes: true
