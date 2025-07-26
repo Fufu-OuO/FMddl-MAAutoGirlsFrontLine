@@ -1,4 +1,4 @@
-name: Install FMddl-MAAutoGirlsFrontLine
+name: install
 
 on:
   push:
@@ -18,6 +18,10 @@ on:
       - "assets/**"
       - "**.py"
   workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
 
 jobs:
   meta:
@@ -54,8 +58,8 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        os: [win, osx, linux]
-        arch: [arm64, x64]
+        os: [win]
+        arch: [aarch64, x86_64]
       fail-fast: false
 
     steps:
@@ -63,53 +67,117 @@ jobs:
         with:
           submodules: true
 
+      - name: Download MaaFramework
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
+          latest: true
+          out-file-path: "deps"
+          extract: true
+
+      - name: Download MFAAvalonia
+        if: matrix.os != 'android'
+        id: download_mfa
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: SweetSmellFox/MFAAvalonia
+          fileName: "MFAAvalonia-*-${{ (matrix.os == 'win' && 'win') || (matrix.os == 'macos' && 'osx') || (matrix.os == 'linux' && 'linux') }}-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
+          latest: true
+          out-file-path: "MFA"
+          extract: true
+
+      - name: Clean up MFAAvalonia archive
+        if: matrix.os != 'android'
+        shell: bash
+        run: |
+          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
+          rm -f "${ARCHIVE_FILE_PATH}"
+          echo "Archive cleanup command executed for MFAAvalonia."
+
+      - name: Setup Embed Python on Windows
+        shell: bash
+        run: |
+          python tools/ci/setup_embed_python.py
+      - name: Install
+        shell: bash
+        run: |
+          ./install/python/python.exe ./tools/install.py ${{ needs.meta.outputs.tag }}
+          if [ -d "MFA" ]; then
+            echo "Copying MFA files to install directory..."
+            mkdir -p install
+            cp -rpvn MFA/. install/
+          else
+            echo "MFA directory not found, skipping copy."
+          fi
+
       - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
 
-      - name: Download FMddl-MAA Release
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: Fufu-OuO/FMddl-MAAutoGirlsFrontLine
-          fileName: "FMddl-MAA-*-${{ matrix.os }}-${{ matrix.arch }}.zip"
-          latest: true
-          out-file-path: "download"
-          extract: true
+          if [[ "${{ matrix.os }}" != "android" ]]; then
+            if [ -d "MFA" ]; then
+              echo "Copying MFA files to install directory..."
+              mkdir -p install
+              rsync -av --ignore-existing MFA/ install/
+            else
+              echo "MFA directory not found, skipping copy."
+            fi
+          else
+            echo "Skipping copy MFA for Android."
+          fi
 
-          # 复制下载的文件到安装目录
-          cp -r download/* install/
-          
-          # 复制资源文件
-          cp -r assets install/
-          cp -r resource install/
-
-      # 上传生成的安装包
       - uses: actions/upload-artifact@v4
         with:
-          name: FMddl-MAA-${{ matrix.os }}-${{ matrix.arch }}
+          name: FMdll-MAA-${{ matrix.arch }}
           path: "install"
+
+  changelog:
+    name: Generate changelog
+    runs-on: ubuntu-latest
+    outputs:
+      release_body: ${{ steps.git-cliff.outputs.content }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate a changelog
+        uses: orhun/git-cliff-action@v4
+        id: git-cliff
+        with:
+          config: .github/cliff.toml
+          args: -vv --latest --strip header
+        env:
+          OUTPUT: CHANGES.md
+          GITHUB_REPO: ${{ github.repository }}
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: install
+    needs: [install, changelog]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
         with:
-          path: artifacts
+          path: assets
 
-      - name: Package Installers
-        run: |
-          cd artifacts
-          for dir in *; do
-            # 压缩包命名为 FMddl-MAA-v0.1.1-win-x64.zip 格式
-            zip -r "../FMddl-MAA-${{ needs.meta.outputs.tag }}-${dir}.zip" "$dir"
+      - run: |
+          cd assets
+          for f in *; do
+            (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
           done
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v2
         with:
-          files: artifacts/*.zip
+          files: assets/*
+          tag_name: ${{ needs.meta.outputs.tag }}
+          body: ${{ needs.changelog.outputs.release_body }}
+          draft: false
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
           generate_release_notes: true
