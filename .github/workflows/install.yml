@@ -19,10 +19,6 @@ on:
       - "**.py"
   workflow_dispatch:
 
-permissions:
-  contents: write
-  actions: write
-
 jobs:
   meta:
     runs-on: ubuntu-latest
@@ -94,22 +90,6 @@ jobs:
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
           rm -f "${ARCHIVE_FILE_PATH}"
           echo "Archive cleanup command executed for MFAAvalonia."
-
-      - name: Setup Embed Python on Windows
-        shell: bash
-        run: |
-          python tools/ci/setup_embed_python.py
-      - name: Install
-        shell: bash
-        run: |
-          ./install/python/python.exe ./tools/install.py ${{ needs.meta.outputs.tag }}
-          if [ -d "MFA" ]; then
-            echo "Copying MFA files to install directory..."
-            mkdir -p install
-            cp -rpvn MFA/. install/
-          else
-            echo "MFA directory not found, skipping copy."
-          fi
 
       - name: Install
         shell: bash
