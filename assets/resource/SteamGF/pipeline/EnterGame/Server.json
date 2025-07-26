@@ -3,7 +3,7 @@
         "doc":"组合任务：顺序执行ServerChange、ServerSelection、ServerEnter、ServerWait",
         "post_wait_freezes": 100,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     163,
@@ -11,8 +11,8 @@
                     163,
                     159
                 ],
-                "template": [
-                    "EnterGame/ServerChange.png"
+                "expected": [
+                    "变更"
                 ]
             }
         },
@@ -24,10 +24,10 @@
             "GameStart",
             "HomeAlready",
             "Reward",
-            "HomeAssignmentAgain"
+            "HomeAssignmentAgain",
+            "Account"
         ],
         "interrupt": [
-            "ServerAccount",
             "ServerLagging",
             "ServerNeedDownload",
             "ServerClose",
@@ -55,15 +55,7 @@
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target" : [
-                    30,
-                    0,
-                    139,
-                    20
-                ]
-            }
+            "type": "Click"
         },
         "next": [
             "ServerSelection",
@@ -75,7 +67,6 @@
             "HomeAlready"
         ],
         "interrupt": [
-            "ServerAccount",
             "ServerLagging",
             "ServerNeedDownload",
             "ServerClose",
@@ -110,7 +101,6 @@
             "HomeAlready"
         ],
         "interrupt": [
-            "ServerAccount",
             "ServerLagging",
             "ServerNeedDownload",
             "ServerClose",
@@ -146,7 +136,6 @@
             "HomeAlready"
         ],
         "interrupt": [
-            "ServerAccount",
             "ServerLagging",
             "ServerNeedDownload",
             "ServerClose",
@@ -176,33 +165,49 @@
             "HomeAlready"
         ]
     },
-    "ServerAccount": {
+    "Account": {
         "doc": "Token失效，重新登录”",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    264,
-                    224,
-                    151,
-                    151
+                    0,
+                    83,
+                    998,
+                    569
                 ],
                 "template": [
-                    "EnterGame/ServerAccount.png"
+                    "EnterGame/AccountA.png",
+                    "EnterGame/AccountB.png"
+                ]
+            }
+        },
+        "next": [
+            "AccountLogin"
+        ]
+    },
+    "AccountLogin": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    83,
+                    998,
+                    569
+                ],
+                "template": [
+                    "EnterGame/AccountLoginB.png"
                 ]
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target" : [
-                    450,
-                    394,
-                    282,
-                    16
-                ]
-            }
-        }
+            "type": "Click"
+        },
+        "next": [
+            "AccountLogin",
+            "ServerChange"
+        ]
     },
     "ServerLagging": {
         "doc": "服务器列表加载中，等待",

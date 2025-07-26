@@ -41,6 +41,7 @@
         ]
     },
     "ExploreGet": {
+        "post_wait_freezes": 1000,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -67,14 +68,50 @@
             }
         },
         "next": [
+            "ExploreReward",
             "ExploreButtonCancel1",
             "ExploreConductor",
             "ExploreFormation",
             "ExploreStart",
             "EnterHome"
-        ],
-        "interrupt": [
-            "Reward"
+        ]
+    },
+    "ExploreReward": {
+        "rate_limit": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    900,
+                    100,
+                    380,
+                    350
+                ],
+                "expected": [
+                    "REW",
+                    "REV",
+                    "ARD"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    231,
+                    102,
+                    218,
+                    109
+                ]
+            }
+        },
+        "next": [
+            "ExploreReward",
+            "ExploreButtonCancel1",
+            "ExploreConductor",
+            "ExploreFormation",
+            "ExploreStart",
+            "EnterHome"
         ]
     },
     "ExploreConductor": {
@@ -213,7 +250,8 @@
                     149
                 ],
                 "template": [
-                    "Room/RoomButtonCancel.png"
+                    "Room/RoomButtonCancelA.png",
+                    "Room/RoomButtonCancelB.png"
                 ]
             }
         },
@@ -238,7 +276,8 @@
                     149
                 ],
                 "template": [
-                    "Room/RoomButtonCancel.png"
+                    "Room/RoomButtonCancelA.png",
+                    "Room/RoomButtonCancelB.png"
                 ]
             }
         },

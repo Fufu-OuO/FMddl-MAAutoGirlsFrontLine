@@ -170,5 +170,35 @@
                 ]
             }
         }
+    },
+    "SkipSkip": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1900,
+                    200
+                ],
+                "expected": [
+                    "跳过",
+                    "记录",
+                    "自动",
+                    "隐藏"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1191,
+                    0,
+                    88,
+                    34
+                ]
+            }
+        }
     }
 }

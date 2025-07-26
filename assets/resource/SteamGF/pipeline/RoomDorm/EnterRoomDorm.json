@@ -5,6 +5,10 @@
             "DormOpenTeamMenu",
             "ButtonRoomDorm",
             "DormLove"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
         ]
     },
     "DormEnterTeam": {
@@ -21,9 +25,11 @@
                 ],
                 "template": [
                     "Button/ButtonTeamA.png",
-                    "Button/ButtonTeamB.png"
+                    "Button/ButtonTeamB.png",
+                    "Button/ButtonTeamC.png",
+                    "Button/ButtonTeamD.png"
                 ],
-                "threshold": 0.55
+                "threshold": 0.8
             }
         },
         "action": {

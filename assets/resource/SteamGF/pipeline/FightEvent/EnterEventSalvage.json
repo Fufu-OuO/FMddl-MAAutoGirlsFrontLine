@@ -1,5 +1,27 @@
 {
     "EventSalvage": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    444,
+                    172,
+                    127,
+                    130
+                ]
+            }
+        },
+        "next": [
+            "EventEntrance",
+            "EventDifficulty",
+            "EventSwipetoLeft"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "EventEntrance": {
         "recognition": {
         "type": "TemplateMatch",
             "param": {
@@ -18,7 +40,7 @@
             "type": "Click"
         },
         "next": [
-            "EventSalvage",
+            "EventEntrance",
             "EventDifficulty",
             "EventSwipetoLeft"
         ],
@@ -93,10 +115,17 @@
         ]
     },
     "EventFirstStage": {
+        "pre_wait_freezes": 100,
+        "post_wait_freezes": 100,
         "recognition": {
             "type": "OCR",
             "param": {
-                "roi" : [0,320,1280,235],
+                "roi" : [
+                    0,
+                    220,
+                    1280,
+                    335
+                ],
                 "expected": [
                     "逃出生天"
                 ]
@@ -147,7 +176,7 @@
         ]
     },
     "EventSalvageStage": {
-        "rate_limit": 500,
+        "rate_limit": 300,
         "recognition": {
             "type": "OCR",
             "param": {

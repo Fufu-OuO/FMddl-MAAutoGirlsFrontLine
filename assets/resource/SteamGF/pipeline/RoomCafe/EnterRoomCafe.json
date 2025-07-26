@@ -1,5 +1,5 @@
 {
-    "RoomDAS": {
+    "RoomCafe": {
         "action": {
             "type": "Click",
             "param": {
@@ -12,17 +12,17 @@
             }
         },
         "next": [
-            "DASEnterTeam",
-            "DASOpenTeamMenu",
-            "DASSwipeBackTeamMenu",
-            "ButtonRoomDAS"
+            "CafeEnterTeam",
+            "CafeOpenTeamMenu",
+            "CafeSwipeBackTeamMenu",
+            "ButtonRoomCafe"
         ],
         "interrupt": [
             "AssignmentAgain",
             "Reward"
         ]
     },
-    "DASEnterTeam": {
+    "CafeEnterTeam": {
         "doc":"组合任务",
         "recognition": {
         "type": "TemplateMatch",
@@ -47,17 +47,17 @@
         },
         "post_delay":1000,
         "next": [
-            "DASEnterTeam",
-            "DASOpenTeamMenu",
-            "DASSwipeBackTeamMenu",
-            "ButtonRoomDAS"
+            "CafeEnterTeam",
+            "CafeOpenTeamMenu",
+            "CafeSwipeBackTeamMenu",
+            "ButtonRoomCafe"
         ],
         "interrupt": [
             "AssignmentAgain",
             "Reward"
         ]
     },
-    "DASOpenTeamMenu": {
+    "CafeOpenTeamMenu": {
         "doc":"尚未点击的Home",
         "recognition": {
             "type": "TemplateMatch",
@@ -87,12 +87,12 @@
             }
         },
         "next": [
-            "ButtonRoomDAS",
-            "DASEnterTeam",
-            "DASSwipeBackTeamMenu"
+            "ButtonRoomCafe",
+            "CafeEnterTeam",
+            "CafeSwipeBackTeamMenu"
         ]
     },
-    "DASSwipeBackTeamMenu": {
+    "CafeSwipeBackTeamMenu": {
         "doc":"拖动导航菜单至右",
         "recognition": {
             "type": "OCR",
@@ -127,12 +127,12 @@
             }
         },
         "next": [
-            "ButtonRoomDAS",
-            "DASEnterTeam",
-            "DASOpenTeamMenu"
+            "ButtonRoomCafe",
+            "CafeEnterTeam",
+            "CafeOpenTeamMenu"
         ]
     },
-    "ButtonRoomDAS": {
+    "ButtonRoomCafe": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -143,7 +143,7 @@
                     377
                 ],
                 "expected": [
-                    "收归行动"
+                    "咖啡厅"
                 ]
             }
         },
@@ -151,8 +151,9 @@
             "type": "Click"
         },
         "next": [
-            "ButtonRoomDAS",
-            "DASSwipeBackTeamMenu"
+            "ButtonRoomCafe",
+            "CafeSwipeBackTeamMenu",
+            "Coffee"
         ]
     }
 }

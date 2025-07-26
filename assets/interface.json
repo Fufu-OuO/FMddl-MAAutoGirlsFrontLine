@@ -87,6 +87,10 @@
             "entry": "RoomExplore"
         },
         {
+            "name": "咖啡厅（心智碎片）",
+            "entry": "RoomCafe"
+        },
+        {
             "name": "领取奖励",
             "entry": "Rewardget"
         }

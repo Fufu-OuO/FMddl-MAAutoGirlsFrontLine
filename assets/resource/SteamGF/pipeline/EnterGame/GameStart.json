@@ -140,9 +140,11 @@
                 ],
                 "template": [
                     "Button/ButtonTeamA.png",
-                    "Button/ButtonTeamB.png"
+                    "Button/ButtonTeamB.png",
+                    "Button/ButtonTeamC.png",
+                    "Button/ButtonTeamD.png"
                 ],
-                "threshold": 0.55
+                "threshold": 0.8
             }
         },
         "action": {
@@ -169,14 +171,16 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    1034,
-                    49,
-                    132,
-                    129
+                    900,
+                    30,
+                    1000,
+                    200
                 ],
                 "template": [
                     "EnterGame/CloseAnnouncementA.png",
-                    "EnterGame/CloseAnnouncementB.png"
+                    "EnterGame/CloseAnnouncementB.png",
+                    "EnterGame/CloseAnnouncementC.png",
+                    "EnterGame/CloseAnnouncementD.png"
                 ],
                 "green_mask": true
             }
@@ -213,7 +217,9 @@
                     152
                 ],
                 "template": [
-                    "EnterGame/CloseEventA.png"
+                    "EnterGame/CloseEventA.png",
+                    "EnterGame/CloseEventB.png",
+                    "EnterGame/CloseEventC.png"
                 ]
             }
         },
@@ -221,10 +227,10 @@
             "type": "Click",
             "param": {
                 "target": [
+                    -150,
                     0,
-                    50,
-                    100,
-                    40
+                    0,
+                    0
                 ]
             }
         },
@@ -263,7 +269,7 @@
                 "roi": [
                     800,
                     600,
-                    480,
+                    900,
                     120
                 ],
                 "expected": [
@@ -272,19 +278,12 @@
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1047,
-                    550,
-                    84,
-                    19
-                ]
-            }
+            "type": "Click"
         },
         "post_wait_freezes": 500,
         "next": [
             "HomeAssignmentButtonYes",
+            "HomeAssignmentAgain",
             "HomeReward",
             "HomeAlready"
         ]
@@ -317,6 +316,7 @@
         },
         "next": [
             "HomeAssignmentButtonYes",
+            "HomeAssignmentAgain",
             "HomeReward",
             "HomeAlready"
         ]

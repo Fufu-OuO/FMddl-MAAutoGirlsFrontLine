@@ -1,5 +1,27 @@
 {
     "DailyA": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    444,
+                    172,
+                    127,
+                    130
+                ]
+            }
+        },
+        "next": [
+            "DailyAClickFight",
+            "DailyASimulation",
+            "DailyASwipe"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "DailyAClickFight": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -18,7 +40,7 @@
             "type": "Click"
         },
         "next": [
-            "DailyA",
+            "DailyAClickFight",
             "DailyASimulation",
             "DailyASwipe"
         ],
@@ -280,7 +302,8 @@
         },
         "next": [
             "DailyAButtonYes",
-            "DailyAButtonCancel"
+            "DailyAButtonCancel",
+            "EnterHome"
         ],
         "interrupt": [
             "Reward"
@@ -298,7 +321,8 @@
                     217
                 ],
                 "template": [
-                    "Room/RoomButtonCancel.png"
+                    "Room/RoomButtonCancelA.png",
+                    "Room/RoomButtonCancelB.png"
                 ]
             }
         },

@@ -11,9 +11,11 @@
                 ],
                 "template": [
                     "Button/ButtonTeamA.png",
-                    "Button/ButtonTeamB.png"
+                    "Button/ButtonTeamB.png",
+                    "Button/ButtonTeamC.png",
+                    "Button/ButtonTeamD.png"
                 ],
-                "threshold": 0.55
+                "threshold": 0.8
             }
         },
         "action": {
@@ -130,27 +132,18 @@
             "type": "OCR",
             "param": {
                 "roi" : [
-                    208,
                     0,
-                    203,
-                    171
+                    552,
+                    424,
+                    167
                 ],
                 "expected": [
-                    "邮件",
-                    "MAIL"
+                    "领取全部"
                 ]
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target" : [
-                    42,
-                    609,
-                    131,
-                    33
-                ]
-            }
+            "type": "Click"
         },
         "next": [
             "MailOut",
@@ -216,9 +209,6 @@
         "next": [
             "ButtonTask",
             "RewardgetTask",
-            "RewardgetTaskGift",
-            "RewardgetTaskVitality",
-            "RewardgetTaskToPass",
             "EnterHome"
         ],
         "interrupt": [
@@ -227,6 +217,34 @@
         ]
     },
     "RewardgetTask": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    464,
+                    403
+                ],
+                "expected": [
+                    "每日事务",
+                    "DAILY"
+                ]
+            }
+        }, 
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "TaskFinish",
+            "TaskGift",
+            "TaskVitality",
+            "TaskToPass",
+            "EnterHome"
+        ]
+    },
+    "TaskFinish": {
+        "post_delay": 2000,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -245,18 +263,17 @@
             "type": "Click"
         },
         "next": [
+            "TaskReward",
             "ButtonTask",
-            "RewardgetTask",
-            "RewardgetTaskGift",
-            "RewardgetTaskVitality",
-            "RewardgetTaskToPass",
+            "TaskFinish",
+            "TaskGift",
+            "TaskVitality",
+            "TaskToPass",
             "EnterHome"
-        ],
-        "interrupt": [
-            "Reward"
         ]
     },
-    "RewardgetTaskGift": {
+    "TaskGift": {
+        "post_delay": 2000,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -267,8 +284,8 @@
                     300
                 ],
                 "template": [
-                    "Rewardget/RewardgetTaskGiftA.png",
-                    "Rewardget/RewardgetTaskGiftB.png"
+                    "Rewardget/TaskGiftA.png",
+                    "Rewardget/TaskGiftB.png"
                 ],
                 "threshold": 0.75,
                 "green_mask": true
@@ -278,28 +295,29 @@
             "type": "Click"
         },
         "next": [
+            "TaskReward",
             "ButtonTask",
-            "RewardgetTask",
-            "RewardgetTaskVitality",
-            "RewardgetTaskToPass",
+            "TaskFinish",
+            "TaskGift",
+            "TaskVitality",
+            "TaskToPass",
             "EnterHome"
-        ],
-        "interrupt": [
-            "Reward"
         ]
     },
-    "RewardgetTaskVitality": {
+    "TaskVitality": {
+        "post_delay": 2000,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    393,
+                    300,
                     60,
-                    758,
+                    1600,
                     244
                 ],
                 "template": [
-                    "Rewardget/RewardgetTaskVitality.png"
+                    "Rewardget/TaskVitalityA.png",
+                    "Rewardget/TaskVitalityB.png"
                 ],
                 "green_mask": true
             }
@@ -308,18 +326,50 @@
             "type": "Click"
         },
         "next": [
+            "TaskReward",
             "ButtonTask",
             "RewardgetTask",
-            "RewardgetTaskGift",
-            "RewardgetTaskVitality",
-            "RewardgetTaskToPass",
+            "TaskGift",
+            "TaskVitality",
+            "TaskToPass",
             "EnterHome"
-        ],
-        "interrupt": [
-            "Reward"
         ]
     },
-    "RewardgetTaskToPass": {
+    "TaskReward": {
+        "rate_limit": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    900,
+                    100,
+                    380,
+                    350
+                ],
+                "expected": [
+                    "REW",
+                    "REV",
+                    "ARD"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    231,
+                    102,
+                    218,
+                    109
+                ]
+            }
+        },
+        "next": [
+            "RewardgetTask",
+            "TaskReward"
+        ]
+    },
+    "TaskToPass": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -330,8 +380,8 @@
                     163
                 ],
                 "template": [
-                    "Rewardget/RewardgetTaskToPassA.png",
-                    "Rewardget/RewardgetTaskToPassB.png"
+                    "Rewardget/TaskToPassA.png",
+                    "Rewardget/TaskToPassB.png"
                 ],
                 "green_mask": true
             }
@@ -363,7 +413,6 @@
             "type": "Click"
         },
         "next": [
-            "RewardgetPass",
             "EnterHome"
         ],
         "interrupt": [

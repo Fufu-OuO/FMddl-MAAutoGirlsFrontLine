@@ -132,7 +132,7 @@
             }
         },
         "post_wait_freezes": {
-            "time": 500,
+            "time": 1000,
             "param": {
                 "target": [
                     500,
@@ -152,7 +152,7 @@
                     334
                 ],
                 "template": [
-                    "Dorm/DormBatteryA.png"
+                    "Dorm/DormBatteryFriend.png"
                 ],
                 "green_mask": true
             }
@@ -169,30 +169,21 @@
     },
     "DormFriendBatteryButtonNo": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
-                    193,
-                    300,
-                    855,
-                    420
+                    0,
+                    200,
+                    1900,
+                    520
                 ],
-                "template": [
-                    "Button/ButtonNoA.png",
-                    "Button/ButtonNoB.png"
+                "expected": [
+                    "关闭"
                 ]
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    30,
-                    4,
-                    -30,
-                    -4
-                ]
-            }
+            "type": "Click"
         },
         "next": [
             "DormFriendLike",
@@ -233,7 +224,8 @@
                     150
                 ],
                 "template": [
-                    "Dorm/DormFriendNext.png"
+                    "Dorm/DormFriendNextA.png",
+                    "Dorm/DormFriendNextB.png"
                 ]
             }
         },
@@ -314,7 +306,8 @@
                     300
                 ],
                 "template": [
-                    "Room/RoomButtonCancel.png"
+                    "Room/RoomButtonCancelA.png",
+                    "Room/RoomButtonCancelB.png"
                 ]
             }
         },

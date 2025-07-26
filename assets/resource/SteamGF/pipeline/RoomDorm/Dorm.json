@@ -1,30 +1,13 @@
 {
     "RoomDorm":{
-        "doc":"组合任务",
-        "recognition": {
-        "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    1000,
-                    318,
-                    900,
-                    167
-                ],
-                "template": [
-                    "Button/ButtonTeamA.png",
-                    "Button/ButtonTeamB.png"
-                ],
-                "threshold": 0.55
-            }
-        },
         "action": {
             "type": "Click",
             "param": {
                 "target" : [
-                    464,
-                    257,
-                    146,
-                    120
+                    444,
+                    172,
+                    127,
+                    130
                 ]
             }
         },
@@ -33,6 +16,10 @@
             "DormLove",
             "DormFriend",
             "EnterHome"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
         ]
     }
 }

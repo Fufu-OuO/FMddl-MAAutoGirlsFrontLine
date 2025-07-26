@@ -49,11 +49,7 @@
                     -4
                 ]
             }
-        },
-        "next": [
-            "AssignmentButtonYes",
-            "AssignmentAgain"
-        ]
+        }
     },
     "Reward": {
         "rate_limit": 200,

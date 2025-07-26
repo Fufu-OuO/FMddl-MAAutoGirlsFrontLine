@@ -1,5 +1,27 @@
 {
     "DailyB": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    444,
+                    172,
+                    127,
+                    130
+                ]
+            }
+        },
+        "next": [
+            "DailyBClickFight",
+            "DailyBSimulation",
+            "DailyBSwipe"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
+    },
+    "DailyBClickFight": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -9,16 +31,16 @@
                     591,
                     453
                 ],
-            "expected": [
-                "战斗"
-            ]
+                "expected": [
+                    "战斗"
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
         "next": [
-            "DailyB",
+            "DailyBClickFight",
             "DailyBSimulation",
             "DailyBSwipe"
         ],
@@ -311,7 +333,8 @@
         },
         "next": [
             "DailyBButtonYes",
-            "DailyBButtonCancel"
+            "DailyBButtonCancel",
+            "EnterHome"
         ],
         "interrupt": [
             "Reward"
@@ -329,7 +352,8 @@
                     217
                 ],
                 "template": [
-                    "Room/RoomButtonCancel.png"
+                    "Room/RoomButtonCancelA.png",
+                    "Room/RoomButtonCancelB.png"
                 ]
             }
         },

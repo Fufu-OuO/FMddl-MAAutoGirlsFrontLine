@@ -1,22 +1,9 @@
 {
     "DAS": {
-        "doc":"组合任务",
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    1000,
-                    318,
-                    900,
-                    167
-                ],
-                "template": [
-                    "Button/ButtonTeamA.png",
-                    "Button/ButtonTeamB.png"
-                ],
-                "threshold": 0.55
-            }
-        }
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward"
+        ]
     },
     "DASFree10":{
         "doc":"组合任务",

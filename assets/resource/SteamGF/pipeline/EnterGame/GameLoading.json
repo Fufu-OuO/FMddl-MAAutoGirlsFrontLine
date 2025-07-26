@@ -5,6 +5,7 @@
         "next": [
             "LogoMica",
             "LogoSunborn",
+            "Account",
             "Server",
             "ServerChange",
             "ServerSelection",
@@ -16,7 +17,6 @@
             "HomeAlready"
         ],
         "interrupt": [
-            "ServerAccount",
             "ServerLagging",
             "ServerNeedDownload",
             "ServerClose",

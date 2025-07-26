@@ -140,7 +140,8 @@
                     149
                 ],
                 "template": [
-                    "Room/RoomButtonCancel.png"
+                    "Room/RoomButtonCancelA.png",
+                    "Room/RoomButtonCancelB.png"
                 ]
             }
         },
