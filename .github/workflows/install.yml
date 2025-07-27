@@ -110,7 +110,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: FMddl-MAA-${{ matrix.arch }}
+          name: FMddl-MAA-${{ needs.meta.outputs.tag }}-${{ matrix.arch }}
           path: "install"
 
   changelog:
