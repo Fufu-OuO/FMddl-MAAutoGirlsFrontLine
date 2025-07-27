@@ -38,16 +38,16 @@
             "LoadingHome",
             "GameLogin1",
             "GameLogin2",
+            "EnterHome",
+            "CloseAnnouncement",
+            "CloseEvent",
+            "GetGirl",
             "HomeAlready"
         ],
         "interrupt": [
             "ServerChange",
             "ServerClose",
-            "ServerEmpty",
-            "EnterHome",
-            "CloseAnnouncement",
-            "CloseEvent",
-            "GetGirl"
+            "ServerEmpty"
         ]
     },
     "GameLogin1": {
@@ -71,6 +71,9 @@
             "LoadingHome",
             "GameLogin1",
             "GameLogin2",
+            "CloseAnnouncement",
+            "CloseEvent",
+            "GetGirl",
             "HomeAlready"
         ]
     },
@@ -97,6 +100,9 @@
             "LoadingHome",
             "GameLogin1",
             "GameLogin2",
+            "CloseAnnouncement",
+            "CloseEvent",
+            "GetGirl",
             "HomeAlready"
         ]
     },
