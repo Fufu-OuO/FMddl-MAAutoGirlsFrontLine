@@ -226,7 +226,7 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "roi" : [500,100,500,300],
+                "roi" : [500,100,800,300],
                 "template": [
                     "EventNow/EventSalvageGirl.png"
                 ]
@@ -242,9 +242,9 @@
             "type": "OCR",
             "param": {
                 "roi" : [
-                    333,
+                    300,
                     96,
-                    946,
+                    1400,
                     503
                 ],
                 "expected": [
