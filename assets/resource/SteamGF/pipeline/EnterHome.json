@@ -51,6 +51,7 @@
         },
         "next": [
             "EnterHomePage",
+            "EnterHome",
             "HomeAlready"
         ],
         "interrupt":[
