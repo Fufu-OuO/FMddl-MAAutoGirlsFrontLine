@@ -33,4 +33,4 @@ jobs:
 
       - name: Check Resource
         run: |
-            python ./check_resource.py ./assets/resource/SteamGF/ ./assets/resource/interface.json
+            python ./check_resource.py ./assets/resource/SteamGF/
