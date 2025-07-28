@@ -21,18 +21,13 @@
             "ServerSelection",
             "ServerEnter",
             "ServerWait",
-            "GameStart",
-            "HomeAlready",
-            "Reward",
-            "HomeAssignmentAgain",
-            "Account"
+            "GameStart"
         ],
         "interrupt": [
             "ServerLagging",
             "ServerNeedDownload",
             "ServerClose",
-            "ServerEmpty",
-            "GetGirl"
+            "ServerEmpty"
         ],
         "post_delay":1000
     },

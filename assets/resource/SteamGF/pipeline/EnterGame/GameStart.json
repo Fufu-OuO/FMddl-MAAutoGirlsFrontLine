@@ -34,20 +34,22 @@
             }
         },
         "next": [
+            "HomeAssignmentAgain",
+            "HomeReward",
+            "CloseAnnouncement",
+            "CloseEvent",
+            "HomeAlready",
             "GameStart",
             "LoadingHome",
             "GameLogin1",
             "GameLogin2",
-            "EnterHome",
-            "CloseAnnouncement",
-            "CloseEvent",
-            "GetGirl",
-            "HomeAlready"
+            "EnterHome"
         ],
         "interrupt": [
             "ServerChange",
             "ServerClose",
-            "ServerEmpty"
+            "ServerEmpty",
+            "GetGirl"
         ]
     },
     "GameLogin1": {

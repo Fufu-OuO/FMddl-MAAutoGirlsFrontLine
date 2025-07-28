@@ -6,21 +6,19 @@
         "next": [
             "HomeAssignmentAgain",
             "HomeReward",
-            "HomeAlready",
-            "GameStart",
-            "Server",
-            "Account",
             "CloseAnnouncement",
             "CloseEvent",
+            "HomeAlready",
+            "GameStart",
+            "Account",
+            "Server",
             "GameLoading"
-
         ],
         "interrupt": [
             "ServerClose",
             "ServerEmpty",
             "EnterHome",
-            "GetGirl",
-            "Reward"
+            "GetGirl"
         ]
     }
 }
