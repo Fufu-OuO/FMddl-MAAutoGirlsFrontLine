@@ -194,14 +194,9 @@
             }
         },
         "action": {
-            "type": "Click",
+            "type": "Key",
             "param": {
-                "target_offset": [
-                    3,
-                    2,
-                    -4,
-                    -4
-                ]
+                "key": 27
             }
         },
         "next": [
@@ -232,14 +227,9 @@
             }
         },
         "action": {
-            "type": "Click",
+            "type": "Key",
             "param": {
-                "target": [
-                    -150,
-                    0,
-                    0,
-                    0
-                ]
+                "key": 27
             }
         },
         "next": [

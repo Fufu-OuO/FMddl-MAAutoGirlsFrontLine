@@ -180,7 +180,10 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Key",
+            "param": {
+                "key": 27
+            }
         },
         "next": [
             "CafeButtonCancel",

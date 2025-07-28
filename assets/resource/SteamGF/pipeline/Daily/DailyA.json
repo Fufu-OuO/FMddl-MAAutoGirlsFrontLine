@@ -203,6 +203,7 @@
             "type": "Click"
         },
         "next": [
+            "DailyABNone",
             "DailyAStart"
         ]
     },
@@ -339,13 +340,13 @@
         "type": "OCR",
             "param": {
                 "roi" : [
-                    902,
-                    453,
+                    232,
                     71,
-                    49
+                    915,
+                    585
                 ],
                 "expected": [
-                    "0"
+                    "道具不足，不可扫荡"
                 ]
             }
         },

@@ -42,7 +42,7 @@
                     "Fight/TeamEchelon1A.png",
                     "Fight/TeamEchelon1B.png"
                 ],
-                "threshold": 0.9
+                "threshold": 0.85
             }
         },
         "action": {
@@ -124,7 +124,6 @@
                     420
                 ],
                 "expected": [
-                    "开始作战",
                     "点击指挥部",
                     "进行部署"
                 ]
@@ -145,9 +144,6 @@
             "EventSalvageStartFight",
             "EventSalvageClickTeam",
             "EventSalvageMildSwipeR"
-        ],
-        "interrupt": [
-            "FightRecycle"
         ]
     },
     "EventSalvageMildSwipeR": {
@@ -400,7 +396,7 @@
         ],
         "interrupt": [
             "EventSalvageButtonNo",
-             "FightRecycle"
+            "EventRecycle"
         ]
     },
     "EventSalvageFighting2": {
@@ -438,7 +434,7 @@
         ],
         "interrupt": [
             "EventSalvageButtonNo",
-             "FightRecycle"
+            "EventRecycle"
         ]
     },
     "EventSalvageFighting3": {
@@ -480,7 +476,7 @@
         ],
         "interrupt": [
             "EventSalvageButtonNo",
-             "FightRecycle"
+            "EventRecycle"
         ]
     },
     "EventSalvageFighting4": {
@@ -518,7 +514,7 @@
         ],
         "interrupt": [
             "EventSalvageButtonNo",
-             "FightRecycle"
+            "EventRecycle"
         ]
     },
     "EventSalvageFighting5": {
@@ -560,7 +556,7 @@
         ],
         "interrupt": [
             "EventSalvageButtonNo",
-             "FightRecycle"
+            "EventRecycle"
         ]
     },
     "EventSalvageFighting6": {
@@ -598,7 +594,7 @@
         ],
         "interrupt": [
             "EventSalvageButtonNo",
-            "FightRecycle"
+            "EventRecycle"
         ]
     },
     "EventSalvageAgainstLagging": {
@@ -637,7 +633,7 @@
         ],
         "interrupt": [
             "EventSalvageButtonNo",
-            "FightRecycle"
+            "EventRecycle"
         ]
     },
     "EventSalvageButtonNo": {

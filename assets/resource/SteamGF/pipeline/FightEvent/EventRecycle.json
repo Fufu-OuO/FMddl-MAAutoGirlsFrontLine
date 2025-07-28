@@ -1,17 +1,16 @@
 {
-    "FightRecycle": {
+    "EventRecycle": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    166,
-                    133,
-                    462,
-                    268
+                    195,
+                    144,
+                    889,
+                    454
                 ],
                 "expected": [
-                    "床位不足",
-                    "人形床位"
+                    "回收"
                 ]
             }
         },
@@ -27,11 +26,11 @@
             }
         },
         "next": [
-            "FightRecycle",
-            "FightRecycleCharacter"
+            "EventRecycle",
+            "EventRecycleCharacter"
         ]
     },
-    "FightRecycleCharacter": {
+    "EventRecycleCharacter": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -50,18 +49,18 @@
             "type": "Click"
         },
         "next": [
-            "FightRecycleAutoChoose"
+            "EventRecycleAutoChoose"
         ]
     },
-    "FightRecycleAutoChoose": {
+    "EventRecycleAutoChoose": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    1012,
-                    495,
-                    267,
-                    224
+                    900,
+                    500,
+                    600,
+                    220
                 ],
                 "expected": [
                     "智能",
@@ -73,19 +72,19 @@
             "type": "Click"
         },
         "next": [
-            "FightRecycleAutoChoose",
-            "FightRecycleYes"
+            "EventRecycleAutoChoose",
+            "EventRecycleYes"
         ]
     },
-    "FightRecycleYes": {
+    "EventRecycleYes": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    1012,
-                    495,
-                    267,
-                    224
+                    900,
+                    500,
+                    600,
+                    220
                 ],
                 "expected": [
                     "回收"
@@ -94,6 +93,20 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "next": [
+            "EventRecycleESC"
+        ]
+    },
+    "EventRecycleESC": {
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": 27
+            }
+        },
+        "next": [
+            "EventSalvage"
+        ]
     }
 }

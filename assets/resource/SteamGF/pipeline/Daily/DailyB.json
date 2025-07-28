@@ -234,6 +234,7 @@
             "type": "Click"
         },
         "next": [
+            "DailyABNone",
             "DailyBStart"
         ]
     },
