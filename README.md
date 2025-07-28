@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
   <img alt="LOGO" src="./assets/images/logo/FMddl-logo_1280×1280.png" width="256" height="256" />
-
+<br>
 <img alt="Name" src="./assets/images/Name.png" width="270" height="33" />
 
 # GirlsFrontLine
