@@ -1,6 +1,6 @@
 {
     "name": "FMddl-MAA",
-    "version":  "v0.1.2_fix",
+    "version":  "v0.2.1_test",
     "mirrorchyan_rid":  "FMddl-MAAutoGirlsFrontLine",
     "mirrorchyan_multiplatform":  false, 
     "url":  "https://github.com/Fufu-OuO/FMddl-MAAutoGirlsFrontLine",
@@ -27,6 +27,7 @@
         {
             "name": "登录游戏",
             "entry": "EnterGame",
+            "doc": "请正确选择账号所在服务器",
             "option": [
                 "服务器"
             ]
@@ -34,6 +35,7 @@
         {
             "name": "模拟作战（人形材料）",
             "entry": "DailyA",
+            "doc": "请从主界面开始本任务",
             "option": [
                 "人形材料关卡",
                 "模拟作战难度",
@@ -43,6 +45,7 @@
         {
             "name": "融合演习（融合材料）",
             "entry": "DailyB",
+            "doc": "请从主界面开始本任务",
             "option": [
                 "融合材料关卡",
                 "融合演习次数"
@@ -51,6 +54,7 @@
         {
             "name": "每日任务",
             "entry": "DailyTask",
+            "doc": "请从主界面开始本任务，将会收集商城格林娜爱心，并给指定人形赠送一本经验书",
             "option": [
                 "[其他] 送经验书×1"
             ]
@@ -58,6 +62,7 @@
         {
             "name": "[溯源回归] 当期活动打捞",
             "entry": "EventSalvage",
+            "doc": "请从主界面开始本任务，如果突然中断任务则为超时，如果捞错枪、点到敌人详情、拖动到无人处则是ym抽风，请重启游戏后再次尝试",
             "option": [
                 "活动打捞人形",
                 "活动打捞作战难度",
@@ -68,24 +73,29 @@
         {
             "name": "宿舍（好感、点赞、电池）",
             "entry": "RoomDorm",
+            "doc": "请从主界面开始本任务，好友电池固定从宿舍数最高者开始",
             "option": [
                 "好友点赞"
             ]
         },
         {
             "name": "资料室（人形经验书）",
+            "doc": "请从主界面开始本任务",
             "entry": "RoomData"
         },
         {
             "name": "前进营地（已出发则不操作）",
+            "doc": "请从主界面开始本任务，如果小队已经出发，则在领取奖励后直接返回主界面",
             "entry": "RoomExplore"
         },
         {
             "name": "咖啡厅（心智碎片）",
+            "doc": "请从主界面开始本任务，如果没有人形讲故事，将直接返回主界面",
             "entry": "RoomCafe"
         },
         {
             "name": "领取奖励",
+            "doc": "请从主界面开始本任务，因为ym的神秘遮罩，可能会出现奖励领不完的情况，建议任务结束后手动校正以防漏领，并可与开发者联系",
             "entry": "Rewardget"
         }
     ],
