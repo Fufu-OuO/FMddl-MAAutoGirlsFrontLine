@@ -1,11 +1,10 @@
 <!-- markdownlint-disable MD033 MD041 -->
-<p align="center">
-  <img alt="LOGO" src="./assets/images/logo/FMddl-logo_1280×1280.png" width="256" height="256" />
-</p>
-
 <div align="center">
+  <img alt="LOGO" src="./assets/images/logo/FMddl-logo_1280×1280.png" width="256" height="256" />
 
-# <font color="FF8C00">**FMddl-MAA**uto</font><p>GirlsFrontLine
+<img alt="Name" src="./assets/images/Name.png" width="270" height="33" />
+
+# GirlsFrontLine
 
 </div>
 
@@ -29,9 +28,9 @@
 
 **烦请对照表格，自行修改费马与游戏的设置，以免出现大量报错。**
 
-### <font color="#FF8C00">费马 => 左下角设置</font>
+> ### 费马 => 左下角设置
 
-=> 左侧边栏：运行设置
+#### => 左侧边栏：运行设置
 
 | 运行设置                            | 值   |
 | ----------------------------------- | ---- |
@@ -44,9 +43,9 @@
 | 捕获方式                             | 无边框窗口：GDI 或 FramePool</p>　窗口化　：GDI |
 | 触控方式                             |  Seize  |
 
-### <font color="#FF8C00">游戏主界面 => 右下角切换栏目 => 设置</font>
+> ### 游戏主界面 => 右下角切换栏目 => 设置
 
-=> 左侧边栏：基础
+#### => 左侧边栏：基础
 
 | 图像设置                            | 值   |
 | ----------------------------------- | ---- |
@@ -63,7 +62,7 @@
 | 台词字幕                            | 关 |
 | 自动播放速度                        | 最大 |
 
-=> 左侧边栏：作战
+#### => 左侧边栏：作战
 
 | 战场设置                            | 值   |
 | ----------------------------------- | ---- |
@@ -99,5 +98,4 @@ MAAFramework下的win32状态，总是先捕获到一个窗口再开始运行，
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！  
 UI 由 [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)大力支持！
 
-感谢 **[MAAGF1](https://github.com/LeonNagant/MaaGF1_Test)** 开发组对本项目作出的贡献:
-@LeonNagant
+感谢 **[MAAGF1](https://github.com/LeonNagant/MaaGF1_Test)** 开发组对本项目的支持与贡献！
