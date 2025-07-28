@@ -6,14 +6,10 @@
 
 # GirlsFrontLine
 
-</div>
-
-<div align="center">
-
 **费马**<sup>FM</sup>**大定理**<sup>Deadline</sup>，基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供模板，是少女前线**国服桌面端**的自动化助手。
 
 # 脚本存在封号风险，请勿以任何形式跳脸官方，<br>使用费马即默认自担风险；<br><br>本项目完全开源，如果你花钱购买了费马，
-<img alt="YOUARETREATED" src="./assets/images/youaretreated.gif" />
+<img alt="YOUARETREATED" src="./assets/images/youaretreated.gif" width="284" height="43" />
 
 </div>
 
@@ -98,4 +94,4 @@ MAAFramework下的win32状态，总是先捕获到一个窗口再开始运行，
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！  
 UI 由 [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)大力支持！
 
-感谢 **[MAAGF1](https://github.com/LeonNagant/MaaGF1_Test)** 开发组对本项目的支持与贡献！
+## 感谢 **[MAAGF1](https://github.com/LeonNagant/MaaGF1_Test)** 开发组对本项目的支持与贡献！
