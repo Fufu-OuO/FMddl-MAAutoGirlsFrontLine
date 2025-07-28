@@ -5,7 +5,7 @@
 
 <div align="center">
 
-# <font color="#FF8C00">**FMddl-MAA**uto</font><p>GirlsFrontLine
+# <font color="FF8C00">**FMddl-MAA**uto</font><p>GirlsFrontLine
 
 </div>
 
@@ -13,12 +13,7 @@
 
 **费马**<sup>FM</sup>**大定理**<sup>Deadline</sup>，基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供模板，是少女前线**国服桌面端**的自动化助手。
 
-# 脚本存在封号风险，请勿以任何形式跳脸官方，<br>使用费马即默认自担风险；<br><br>本项目完全开源，如果你花钱购买了费马，<br><font color="#FF0000">恭</font><font color="#FF7F00">喜</font><font color="#FFFF00">你</font><font color="#00FF00">被</font><font color="#00FFFF">骗</font><font color="#0000FF">了</font><font color="#8B00FF">！</font>
-
-</div>
-
-<div align="center">
-
+# 脚本存在封号风险，请勿以任何形式跳脸官方，<br>使用费马即默认自担风险；<br><br>本项目完全开源，如果你花钱购买了费马，
 <img alt="YOUARETREATED" src="./assets/images/youaretreated.gif" />
 
 </div>
@@ -46,9 +41,8 @@
 
 | 连接设置                            | 值   |
 | ----------------------------------- | ---- |
-| 捕获方式                             | 无边框窗口：GDI或FramePool</p>窗口化：GDI |
+| 捕获方式                             | 无边框窗口：GDI 或 FramePool</p>　窗口化　：GDI |
 | 触控方式                             |  Seize  |
-
 
 ### <font color="#FF8C00">游戏主界面 => 右下角切换栏目 => 设置</font>
 
@@ -57,7 +51,7 @@
 | 图像设置                            | 值   |
 | ----------------------------------- | ---- |
 | 分辨率                               | 16:9（≥720p） |
-| 显示模式                             | 无边框窗口</p>窗口化 |
+| 显示模式                             | 无边框窗口</p>　窗口化 |
 | 高帧数模式                           | 开 |
 | 兵棋画面模式                         | 帧率优先 |
 
@@ -92,20 +86,18 @@
 ## 常见问题
 
 > **为什么费马不能帮我打开游戏？**<p>
-MAAFramework下的win32状态，总是先捕获到一个窗口再开始运行，费马无法在没有打开游戏的情况下捕获游戏窗口╮(╯▽╰)╭
-
+MAAFramework下的win32状态，总是先捕获到一个窗口再开始运行，费马无法在没有打开游戏的情况下捕获游戏窗口╮(╯▽╰)╭</p>
 > **为什么脚本会抢鼠标？**<p>
-国服目前只有桌面端，运行脚本时游戏窗口必须保持在前台，所以本项目这点上不像Alas、MAA等项目，而是更像BetterGI、三月七，必然抢鼠标(ó﹏ò｡)
-
+国服目前只有桌面端，运行脚本时游戏窗口必须保持在前台，所以本项目这点上不像Alas、MAA等项目，而是更像BetterGI、三月七，必然抢鼠标(ó﹏ò｡)</p>
 > **为什么找不到自动后勤的功能？如何设置我的后勤？**<p>
 后勤完成界面会于游戏停留在主页面时自动弹出，如果不及时点掉必然报错，故费马自带了**不可取消**的后勤重复功能。<p>
-⚠️以下为“后勤重复”功能：除了启动定时费马的用户可以在**第一次运行**时，借助该功能对齐时间以外，该功能无需选中⚠️<p>
-如果确定需要启动该功能，请参考下图：
-（等待补充）
+~~⚠️以下为“后勤重复”功能：除了启动定时费马的用户可以在**第一次运行**时，借助该功能对齐时间以外，该功能无需选中⚠️<p>
+如果确定需要启动该功能，请参考下图：~~</p>
 
 ## 鸣谢
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！  
 UI 由 [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)大力支持！
 
-感谢以下开发者对本项目作出的贡献:
+感谢 **[MAAGF1](https://github.com/LeonNagant/MaaGF1_Test)** 开发组对本项目作出的贡献:
+@LeonNagant
