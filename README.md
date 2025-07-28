@@ -9,7 +9,19 @@
 
 </div>
 
-FM<sup>费马</sup>Deadline<sup>大定理</sup>，基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供模板，是少女前线**国服桌面端**的自动化助手。
+<div align="center">
+
+**费马**<sup>FM</sup>**大定理**<sup>Deadline</sup>，基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供模板，是少女前线**国服桌面端**的自动化助手。
+
+# 脚本存在封号风险，请勿以任何形式跳脸官方，<br>使用费马即默认自担风险；<br><br>本项目完全开源，如果你花钱购买了费马，<br><font color="#FF0000">恭</font><font color="#FF7F00">喜</font><font color="#FFFF00">你</font><font color="#00FF00">被</font><font color="#00FFFF">骗</font><font color="#0000FF">了</font><font color="#8B00FF">！</font>
+
+</div>
+
+<div align="center">
+
+<img alt="YOUARETREATED" src="./assets/images/youaretreated.gif" />
+
+</div>
 
 ## 功能
 
@@ -22,7 +34,7 @@ FM<sup>费马</sup>Deadline<sup>大定理</sup>，基于 [MaaFramework](https://
 
 **烦请对照表格，自行修改费马与游戏的设置，以免出现大量报错。**
 
-费马 => 左下角设置
+### <font color="#FF8C00">费马 => 左下角设置</font>
 
 => 左侧边栏：运行设置
 
@@ -30,21 +42,22 @@ FM<sup>费马</sup>Deadline<sup>大定理</sup>，基于 [MaaFramework](https://
 | ----------------------------------- | ---- |
 | 任务运行失败后是否继续运行其它任务    | 是 |
 
-=> 左侧边栏：连接设置
+#### => 左侧边栏：连接设置
 
 | 连接设置                            | 值   |
 | ----------------------------------- | ---- |
-| 捕获方式                             | FramePool |
+| 捕获方式                             | 无边框窗口：GDI或FramePool</p>窗口化：GDI |
 | 触控方式                             |  Seize  |
 
-主界面 => 右下角切换栏目 => 设置
+
+### <font color="#FF8C00">游戏主界面 => 右下角切换栏目 => 设置</font>
 
 => 左侧边栏：基础
 
 | 图像设置                            | 值   |
 | ----------------------------------- | ---- |
-| 分辨率                               | 16:9（测试设备为 2560×1440，其余分辨率烦请自测） |
-| 显示模式                             | 无边框窗口！！！ |
+| 分辨率                               | 16:9（≥720p） |
+| 显示模式                             | 无边框窗口</p>窗口化 |
 | 高帧数模式                           | 开 |
 | 兵棋画面模式                         | 帧率优先 |
 
