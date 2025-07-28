@@ -1,17 +1,160 @@
 {
     "DormFriend": {
+        "doc": "返回主界面（专供好友宿舍前使用）",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    30,
+                    10,
+                    461,
+                    158
+                ],
+                "template": [
+                    "Button/ButtonHomeAtoB1.png",
+                    "Button/ButtonHomeAtoB2.png"
+                ],
+                "threshold":0.8
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DormFriendHomePage",
+            "DormFriend",
+            "DormFriendHomeAlready"
+        ],
+        "interrupt":[
+            "RoomStuck"
+        ]
+    },
+    "DormFriendHomePage":{
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    5,
+                    61,
+                    427,
+                    153
+                ],
+                "expected": [
+                    "返回基地",
+                    "RETURN"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "AssignmentAgain",
+            "Reward",
+            "GetGirl",
+            "DormFriend",
+            "DormFriendHomePage",
+            "DormFriendHomeAlready"
+        ],
+        "interrupt":[
+            "RoomStuck"
+        ]
+    },
+    "DormFriendHomeAlready": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1000,
+                    318,
+                    900,
+                    167
+                ],
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png",
+                    "Button/ButtonTeamC.png",
+                    "Button/ButtonTeamD.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "next": [
+            "ButtonFriend",
+            "DormFriendMenuBtoA"
+        ]
+    },
+    "DormFriendMenuBtoA": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    1600,
+                    143
+                ],
+                "expected": [
+                    "设置"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    1102,
+                    633,
+                    23,
+                    18
+                ]
+            }
+        },
+        "next": [
+            "ButtonFriend",
+            "DormFriendMenuBtoA"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward",
+            "GetGirl"
+        ]
+    },
+    "ButtonFriend": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    1600,
+                    143
+                ],
+                "expected": [
+                    "好友"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ButtonFriend",
+            "Friendlist"
+        ]
+    },
+    "Friendlist": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
                     0,
-                    557,
-                    157,
-                    154
+                    0,
+                    335,
+                    603
                 ],
                 "expected": [
-                    "参观",
-                    "Visit"
+                    "好友列表"
                 ]
             }
         },
@@ -19,22 +162,25 @@
             "type": "Click"
         },
         "next": [
-            "DormFriendVisitMine",
-            "DormFriendVisitGo"
+            "FriendOrderBy",
+            "ChooseFriendOrder"
         ]
     },
-    "DormFriendVisitMine": {
+    "FriendOrderBy": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    337,
-                    102,
-                    220,
-                    144
+                    868,
+                    0,
+                    411,
+                    214
                 ],
                 "expected": [
-                    "我的好友"
+                    "最新消息", 
+                    "最近登陆",
+                    "指挥官等级",
+                    "宿舍数量"
                 ]
             }
         },
@@ -42,22 +188,22 @@
             "type": "Click"
         },
         "next": [
-            "DormFriendVisitGo",
-            "DormFriend"
+            "ChooseFriendOrder",
+            "FriendOrderBy"
         ]
     },
-    "DormFriendVisitGo": {
+    "ChooseFriendOrder": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    800,
-                    177,
-                    1100,
-                    154
+                    1023,
+                    0,
+                    256,
+                    590
                 ],
                 "expected": [
-                    "参观宿舍"
+                    "宿舍数量"
                 ]
             }
         },
@@ -65,7 +211,54 @@
             "type": "Click"
         },
         "next": [
-            "DormFriendVisitGo",
+            "FriendBusinessCard",
+            "FriendVisit"
+        ]
+    },
+    "FriendBusinessCard": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    202,
+                    0,
+                    873,
+                    720
+                ],
+                "expected": [
+                    "等级",
+                    "最后上线"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "FriendVisit",
+            "FriendBusinessCard"
+        ]
+    },
+    "FriendVisit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    737,
+                    330,
+                    542,
+                    389
+                ],
+                "expected": [
+                    "参观"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "FriendVisit",
             "DormFriendLike",
             "DormFriendBattery",
             "DormFriendBatteryButtonNo",

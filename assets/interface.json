@@ -75,6 +75,7 @@
             "entry": "RoomDorm",
             "doc": "请从主界面开始本任务，好友电池固定从宿舍数最高者开始",
             "option": [
+                "访问好友",
                 "好友点赞"
             ]
         },
@@ -929,7 +930,107 @@
                 }
             ]
         },
-        "好友点赞":  {
+        "访问好友顺序": {
+            "cases": [
+                {
+                    "name": "最新消息",
+                    "pipeline_override": {
+                        "ChooseFriendOrder": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1023,
+                                        0,
+                                        256,
+                                        590
+                                    ],
+                                    "expected": [
+                                        "最新消息"
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "Click"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "最近登陆",
+                    "pipeline_override": {
+                        "ChooseFriendOrder": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1023,
+                                        0,
+                                        256,
+                                        590
+                                    ],
+                                    "expected": [
+                                        "最近登陆"
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "Click"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "指挥官等级",
+                    "pipeline_override": {
+                        "ChooseFriendOrder": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1023,
+                                        0,
+                                        256,
+                                        590
+                                    ],
+                                    "expected": [
+                                        "指挥官等级"
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "Click"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "宿舍数量",
+                    "pipeline_override": {
+                        "ChooseFriendOrder": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1023,
+                                        0,
+                                        256,
+                                        590
+                                    ],
+                                    "expected": [
+                                        "宿舍数量"
+                                    ]
+                                }
+                            },
+                            "action": {
+                                "type": "Click"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "好友点赞": {
             "cases": [
                 {
                     "name": "10个人",

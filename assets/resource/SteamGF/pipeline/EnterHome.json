@@ -59,6 +59,7 @@
         ]
     },
     "EnterHomePage":{
+        "post_delay": 3000,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -78,14 +79,15 @@
             "type": "Click"
         },
         "next": [
+            "AssignmentAgain",
+            "Reward",
+            "GetGirl",
             "EnterHome",
             "EnterHomePage",
             "HomeAlready"
         ],
         "interrupt":[
-            "RoomStuck",
-            "AssignmentAgain",
-            "Reward"
+            "RoomStuck"
         ]
     },
     "RoomStuck": {

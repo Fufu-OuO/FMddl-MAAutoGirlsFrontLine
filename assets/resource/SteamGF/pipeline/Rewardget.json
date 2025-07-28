@@ -101,7 +101,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "ButtonMail": {
