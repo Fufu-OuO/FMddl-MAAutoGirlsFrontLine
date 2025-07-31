@@ -218,6 +218,7 @@
         ]
     },
     "RewardgetTask": {
+        "post_delay": 2000,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -319,7 +320,8 @@
                     "Rewardget/TaskVitalityA.png",
                     "Rewardget/TaskVitalityB.png"
                 ],
-                "green_mask": true
+                "green_mask": true,
+                "threshold": 0.55
             }
         },
         "action": {
@@ -383,7 +385,8 @@
                     "Rewardget/TaskToPassA.png",
                     "Rewardget/TaskToPassB.png"
                 ],
-                "green_mask": true
+                "green_mask": true,
+                "threshold": 0.55
             }
         },
         "action": {
