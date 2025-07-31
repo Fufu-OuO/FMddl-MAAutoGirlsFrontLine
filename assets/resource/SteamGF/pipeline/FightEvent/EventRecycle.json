@@ -108,7 +108,8 @@
             }
         },
         "next": [
-            "EventSalvage"
+            "EventSalvage",
+            "EventRecycleESC"
         ]
     }
 }

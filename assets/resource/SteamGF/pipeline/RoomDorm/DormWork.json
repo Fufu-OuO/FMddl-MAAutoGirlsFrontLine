@@ -1,5 +1,7 @@
 {
     "DormLove": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
         "rate_limit": 200,
         "recognition": {
             "type": "TemplateMatch",

@@ -39,11 +39,11 @@
             }
         },
         "next": [
+            "EnterHome",
             "AssignmentAgain",
             "Reward",
             "GetGirl",
-            "HomeAlready",
-            "EnterHome"
+            "HomeAlready"
         ],
         "interrupt":[
             "RoomStuck"
