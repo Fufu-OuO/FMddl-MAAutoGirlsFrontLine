@@ -225,7 +225,8 @@
                 "template": [
                     "Fight/TeamMarkA.png",
                     "Fight/TeamMarkB.png"
-                ]
+                ],
+                "threshold": 0.5
             }
         },
         "action": {
