@@ -617,7 +617,7 @@
                         }
                 },
                 {
-"name": "[5★] TKB-408",
+"name": "（手动点怪）[5★] TKB-408",
                         "pipeline_override": {
                             "EventSalvageSwipetoTarget": {
                                 "action": {
