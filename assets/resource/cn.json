@@ -8,10 +8,18 @@
                 "event_type": "SideStory",
                 "start_time": 1749700800000,
                 "end_time": 1753927200000
-            },
-            "anecdote": {
-                "start_time": 1741208400000,
-                "end_time": 1753891140000
+            }
+        }
+    },
+    "9.1": {
+        "version_name": "虚粒子对",
+        "start_time": 1753952400000,
+        "end_time": 1755741600000,
+        "activity": {
+            "combat": {
+                "event_type": "SideStory",
+                "start_time": 1753952400000,
+                "end_time": 1755741600000
             }
         }
     }

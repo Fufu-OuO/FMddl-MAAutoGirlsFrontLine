@@ -1,4 +1,31 @@
 {
+    "EventSalvageSwipetoAirport": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    420,
+                    300,
+                    300
+                ],
+                "expected": [
+                    "计划模式"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+"begin" : [860,128,1,1],
+"end" : [505,537,1,1]
+            }
+        },
+        "next": [
+            "EventSalvagePrepare",
+            "EventSalvageSwipetoAirport"
+        ]
+    },
     "EventSalvagePrepare": {
         "recognition": {
             "type": "TemplateMatch",
@@ -14,7 +41,8 @@
                     "EventNow/EventAirport1B.png",
                     "EventNow/EventAirport2A.png",
                     "EventNow/EventAirport2B.png"
-                ]
+                ],
+                "threshold": 0.5
             }
         },
         "action": {
@@ -170,7 +198,8 @@
                     1,
                     1
                 ],
-                "end" : [894,
+                "end" : [
+                    894,
                     251,
                     1,
                     1
@@ -289,8 +318,8 @@
         "action": {
             "type": "Swipe",
             "param": {
-                "begin" : [1005,503,1,1],
-                "end" : [860,370,1,1]
+"begin" : [823,127,1,1],
+"end" : [693,517,1,1]
             }
         },
         "next": [
@@ -310,21 +339,12 @@
                     0
                 ],
                 "expected": [
-                    "30268",
-                    "11624"
+"机场"
                 ]
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    -181,
-                    -5,
-                    -12,
-                    -4
-                ]
-            }
+            "type": "Click"
         },
         "next": [
             "EventSalvageScheduleOK", 

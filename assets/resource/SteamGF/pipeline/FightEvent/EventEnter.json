@@ -18,7 +18,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "EventEntrance": {
@@ -46,7 +47,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "EventDifficulty": {
@@ -127,7 +129,7 @@
                     335
                 ],
                 "expected": [
-                    "逃出生天"
+"灰烬天堂"
                 ]
             }
         },
@@ -182,7 +184,8 @@
             "param": {
                 "roi" : [0,320,1280,235],
                 "expected": [
-                    "行星环"
+"真空",
+"湮灭"
                 ]
             }
         },
@@ -257,7 +260,7 @@
         },
         "next": [
             "EventRecycle",
-            "EventSalvagePrepare",
+            "EventSalvageSwipetoAirport",
             "EnterEventSalvage"
         ]
     }

@@ -56,13 +56,13 @@
         {
             "name": "每日任务",
             "entry": "DailyTask",
-            "doc": "请从主界面开始本任务，将会收集商城格林娜爱心，并给指定人形赠送一本经验书",
+            "doc": "请从主界面开始本任务，将会收集商城格林娜爱心、给指定人形赠送1本经验书、强化第一个装备3次",
             "option": [
                 "[其他] 送经验书×1"
             ]
         },
         {
-            "name": "[溯源回归] 当期活动打捞",
+            "name": "[虚粒子对] 当期活动打捞",
             "entry": "EventSalvage",
             "doc": "请从主界面开始本任务，如果突然中断任务则为超时，如果捞错枪、点到敌人详情、拖动到无人处则是ym抽风，请重启游戏后再次尝试",
             "option": [
@@ -561,56 +561,70 @@
         "活动打捞人形": {
             "cases": [
                 {
-"name": "[4★] APC556",
+"name": "[4★] M1895CB",
                         "pipeline_override": {
                             "EventSalvageSwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
-"begin" : [640,69,1,1],
-"end" : [640,687,1,1]
+"begin" : [464,187,1,1],
+"end" : [653,712,1,1]
                                         }
                                 }
                             }
                         }
                 },
                 {
-"name": "[5★] DSR-50",
+"name": "[4★] CX4 风暴",
                         "pipeline_override": {
                             "EventSalvageSwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
-"begin" : [886,251,1,1],
-"end" : [750,376,1,1]
+"begin" : [823,127,1,1],
+"end" : [693,517,1,1]
                                         }
                                 }
                             }
                         }
                 },
                 {
-"name": "[4★]P290",
+"name": "[5★] SRS",
                         "pipeline_override": {
                             "EventSalvageSwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
-"begin" : [640,697,1,1],
-"end" : [640,68,1,1]
+"begin" : [464,187,1,1],
+"end" : [653,712,1,1]
                                         }
                                 }
                             }
                         }
                 },
                 {
-"name": "[5★] 蜂鸟",
+"name": "[5★] AK-74U",
                         "pipeline_override": {
                             "EventSalvageSwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
-"begin" : [1000,503,1,1],
-"end" : [860,370,1,1]
+"begin" : [823,127,1,1],
+"end" : [693,517,1,1]
+                                        }
+                                }
+                            }
+                        }
+                },
+                {
+"name": "[5★] TKB-408",
+                        "pipeline_override": {
+                            "EventSalvageSwipetoTarget": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+"begin" : [711,585,1,1],
+"end" : [709,207,1,1]
                                         }
                                 }
                             }
@@ -893,38 +907,42 @@
         "活动打捞梯队所部署的机场位置": {
             "cases": [
                 {
-                    "name": "[左] 1号机场",
+                    "name": "[左下] 1号机场",
                         "pipeline_override": {
-                            "EventSalvagePrepare": {
-                                "recognition": {
-                                    "type": "TemplateMatch",
+                            "EventSalvageSwipetoAirport": {
+                                "action": {
+                                    "type": "Swipe",
                                     "param": {
-"roi" : [410,259,435,391],
-                                        "template": [
-                                            "EventNow/EventAirport1A.png",
-                                            "EventNow/EventAirport1B.png",
-                                            "EventNow/EventAirport2A.png",
-                                            "EventNow/EventAirport2B.png"
-                                        ]
+"begin" : [100,378,1,1],
+"end" : [850,383,1,1]
                                     }
                                 }
                             }
                         }
                 },
                 {
-                    "name": "[右] 2号机场",
+                    "name": "[中下] 2号机场",
                         "pipeline_override": {
-                            "EventSalvagePrepare": {
-                                "recognition": {
-                                    "type": "TemplateMatch",
+                            "EventSalvageSwipetoAirport": {
+                                "action": {
+                                    "type": "Swipe",
                                     "param": {
-"roi" : [842,165,373,466],
-                                        "template": [
-                                            "EventNow/EventAirport1A.png",
-                                            "EventNow/EventAirport1B.png",
-                                            "EventNow/EventAirport2A.png",
-                                            "EventNow/EventAirport2B.png"
-                                        ]
+"begin" : [100,380,1,1],
+"end" : [101,380,1,1]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "[右上] 3号机场",
+                        "pipeline_override": {
+                            "EventSalvageSwipetoAirport": {
+                                "action": {
+                                    "type": "Swipe",
+                                    "param": {
+"begin" : [860,128,1,1],
+"end" : [505,537,1,1]
                                     }
                                 }
                             }
