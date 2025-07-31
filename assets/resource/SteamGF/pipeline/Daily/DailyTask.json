@@ -19,7 +19,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "DailyTaskMenuBtoA": {
@@ -53,7 +54,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "KalinaLove": {
@@ -94,7 +96,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "KalinaLove_ButtonShop": {
@@ -124,7 +127,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "KalinaLove_ClickLove1": {
@@ -281,7 +285,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "Send1Report": {
@@ -320,7 +325,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "Send1Report_ButtonWarehouse": {
@@ -349,7 +355,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "Send1Report_DownAndUp": {
@@ -514,7 +521,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "EquipmentStrengthen": {
@@ -797,6 +805,11 @@
         "next": [
             "HomeAlready",
             "EquipmentStrengthen_ESC"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward",
+            "GetGirl"
         ]
     }
 }
