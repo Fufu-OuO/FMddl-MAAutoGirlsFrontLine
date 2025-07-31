@@ -20,7 +20,8 @@
         "interrupt": [
             "AssignmentAgain",
             "Reward",
-            "GetGirl"
+            "GetGirl",
+            "ReturnHome"
         ]
     },
     "DailyTaskMenuBtoA": {

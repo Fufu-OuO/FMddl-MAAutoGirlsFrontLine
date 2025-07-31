@@ -18,7 +18,8 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "ReturnHome"
         ]
     },
     "DailyBClickFight": {

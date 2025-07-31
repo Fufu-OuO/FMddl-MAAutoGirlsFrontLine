@@ -19,7 +19,8 @@
         "interrupt": [
             "AssignmentAgain",
             "Reward",
-            "GetGirl"
+            "GetGirl",
+            "ReturnHome"
         ]
     },
     "EventEntrance": {
