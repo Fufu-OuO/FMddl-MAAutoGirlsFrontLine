@@ -12,8 +12,8 @@
             "win32": {
                 "class_regex": ".*",
                 "window_regex": "少女前线",
-                "input": 1,
-                "screencap": 3
+                "screencap": 1,
+                "input": 1
             }
         }
     ],
