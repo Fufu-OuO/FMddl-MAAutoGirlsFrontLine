@@ -216,6 +216,7 @@
         ]
     },
     "DailyBTimeAll": {
+        "enabled": false,
         "recognition": {
         "type": "TemplateMatch",
             "param": {

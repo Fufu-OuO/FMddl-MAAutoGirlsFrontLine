@@ -185,6 +185,7 @@
         ]
     },
     "DailyATimeAll": {
+        "enabled": false,
         "recognition": {
         "type": "TemplateMatch",
             "param": {
