@@ -270,7 +270,7 @@
         ]
     },
     "EventSalvageScheduleMode": {
-        "pre_wait_freezes":300,
+        "pre_wait_freezes": 300,
         "recognition": {
             "type": "OCR",
             "param": {
