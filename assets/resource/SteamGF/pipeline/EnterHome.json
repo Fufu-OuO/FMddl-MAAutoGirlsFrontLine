@@ -9,11 +9,11 @@
         },
         "next": [
             "ButtonBack",
-            "EnterHome",
             "AssignmentAgain",
             "Reward",
             "GetGirl",
-            "HomeAlready"
+            "HomeAlready",
+            "EnterHome"
         ],
         "interrupt":[
             "RoomStuck"
@@ -29,11 +29,11 @@
         },
         "next": [
             "ButtonBack",
-            "EnterHome",
             "AssignmentAgain",
             "Reward",
             "GetGirl",
-            "HomeAlready"
+            "HomeAlready",
+            "EnterHome"
         ],
         "interrupt":[
             "RoomStuck"
@@ -61,11 +61,11 @@
         },
         "next": [
             "ButtonBack",
-            "EnterHome",
             "AssignmentAgain",
             "Reward",
             "GetGirl",
-            "HomeAlready"
+            "HomeAlready",
+            "EnterHome"
         ],
         "interrupt":[
             "RoomStuck"
