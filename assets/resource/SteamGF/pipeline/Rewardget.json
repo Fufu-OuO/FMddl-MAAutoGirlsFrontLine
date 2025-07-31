@@ -320,8 +320,7 @@
                     "Rewardget/TaskVitalityA.png",
                     "Rewardget/TaskVitalityB.png"
                 ],
-                "green_mask": true,
-                "threshold": 0.55
+                "green_mask": true
             }
         },
         "action": {
