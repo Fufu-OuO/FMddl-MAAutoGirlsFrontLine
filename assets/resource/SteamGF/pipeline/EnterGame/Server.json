@@ -1,6 +1,6 @@
 {
     "Server":{
-        "doc":"组合任务：顺序执行ServerChange、ServerSelection、ServerEnter、ServerWait",
+        "doc":"组合任务",
         "post_wait_freezes": 100,
         "recognition": {
             "type": "OCR",
@@ -25,7 +25,6 @@
         ],
         "interrupt": [
             "ServerLagging",
-            "ServerNeedDownload",
             "ServerClose",
             "ServerEmpty"
         ],
@@ -124,6 +123,7 @@
         },
         "next": [
             "ServerEnter",
+            "ServerNeedDownload",
             "ServerWait",
             "GameStart",
             "Reward",
@@ -132,7 +132,6 @@
         ],
         "interrupt": [
             "ServerLagging",
-            "ServerNeedDownload",
             "ServerClose",
             "ServerEmpty"
         ]
@@ -276,6 +275,17 @@
         }
     },
     "ServerNeedDownload": {
+        "post_wait_freezes": {
+            "time": 2000,
+            "param": {
+                "target" : [
+                    169,
+                    120,
+                    870,
+                    402
+                ]
+            }
+        },
         "recognition": {
             "type": "OCR",
             "param": {
@@ -291,22 +301,47 @@
                     "请确保本地",
                     "的存储空间！"
                 ]
-            },
+            }
+        },
         "next": [
-            "ServerButtonYes",
+            "ServerDownload",
             "ServerDownloading"
         ]
-        }
+    },
+    "ServerDownload": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    193,
+                    300,
+                    855,
+                    420
+                ],
+                "expected": [
+                    "确认",
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ServerDownloading"
+        ]
     },
     "ServerDownloading": {
+        "timeout": 3600000,
+        "rate_limit": 10000,
         "pre_wait_freezes": {
-            "time": 3000000,
+            "time": 2000,
             "param": {
                 "target" : [
-                    16,
-                    596,
-                    85,
-                    69
+                    0,
+                    586,
+                    196,
+                    133
                 ]
             }
         },
@@ -324,11 +359,17 @@
                 ]
             }
         },
-        "post_wait_freezes": 10000
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ServerEnter",
+            "GameStart"
+        ]
     },
     "ServerButtonYes": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     193,
@@ -336,24 +377,14 @@
                     855,
                     420
                 ],
-                "template": [
-                    "Button/ButtonYesA.png",
-                    "Button/ButtonYesB.png",
-                    "Button/ButtonYesC.png",
-                    "Button/ButtonYesD.png"
+                "expected": [
+                    "确认",
+                    "确定"
                 ]
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    30,
-                    4,
-                    -30,
-                    -4
-                ]
-            }
+            "type": "Click"
         },
         "next": [
             "ServerButtonNo",
@@ -371,9 +402,8 @@
                     855,
                     420
                 ],
-                "template": [
-                    "Button/ButtonNoA.png",
-                    "Button/ButtonNoB.png"
+                "expected": [
+                    "取消"
                 ]
             }
         },

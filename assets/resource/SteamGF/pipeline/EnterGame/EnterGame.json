@@ -9,6 +9,7 @@
             "CloseAnnouncement",
             "CloseEvent",
             "HomeAlready",
+            "ServerNeedDownload",
             "GameStart",
             "Account",
             "Server",
