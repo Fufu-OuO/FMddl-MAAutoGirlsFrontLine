@@ -171,6 +171,44 @@
         "next": [
             "EventSalvageStartFight",
             "EventSalvageClickTeam",
+            "EventSalvageSwipeL",
+            "EventSalvageMildSwipeR"
+        ]
+    },
+    "EventSalvageSwipeL": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    420,
+                    300,
+                    300
+                ],
+                "expected": [
+                    "计划模式"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin" : [
+                    300,
+                    251,
+                    1,
+                    1
+                ],
+                "end" : [
+                    600,
+                    251,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "EventSalvageClickTeam",
             "EventSalvageMildSwipeR"
         ]
     },
@@ -214,7 +252,7 @@
     "EventSalvageClickTeam": {
         "pre_wait_freezes": 300,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     0,
@@ -222,11 +260,10 @@
                     0,
                     0
                 ],
-                "template": [
-                    "Fight/TeamMarkA.png",
-                    "Fight/TeamMarkB.png"
+                "expected": [
+                    "第"
                 ],
-                "threshold": 0.5
+                "threshold": 0.6
             }
         },
         "action": {

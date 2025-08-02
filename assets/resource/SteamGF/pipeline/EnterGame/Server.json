@@ -31,7 +31,7 @@
         "post_delay":1000
     },
     "ServerChange": {
-        "doc": "服务器列表未展开，点击“更变”",
+        "doc": "服务器列表未展开，点击“变更”",
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 2000,
         "recognition": {

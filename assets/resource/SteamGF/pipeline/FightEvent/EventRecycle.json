@@ -27,10 +27,10 @@
         },
         "next": [
             "EventRecycle",
-            "EventRecycleCharacter"
+            "EventRecycle_Character"
         ]
     },
-    "EventRecycleCharacter": {
+    "EventRecycle_Character": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -49,10 +49,10 @@
             "type": "Click"
         },
         "next": [
-            "EventRecycleAutoChoose"
+            "EventRecycle_AutoChoose"
         ]
     },
-    "EventRecycleAutoChoose": {
+    "EventRecycle_AutoChoose": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -72,7 +72,7 @@
             "type": "Click"
         },
         "next": [
-            "EventRecycleAutoChoose",
+            "EventRecycle_AutoChoose",
             "EventRecycleYes"
         ]
     },
@@ -95,10 +95,10 @@
             "type": "Click"
         },
         "next": [
-            "EventRecycleESC"
+            "EventRecycle_ESC"
         ]
     },
-    "EventRecycleESC": {
+    "EventRecycle_ESC": {
         "pre_delay": 2000,
         "post_delay": 2000,
         "action": {
@@ -109,7 +109,7 @@
         },
         "next": [
             "EventSalvage",
-            "EventRecycleESC"
+            "EventRecycle_ESC"
         ]
     }
 }
