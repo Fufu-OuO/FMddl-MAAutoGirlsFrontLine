@@ -350,7 +350,7 @@
             "type": "Click",
             "param": {
                 "target_offset": [
-                    -125,
+                    -130,
                     40,
                     -30,
                     -4
@@ -359,6 +359,7 @@
         },
         "next": [
             "EventSalvage_SupplyTeam",
+            "EventSalvage_SwipetoTarget",
             "EventSalvage_ClickTeam",
             "EventSalvage_SwipeRMild"
         ]
@@ -420,45 +421,119 @@
 
     "EventSalvage_SwipetoTarget": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    20,
                     0,
-                    480,
-                    255
+                    420,
+                    300,
+                    300
                 ],
-                "expected": [
-                    "终止作战"
+                "template": [
+                    "Fight/ScheduleOn.png",
+                    "Fight/ScheduleOn_720p.png"
                 ]
             }
         },
         "action": {
             "type": "Swipe",
             "param": {
+                "duration": 100,
 "begin" : [823,127,1,1],
 "end" : [693,517,1,1]
             }
         },
         "next": [
+            "EventSalvage_PressEnemyAccident",
             "EventSalvage_ClickTarget",
             "EventSalvage_SwipetoTarget"
         ]
     },
-    "EventSalvage_ClickTarget": {
-        "pre_wait_freezes":300,
+    "EventSalvage_PressEnemyAccident": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    791,
+                    0,
+                    424,
+                    392
+                ],
+                "expected": [
+                    "敌方梯队",
+                    "阵型",
+                    "驻守",
+                    "警戒",
+                    "消灭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    309,
+                    52,
+                    200,
+                    200
+                ]
+            }
+        },
+        "next": [
+            "EventSalvage_PressEnemyAccident",
+            "EventSalvage_ClickTeam",
+            "EventSalvage_SwipetoTeam"
+        ]
+    },
+    "EventSalvage_SwipetoTeam": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
                     0,
-                    0,
-                    0,
-                    0
+                    420,
+                    300,
+                    300
                 ],
                 "expected": [
-"机场"
+                    "计划模式"
                 ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "duration": 100,
+"begin" : [694,516,1,1],
+"end" : [824,126,1,1]
+            }
+        },
+        "next": [
+            "EventSalvage_PressEnemyAccident",
+            "EventSalvage_ClickTeam",
+            "EventSalvage_SwipetoTeam"
+        ]
+    },
+    "EventSalvage_ClickTarget": {
+        "pre_wait_freezes": 300,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    60,
+                    1900,
+                    660
+                ],
+                "template": [
+"Fight/AirportCloseA.png",
+"Fight/AirportCloseB.png",
+"Fight/AirportCloseC.png",
+"Fight/AirportCloseA_720p.png",
+"Fight/AirportCloseB_720p.png",
+"Fight/AirportCloseC_720p.png"
+                ],
+                "threshold": 0.7
             }
         },
         "action": {
@@ -501,10 +576,13 @@
                 "roi" : [
                     0,
                     0,
-                    784,
-                    719
+                    1100,
+                    720
                 ],
                 "expected": [
+                    "全局经验",
+                    "战斗胜",
+                    "GeK",
                     "获得",
                     "战利品",
                     "结算",
@@ -527,11 +605,9 @@
         "next": [
             "EventSalvage_AgainstLagging",
             "EventSalvage_Fighting",
-            "EventSalvage_StartFight"
-        ],
-        "interrupt": [
+            "EventRecycle",
             "EventSalvage_DoNotStopSchedule",
-            "EventRecycle"
+            "EventSalvage_StartFight"
         ]
     },
     "EventSalvage_AgainstLagging": {
@@ -565,11 +641,9 @@
         "next": [
             "EventSalvage_AgainstLagging",
             "EventSalvage_Fighting",
-            "EventSalvage_StartFight"
-        ],
-        "interrupt": [
+            "EventRecycle",
             "EventSalvage_DoNotStopSchedule",
-            "EventRecycle"
+            "EventSalvage_StartFight"
         ]
     },
     "EventSalvage_DoNotStopSchedule": {
@@ -601,6 +675,11 @@
                 ],
                 "duration": 60
             }
-        }
+        },
+        "next": [
+            "EventSalvage_DoNotStopSchedule",
+            "EventSalvage_AgainstLagging",
+            "EventSalvage_Fighting"
+        ]
     }
 }

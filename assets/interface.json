@@ -568,8 +568,19 @@
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
+                                            "duration": 100,
 "begin" : [464,187,1,1],
 "end" : [653,712,1,1]
+                                        }
+                                }
+                            },
+                            "EventSalvage_SwipetoTeam": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+                                            "duration": 100,
+"begin" : [652,713,1,1],
+"end" : [465,186,1,1]
                                         }
                                 }
                             }
@@ -582,8 +593,19 @@
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
+                                            "duration": 100,
 "begin" : [823,127,1,1],
 "end" : [693,517,1,1]
+                                        }
+                                }
+                            },
+                            "EventSalvage_SwipetoTeam": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+                                            "duration": 100,
+"begin" : [692,518,1,1],
+"end" : [824,126,1,1]
                                         }
                                 }
                             }
@@ -596,8 +618,19 @@
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
+                                            "duration": 100,
 "begin" : [464,187,1,1],
 "end" : [653,712,1,1]
+                                        }
+                                }
+                            },
+                            "EventSalvage_SwipetoTeam": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+                                            "duration": 100,
+"begin" : [652,713,1,1],
+"end" : [465,186,1,1]
                                         }
                                 }
                             }
@@ -610,8 +643,19 @@
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
+                                            "duration": 100,
 "begin" : [823,127,1,1],
 "end" : [693,517,1,1]
+                                        }
+                                }
+                            },
+                            "EventSalvage_SwipetoTeam": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+                                            "duration": 100,
+"begin" : [692,518,1,1],
+"end" : [824,126,1,1]
                                         }
                                 }
                             }
@@ -624,8 +668,19 @@
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
+                                            "duration": 100,
 "begin" : [711,585,1,1],
 "end" : [709,207,1,1]
+                                        }
+                                }
+                            },
+                            "EventSalvage_SwipetoTeam": {
+                                "action": {
+                                    "type": "Swipe",
+                                        "param": {
+                                            "duration": 100,
+"begin" : [708,208,1,1],
+"end" : [712,584,1,1]
                                         }
                                 }
                             }

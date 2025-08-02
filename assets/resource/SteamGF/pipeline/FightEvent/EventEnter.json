@@ -45,6 +45,7 @@
         "next": [
             "Event_Entrance",
             "Event_Difficulty",
+            "Event_SalvageStage",
             "Event_SwipeL"
         ],
         "interrupt": [
@@ -75,6 +76,7 @@
         },
         "next": [
             "Event_Difficulty",
+            "Event_SalvageStage",
             "Event_SwipeL"
         ]
     },
