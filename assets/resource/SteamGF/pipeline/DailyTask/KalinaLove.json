@@ -1,0 +1,233 @@
+{
+    "KalinaLove": {
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    1000,
+                    318,
+                    900,
+                    167
+                ],
+                "template": [
+                    "Button/ButtonTeamA.png",
+                    "Button/ButtonTeamB.png",
+                    "Button/ButtonTeamC.png",
+                    "Button/ButtonTeamD.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    464,
+                    257,
+                    146,
+                    120
+                ]
+            }
+        },
+        "next": [
+            "KalinaLove_ButtonShop",
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward",
+            "GetGirl"
+        ]
+    },
+    "KalinaLove_ButtonShop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    325,
+                    576,
+                    826,
+                    143
+                ],
+                "expected": [
+                    "商城"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "KalinaLove_ButtonShop",
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3",
+            "KalinaLove_ClickKalina"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward",
+            "GetGirl"
+        ]
+    },
+    "KalinaLove_ClickLove1": {
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    788,
+                    81,
+                    363,
+                    328
+                ],
+                "template": [
+                    "Dorm/DormLoveA.png",
+                    "Dorm/DormLoveB.png"
+                ],
+                "threshold": 0.5,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3",
+            "KalinaLove_ClickKalina",
+            "KalinaLove_ButtonBack"
+        ]
+    },
+    "KalinaLove_ClickLove2": {
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    788,
+                    81,
+                    363,
+                    328
+                ],
+                "template": [
+                    "Dorm/DormLoveA.png",
+                    "Dorm/DormLoveB.png"
+                ],
+                "threshold": 0.5,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3",
+            "KalinaLove_ClickKalina",
+            "KalinaLove_ButtonBack"
+        ]
+    },
+    "KalinaLove_ClickLove3": {
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    788,
+                    81,
+                    363,
+                    328
+                ],
+                "template": [
+                    "Dorm/DormLoveA.png",
+                    "Dorm/DormLoveB.png"
+                ],
+                "threshold": 0.5,
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3",
+            "KalinaLove_ClickKalina",
+            "KalinaLove_ButtonBack"
+        ]
+    },
+    "KalinaLove_ClickKalina": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    981,
+                    0,
+                    298,
+                    296
+                ],
+                "expected": [
+                    "换装"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    1150,
+                    460,
+                    56,
+                    182
+                ]
+            }
+        },
+        "next": [
+            "KalinaLove_ClickLove1",
+            "KalinaLove_ClickLove2",
+            "KalinaLove_ClickLove3",
+            "KalinaLove_ButtonBack"
+        ]
+    },
+    "KalinaLove_ButtonBack": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    200,
+                    100
+                ],
+                "template": [
+                    "Button/ButtonBackA.png"
+                ],
+                "threshold": 0.5
+            }
+        },
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": 27
+            }
+        },
+        "next": [
+            "KalinaLove_ButtonBack",
+            "Send1Report"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward",
+            "GetGirl"
+        ]
+    }
+}
