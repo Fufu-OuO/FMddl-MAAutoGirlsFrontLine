@@ -1,6 +1,6 @@
 {
     "name": "FMddl-MAA",
-    "version": "v0.2.1_fix",
+    "version": "v0.2.2",
     "message": "欢迎使用费马喵，感谢支持喵 ᨐᵉᵒʷ",
     "mirrorchyan_rid":  "FMddl-MAAutoGirlsFrontLine",
     "mirrorchyan_multiplatform":  false, 
@@ -57,9 +57,11 @@
         {
             "name": "每日任务",
             "entry": "DailyTask",
-            "doc": "请从主界面开始本任务，将会收集商城格林娜爱心、给指定人形赠送1本经验书、强化第一个装备3次",
+            "doc": "请从主界面开始本任务，将会收集商城格林娜爱心、给指定人形赠送1本经验书、强化第一个装备3次、借用好友梯队",
             "option": [
-                "[其他] 送经验书×1"
+                "[其他] 送经验书×1",
+                "借好友梯队时下的狗粮梯队",
+                "借几次好友梯队"
             ]
         },
         {
@@ -1253,6 +1255,326 @@
                                     ],
                                     "expected": [
                                         "降序"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "借好友梯队时下的狗粮梯队": {
+            "cases": [
+                {
+                    "name": "1",
+                        "pipeline_override": {
+                            "EventSalvage_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution1A.png",
+                                            "Fight/TeamCaution1B.png",
+                                            "Fight/TeamEchelon1A.png",
+                                            "Fight/TeamEchelon1B.png",
+                                            "Fight/TeamCaution1A_720p.png",
+                                            "Fight/TeamCaution1B_720p.png",
+                                            "Fight/TeamEchelon1A_720p.png",
+                                            "Fight/TeamEchelon1B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "2",
+                        "pipeline_override": {
+                            "EventSalvage_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution2A.png",
+                                            "Fight/TeamCaution2B.png",
+                                            "Fight/TeamEchelon2A.png",
+                                            "Fight/TeamEchelon2B.png",
+                                            "Fight/TeamCaution2A_720p.png",
+                                            "Fight/TeamCaution2B_720p.png",
+                                            "Fight/TeamEchelon2A_720p.png",
+                                            "Fight/TeamEchelon2B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "3",
+                        "pipeline_override": {
+                            "EventSalvage_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution3A.png",
+                                            "Fight/TeamCaution3B.png",
+                                            "Fight/TeamEchelon3A.png",
+                                            "Fight/TeamEchelon3B.png",
+                                            "Fight/TeamCaution3A_720p.png",
+                                            "Fight/TeamCaution3B_720p.png",
+                                            "Fight/TeamEchelon3A_720p.png",
+                                            "Fight/TeamEchelon3B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "4",
+                        "pipeline_override": {
+                            "EventSalvage_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution4A.png",
+                                            "Fight/TeamCaution4B.png",
+                                            "Fight/TeamEchelon4A.png",
+                                            "Fight/TeamEchelon4B.png",
+                                            "Fight/TeamCaution4A_720p.png",
+                                            "Fight/TeamCaution4B_720p.png",
+                                            "Fight/TeamEchelon4A_720p.png",
+                                            "Fight/TeamEchelon4B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "5",
+                        "pipeline_override": {
+                            "EventSalvage_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution5A.png",
+                                            "Fight/TeamCaution5B.png",
+                                            "Fight/TeamEchelon5A.png",
+                                            "Fight/TeamEchelon5B.png",
+                                            "Fight/TeamCaution5A_720p.png",
+                                            "Fight/TeamCaution5B_720p.png",
+                                            "Fight/TeamEchelon5A_720p.png",
+                                            "Fight/TeamEchelon5B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "6",
+                        "pipeline_override": {
+                            "EventSalvage_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution6A.png",
+                                            "Fight/TeamCaution6B.png",
+                                            "Fight/TeamEchelon6A.png",
+                                            "Fight/TeamEchelon6B.png",
+                                            "Fight/TeamCaution6A_720p.png",
+                                            "Fight/TeamCaution6B_720p.png",
+                                            "Fight/TeamEchelon6A_720p.png",
+                                            "Fight/TeamEchelon6B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "7",
+                        "pipeline_override": {
+                            "EventSalvage_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution7A.png",
+                                            "Fight/TeamCaution7B.png",
+                                            "Fight/TeamEchelon7A.png",
+                                            "Fight/TeamEchelon7B.png",
+                                            "Fight/TeamCaution7A_720p.png",
+                                            "Fight/TeamCaution7B_720p.png",
+                                            "Fight/TeamEchelon7A_720p.png",
+                                            "Fight/TeamEchelon7B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "8",
+                        "pipeline_override": {
+                            "EventSalvage_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution8A.png",
+                                            "Fight/TeamCaution8B.png",
+                                            "Fight/TeamEchelon8A.png",
+                                            "Fight/TeamEchelon8B.png",
+                                            "Fight/TeamCaution8A_720p.png",
+                                            "Fight/TeamCaution8B_720p.png",
+                                            "Fight/TeamEchelon8A_720p.png",
+                                            "Fight/TeamEchelon8B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "9",
+                        "pipeline_override": {
+                            "EventSalvage_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution9A.png",
+                                            "Fight/TeamCaution9B.png",
+                                            "Fight/TeamEchelon9A.png",
+                                            "Fight/TeamEchelon9B.png",
+                                            "Fight/TeamCaution9A_720p.png",
+                                            "Fight/TeamCaution9B_720p.png",
+                                            "Fight/TeamEchelon9A_720p.png",
+                                            "Fight/TeamEchelon9B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                }
+            ]
+        },
+        "借几次好友梯队": {
+            "cases": [
+                {
+                    "name": "2 次",
+                    "pipeline_override": {
+                        "BorrowFriendTeam_TimeEnough": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1050,
+                                        0,
+                                        900,
+                                        120
+                                    ],
+                                    "expected": [
+                                        "2/20",
+                                        "3/20",
+                                        "4/20",
+                                        "5/20",
+                                        "6/20",
+                                        "7/20",
+                                        "8/20",
+                                        "9/20",
+                                        "10/20",
+                                        "11/20",
+                                        "12/20",
+                                        "13/20",
+                                        "14/20",
+                                        "15/20",
+                                        "16/20",
+                                        "17/20",
+                                        "18/20",
+                                        "19/20",
+                                        "20/20"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "20 次",
+                    "pipeline_override": {
+                        "BorrowFriendTeam_TimeEnough": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1050,
+                                        0,
+                                        900,
+                                        120
+                                    ],
+                                    "expected": [
+                                        "20/20"
                                     ]
                                 }
                             }
