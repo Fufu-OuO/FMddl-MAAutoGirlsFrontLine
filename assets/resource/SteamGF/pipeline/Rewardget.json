@@ -257,7 +257,8 @@
                 ],
                 "expected": [
                     "结算",
-                    "COLLECT"
+                    "COLLECT",
+                    "MISSION"
                 ]
             }
         }, 
