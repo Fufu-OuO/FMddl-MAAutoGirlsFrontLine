@@ -24,6 +24,7 @@
         ]
     },
     "Event_Entrance": {
+        "post_delay": 3000,
         "recognition": {
         "type": "TemplateMatch",
             "param": {
@@ -130,7 +131,11 @@
                     335
                 ],
                 "expected": [
-"灰烬天堂"
+"灰烬",
+"灰炽",
+"烬天",
+"炽天",
+"天堂"
                 ]
             }
         },
@@ -186,6 +191,7 @@
                 "roi" : [0,320,1280,235],
                 "expected": [
 "真空湮",
+"真空灭",
 "湮灭"
                 ]
             }

@@ -564,7 +564,7 @@
                 {
 "name": "[4★] M1895CB",
                         "pipeline_override": {
-                            "EventSalvageSwipetoTarget": {
+                            "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
@@ -578,7 +578,7 @@
                 {
 "name": "[4★] CX4 风暴",
                         "pipeline_override": {
-                            "EventSalvageSwipetoTarget": {
+                            "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
@@ -592,7 +592,7 @@
                 {
 "name": "[5★] SRS",
                         "pipeline_override": {
-                            "EventSalvageSwipetoTarget": {
+                            "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
@@ -606,7 +606,7 @@
                 {
 "name": "[5★] AK-74U",
                         "pipeline_override": {
-                            "EventSalvageSwipetoTarget": {
+                            "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
@@ -620,7 +620,7 @@
                 {
 "name": "（手动点怪）[5★] TKB-408",
                         "pipeline_override": {
-                            "EventSalvageSwipetoTarget": {
+                            "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
@@ -638,7 +638,7 @@
                 {
                     "name": "噩梦",
                         "pipeline_override": {
-                            "EventDifficulty": {
+                            "Event_Difficulty": {
                                 "recognition": {
                                     "type": "OCR",
                                     "param": {
@@ -654,13 +654,14 @@
                 {
                     "name": "困难",
                         "pipeline_override": {
-                            "EventDifficulty": {
+                            "Event_Difficulty": {
                                 "recognition": {
                                     "type": "OCR",
                                     "param": {
                                         "expected": [
                                             "普通",
-                                            "噩梦"
+                                            "噩梦",
+                                            "歌梦"
                                         ]
                                     }
                                 }
@@ -670,13 +671,14 @@
                 {
                     "name": "普通",
                         "pipeline_override": {
-                            "EventDifficulty": {
+                            "Event_Difficulty": {
                                 "recognition": {
                                     "type": "OCR",
                                     "param": {
                                         "expected": [
                                             "困难",
-                                            "噩梦"
+                                            "噩梦",
+                                            "歌梦"
                                         ]
                                     }
                                 }
@@ -690,7 +692,7 @@
                 {
                     "name": "1",
                         "pipeline_override": {
-                            "EventSalvageChooseTeam": {
+                            "EventSalvage_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -704,7 +706,11 @@
                                             "Fight/TeamCaution1A.png",
                                             "Fight/TeamCaution1B.png",
                                             "Fight/TeamEchelon1A.png",
-                                            "Fight/TeamEchelon1B.png"
+                                            "Fight/TeamEchelon1B.png",
+                                            "Fight/TeamCaution1A_720p.png",
+                                            "Fight/TeamCaution1B_720p.png",
+                                            "Fight/TeamEchelon1A_720p.png",
+                                            "Fight/TeamEchelon1B_720p.png"
                                         ]
                                     }
                                 }
@@ -714,7 +720,7 @@
                 {
                     "name": "2",
                         "pipeline_override": {
-                            "EventSalvageChooseTeam": {
+                            "EventSalvage_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -728,7 +734,11 @@
                                             "Fight/TeamCaution2A.png",
                                             "Fight/TeamCaution2B.png",
                                             "Fight/TeamEchelon2A.png",
-                                            "Fight/TeamEchelon2B.png"
+                                            "Fight/TeamEchelon2B.png",
+                                            "Fight/TeamCaution2A_720p.png",
+                                            "Fight/TeamCaution2B_720p.png",
+                                            "Fight/TeamEchelon2A_720p.png",
+                                            "Fight/TeamEchelon2B_720p.png"
                                         ]
                                     }
                                 }
@@ -738,7 +748,7 @@
                 {
                     "name": "3",
                         "pipeline_override": {
-                            "EventSalvageChooseTeam": {
+                            "EventSalvage_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -752,7 +762,11 @@
                                             "Fight/TeamCaution3A.png",
                                             "Fight/TeamCaution3B.png",
                                             "Fight/TeamEchelon3A.png",
-                                            "Fight/TeamEchelon3B.png"
+                                            "Fight/TeamEchelon3B.png",
+                                            "Fight/TeamCaution3A_720p.png",
+                                            "Fight/TeamCaution3B_720p.png",
+                                            "Fight/TeamEchelon3A_720p.png",
+                                            "Fight/TeamEchelon3B_720p.png"
                                         ]
                                     }
                                 }
@@ -762,7 +776,7 @@
                 {
                     "name": "4",
                         "pipeline_override": {
-                            "EventSalvageChooseTeam": {
+                            "EventSalvage_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -776,7 +790,11 @@
                                             "Fight/TeamCaution4A.png",
                                             "Fight/TeamCaution4B.png",
                                             "Fight/TeamEchelon4A.png",
-                                            "Fight/TeamEchelon4B.png"
+                                            "Fight/TeamEchelon4B.png",
+                                            "Fight/TeamCaution4A_720p.png",
+                                            "Fight/TeamCaution4B_720p.png",
+                                            "Fight/TeamEchelon4A_720p.png",
+                                            "Fight/TeamEchelon4B_720p.png"
                                         ]
                                     }
                                 }
@@ -786,7 +804,7 @@
                 {
                     "name": "5",
                         "pipeline_override": {
-                            "EventSalvageChooseTeam": {
+                            "EventSalvage_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -800,7 +818,11 @@
                                             "Fight/TeamCaution5A.png",
                                             "Fight/TeamCaution5B.png",
                                             "Fight/TeamEchelon5A.png",
-                                            "Fight/TeamEchelon5B.png"
+                                            "Fight/TeamEchelon5B.png",
+                                            "Fight/TeamCaution5A_720p.png",
+                                            "Fight/TeamCaution5B_720p.png",
+                                            "Fight/TeamEchelon5A_720p.png",
+                                            "Fight/TeamEchelon5B_720p.png"
                                         ]
                                     }
                                 }
@@ -810,7 +832,7 @@
                 {
                     "name": "6",
                         "pipeline_override": {
-                            "EventSalvageChooseTeam": {
+                            "EventSalvage_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -824,7 +846,11 @@
                                             "Fight/TeamCaution6A.png",
                                             "Fight/TeamCaution6B.png",
                                             "Fight/TeamEchelon6A.png",
-                                            "Fight/TeamEchelon6B.png"
+                                            "Fight/TeamEchelon6B.png",
+                                            "Fight/TeamCaution6A_720p.png",
+                                            "Fight/TeamCaution6B_720p.png",
+                                            "Fight/TeamEchelon6A_720p.png",
+                                            "Fight/TeamEchelon6B_720p.png"
                                         ]
                                     }
                                 }
@@ -834,7 +860,7 @@
                 {
                     "name": "7",
                         "pipeline_override": {
-                            "EventSalvageChooseTeam": {
+                            "EventSalvage_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -848,7 +874,11 @@
                                             "Fight/TeamCaution7A.png",
                                             "Fight/TeamCaution7B.png",
                                             "Fight/TeamEchelon7A.png",
-                                            "Fight/TeamEchelon7B.png"
+                                            "Fight/TeamEchelon7B.png",
+                                            "Fight/TeamCaution7A_720p.png",
+                                            "Fight/TeamCaution7B_720p.png",
+                                            "Fight/TeamEchelon7A_720p.png",
+                                            "Fight/TeamEchelon7B_720p.png"
                                         ]
                                     }
                                 }
@@ -858,7 +888,7 @@
                 {
                     "name": "8",
                         "pipeline_override": {
-                            "EventSalvageChooseTeam": {
+                            "EventSalvage_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -872,7 +902,11 @@
                                             "Fight/TeamCaution8A.png",
                                             "Fight/TeamCaution8B.png",
                                             "Fight/TeamEchelon8A.png",
-                                            "Fight/TeamEchelon8B.png"
+                                            "Fight/TeamEchelon8B.png",
+                                            "Fight/TeamCaution8A_720p.png",
+                                            "Fight/TeamCaution8B_720p.png",
+                                            "Fight/TeamEchelon8A_720p.png",
+                                            "Fight/TeamEchelon8B_720p.png"
                                         ]
                                     }
                                 }
@@ -882,7 +916,7 @@
                 {
                     "name": "9",
                         "pipeline_override": {
-                            "EventSalvageChooseTeam": {
+                            "EventSalvage_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -896,7 +930,11 @@
                                             "Fight/TeamCaution9A.png",
                                             "Fight/TeamCaution9B.png",
                                             "Fight/TeamEchelon9A.png",
-                                            "Fight/TeamEchelon9B.png"
+                                            "Fight/TeamEchelon9B.png",
+                                            "Fight/TeamCaution9A_720p.png",
+                                            "Fight/TeamCaution9B_720p.png",
+                                            "Fight/TeamEchelon9A_720p.png",
+                                            "Fight/TeamEchelon9B_720p.png"
                                         ]
                                     }
                                 }
@@ -910,12 +948,12 @@
                 {
                     "name": "[左下] 1号机场",
                         "pipeline_override": {
-                            "EventSalvageSwipetoAirport": {
+                            "EventSalvage_SwipetoAirport": {
                                 "action": {
                                     "type": "Swipe",
                                     "param": {
-"begin" : [100,378,1,1],
-"end" : [850,383,1,1]
+"begin" : [50,378,1,1],
+"end" : [1150,383,1,1]
                                     }
                                 }
                             }
@@ -924,7 +962,7 @@
                 {
                     "name": "[中下] 2号机场",
                         "pipeline_override": {
-                            "EventSalvageSwipetoAirport": {
+                            "EventSalvage_SwipetoAirport": {
                                 "action": {
                                     "type": "Swipe",
                                     "param": {
@@ -938,7 +976,7 @@
                 {
                     "name": "[右上] 3号机场",
                         "pipeline_override": {
-                            "EventSalvageSwipetoAirport": {
+                            "EventSalvage_SwipetoAirport": {
                                 "action": {
                                     "type": "Swipe",
                                     "param": {

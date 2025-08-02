@@ -17,8 +17,8 @@
         "action": {
             "type": "Swipe",
             "param": {
-"begin" : [860,128,1,1],
-"end" : [505,537,1,1]
+"begin" : [50,378,1,1],
+"end" : [1150,383,1,1]
             }
         },
         "next": [
@@ -50,9 +50,86 @@
         },
         "next": [
             "EventSalvage_ChooseTeam",
+            "EventSalvage_SwipeTeamUp",
             "EventSalvage_Prepare"
         ],
         "timeout": 60000
+    },
+    "EventSalvage_SwipeTeamUp": {
+        "recognition": {
+            "type": "ocr",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    497,
+                    379
+                ],
+                "expected": [
+                    "选择梯",
+                    "择梯队"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin" : [
+                    80,
+                    649,
+                    1,
+                    1
+                ],
+                "end" : [
+                    80,
+                    181,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "EventSalvage_ChooseTeam",
+            "EventSalvage_SwipeTeamDown"
+        ]
+    },
+    "EventSalvage_SwipeTeamDown": {
+        "recognition": {
+            "type": "ocr",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    497,
+                    379
+                ],
+                "expected": [
+                    "选择梯",
+                    "择梯队"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin" : [
+                    80,
+                    181,
+                    1,
+                    1
+                ],
+                "end" : [
+                    80,
+                    649,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "EventSalvage_ChooseTeam",
+            "EventSalvage_SwipeTeamUp"
+        ]
     },
     "EventSalvage_ChooseTeam": {
         "recognition": {
@@ -68,9 +145,13 @@
                     "Fight/TeamCaution1A.png",
                     "Fight/TeamCaution1B.png",
                     "Fight/TeamEchelon1A.png",
-                    "Fight/TeamEchelon1B.png"
+                    "Fight/TeamEchelon1B.png",
+                    "Fight/TeamCaution1A_720p.png",
+                    "Fight/TeamCaution1B_720p.png",
+                    "Fight/TeamEchelon1A_720p.png",
+                    "Fight/TeamEchelon1B_720p.png"
                 ],
-                "threshold": 0.85
+                "threshold": 0.83
             }
         },
         "action": {
@@ -89,7 +170,7 @@
                 "roi" : [
                     500,
                     560,
-                    430,
+                    1000,
                     250
                 ],
                 "expected": [
@@ -110,7 +191,7 @@
         "pre_wait_freezes": 200,
         "post_wait_freezes": 200,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     600,
@@ -118,10 +199,9 @@
                     680,
                     420
                 ],
-                "template": [
-                    "Button/ButtonYesA.png",
-                    "Button/ButtonYesB.png",
-                    "Fight/TeamYes.png"
+                "expected": [
+                    "确定",
+                    "确认"
                 ]
             }
         },
