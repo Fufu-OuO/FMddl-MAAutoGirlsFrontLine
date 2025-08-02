@@ -349,7 +349,7 @@
         },
         "next": [
             "EventSalvageScheduleOK", 
-            "EventSalvageFighting1"
+            "EventSalvageFighting"
         ]
     },
     "EventSalvageScheduleOK": {
@@ -373,12 +373,10 @@
         },
         "next": [
             "EventSalvageAgainstLagging",
-            "EventSalvageFighting1",
-            "EventSalvageFighting2",
-            "EventSalvageFighting3"
+            "EventSalvageFighting"
         ]
     },
-    "EventSalvageFighting1": {
+    "EventSalvageFighting": {
         "rate_limit": 500,
         "recognition": {
             "type": "OCR",
@@ -411,206 +409,7 @@
         },
         "next": [
             "EventSalvageAgainstLagging",
-            "EventSalvageFighting1",
-            "EventSalvageFighting2",
-            "EventSalvageStartFight"
-        ],
-        "interrupt": [
-            "EventSalvageButtonNo",
-            "EventRecycle"
-        ]
-    },
-    "EventSalvageFighting2": {
-        "rate_limit": 200,
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    336,
-                    35,
-                    469,
-                    482
-                ],
-                "template": [
-                    "Girls/GetGirl.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target" : [
-                    336,
-                    606,
-                    32,
-                    37
-                ]
-            }
-        },
-        "next": [
-            "EventSalvageAgainstLagging",
-            "EventSalvageFighting2",
-            "EventSalvageFighting3",
-            "EventSalvageStartFight"
-        ],
-        "interrupt": [
-            "EventSalvageButtonNo",
-            "EventRecycle"
-        ]
-    },
-    "EventSalvageFighting3": {
-        "rate_limit": 500,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi" : [
-                    0,
-                    0,
-                    784,
-                    719
-                ],
-                "expected": [
-                    "获得",
-                    "战利品",
-                    "结算",
-                    "再次",
-                    "枪种"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target" : [
-                    336,
-                    606,
-                    32,
-                    37
-                ]
-            }
-        },
-        "next": [
-            "EventSalvageAgainstLagging",
-            "EventSalvageFighting3",
-            "EventSalvageFighting4",
-            "EventSalvageStartFight"
-        ],
-        "interrupt": [
-            "EventSalvageButtonNo",
-            "EventRecycle"
-        ]
-    },
-    "EventSalvageFighting4": {
-        "rate_limit": 200,
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    336,
-                    35,
-                    469,
-                    482
-                ],
-                "template": [
-                    "Girls/GetGirl.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target" : [
-                    336,
-                    606,
-                    32,
-                    37
-                ]
-            }
-        },
-        "next": [
-            "EventSalvageAgainstLagging",
-            "EventSalvageFighting4",
-            "EventSalvageFighting5",
-            "EventSalvageStartFight"
-        ],
-        "interrupt": [
-            "EventSalvageButtonNo",
-            "EventRecycle"
-        ]
-    },
-    "EventSalvageFighting5": {
-        "rate_limit": 500,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi" : [
-                    0,
-                    0,
-                    784,
-                    719
-                ],
-                "expected": [
-                    "获得",
-                    "战利品",
-                    "结算",
-                    "再次",
-                    "枪种"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target" : [
-                    336,
-                    606,
-                    32,
-                    37
-                ]
-            }
-        },
-        "next": [
-            "EventSalvageAgainstLagging",
-            "EventSalvageFighting5",
-            "EventSalvageFighting6",
-            "EventSalvageStartFight"
-        ],
-        "interrupt": [
-            "EventSalvageButtonNo",
-            "EventRecycle"
-        ]
-    },
-    "EventSalvageFighting6": {
-        "rate_limit": 200,
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    336,
-                    35,
-                    469,
-                    482
-                ],
-                "template": [
-                    "Girls/GetGirl.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target" : [
-                    336,
-                    606,
-                    32,
-                    37
-                ]
-            }
-        },
-        "next": [
-            "EventSalvageAgainstLagging",
-            "EventSalvageFighting6",
-            "EventSalvageFighting1",
+            "EventSalvageFighting",
             "EventSalvageStartFight"
         ],
         "interrupt": [
@@ -648,8 +447,7 @@
         },
         "next": [
             "EventSalvageAgainstLagging",
-            "EventSalvageFighting4",
-            "EventSalvageFighting1",
+            "EventSalvageFighting",
             "EventSalvageStartFight"
         ],
         "interrupt": [
@@ -659,7 +457,7 @@
     },
     "EventSalvageButtonNo": {
         "rate_limit": 200,
-        "post_wait_freezes": 2000,
+        "post_delay": 2000,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
