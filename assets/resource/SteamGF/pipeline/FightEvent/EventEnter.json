@@ -12,9 +12,9 @@
             }
         },
         "next": [
-            "EventEntrance",
-            "EventDifficulty",
-            "EventSwipetoLeft"
+            "Event_Entrance",
+            "Event_Difficulty",
+            "Event_SwipeL"
         ],
         "interrupt": [
             "AssignmentAgain",
@@ -23,7 +23,7 @@
             "ReturnHome"
         ]
     },
-    "EventEntrance": {
+    "Event_Entrance": {
         "recognition": {
         "type": "TemplateMatch",
             "param": {
@@ -42,9 +42,9 @@
             "type": "Click"
         },
         "next": [
-            "EventEntrance",
-            "EventDifficulty",
-            "EventSwipetoLeft"
+            "Event_Entrance",
+            "Event_Difficulty",
+            "Event_SwipeL"
         ],
         "interrupt": [
             "AssignmentAgain",
@@ -52,7 +52,7 @@
             "GetGirl"
         ]
     },
-    "EventDifficulty": {
+    "Event_Difficulty": {
         "doc": "普通、困难、噩梦，要打哪个就OCR其余的，并执行Click",
         "recognition": {
             "type": "OCR",
@@ -73,11 +73,11 @@
             "type": "Click"
         },
         "next": [
-            "EventDifficulty",
-            "EventSwipetoLeft"
+            "Event_Difficulty",
+            "Event_SwipeL"
         ]
     },
-    "EventSwipetoLeft": {
+    "Event_SwipeL": {
         "doc": "拉到活动最左侧",
         "recognition": {
             "type": "OCR",
@@ -112,12 +112,12 @@
             }
         },
         "next": [
-            "EventSalvageStage",
-            "EventFirstStage",
-            "EventSwipetoLeft"
+            "Event_SalvageStage",
+            "Event_FirstStage",
+            "Event_SwipeL"
         ]
     },
-    "EventFirstStage": {
+    "Event_FirstStage": {
         "pre_wait_freezes": 100,
         "post_wait_freezes": 100,
         "recognition": {
@@ -135,11 +135,11 @@
             }
         },
         "next": [
-            "EventSalvageStage",
-            "EventSwipetoTarget"
+            "Event_SalvageStage",
+            "Event_SwipetoTarget"
         ]
     },
-    "EventSwipetoTarget": {
+    "Event_SwipetoTarget": {
         "doc": "识别章节进度",
         "recognition": {
             "type": "OCR",
@@ -174,11 +174,11 @@
             }
         },
         "next": [
-            "EventSalvageStage",
-            "EventSwipetoTarget"
+            "Event_SalvageStage",
+            "Event_SwipetoTarget"
         ]
     },
-    "EventSalvageStage": {
+    "Event_SalvageStage": {
         "rate_limit": 300,
         "recognition": {
             "type": "OCR",
@@ -194,13 +194,13 @@
             "type": "Click"
         },
         "next": [
-            "EventSalvageStage",
-            "CheckEventSalvageGirl",
-            "CheckEventSalvageList",
-            "EnterEventSalvage"
+            "Event_SalvageStage",
+            "Event_CheckSalvageGirl",
+            "Event_CheckSalvageList",
+            "EventSalvage_Enter"
         ]
     },
-    "CheckEventSalvageList": {
+    "Event_CheckSalvageList": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -220,13 +220,13 @@
             "type": "Click"
         },
         "next": [
-            "CheckEventSalvageGirl",
-            "CheckEventSalvageList",
-            "EventSalvageStage"
+            "Event_CheckSalvageGirl",
+            "Event_CheckSalvageList",
+            "Event_SalvageStage"
             
         ]
     },
-    "CheckEventSalvageGirl": {
+    "Event_CheckSalvageGirl": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -237,11 +237,11 @@
             }
         },
         "next": [
-            "EnterEventSalvage",
-            "CheckEventSalvageList"
+            "EventSalvage_Enter",
+            "Event_CheckSalvageList"
         ]
     },
-    "EnterEventSalvage": {
+    "EventSalvage_Enter": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -261,8 +261,8 @@
         },
         "next": [
             "EventRecycle",
-            "EventSalvageSwipetoAirport",
-            "EnterEventSalvage"
+            "EventSalvage_SwipetoAirport",
+            "EventSalvage_Enter"
         ]
     }
 }

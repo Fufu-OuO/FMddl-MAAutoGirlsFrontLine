@@ -1,5 +1,5 @@
 {
-    "EventSalvageSwipetoAirport": {
+    "EventSalvage_SwipetoAirport": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -22,11 +22,11 @@
             }
         },
         "next": [
-            "EventSalvagePrepare",
-            "EventSalvageSwipetoAirport"
+            "EventSalvage_Prepare",
+            "EventSalvage_SwipetoAirport"
         ]
     },
-    "EventSalvagePrepare": {
+    "EventSalvage_Prepare": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -49,12 +49,12 @@
             "type": "Click"
         },
         "next": [
-            "EventSalvageChooseTeam",
-            "EventSalvagePrepare"
+            "EventSalvage_ChooseTeam",
+            "EventSalvage_Prepare"
         ],
         "timeout": 60000
     },
-    "EventSalvageChooseTeam": {
+    "EventSalvage_ChooseTeam": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -77,12 +77,12 @@
             "type": "Click"
         },
         "next": [
-            "EventSalvageFixTeam",
-            "EventSalvageYesTeam",
-            "EventSalvageChooseTeam"
+            "EventSalvage_FixTeam",
+            "EventSalvage_YesTeam",
+            "EventSalvage_ChooseTeam"
         ]
     },
-    "EventSalvageFixTeam": {
+    "EventSalvage_FixTeam": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -102,11 +102,11 @@
             "type": "Click"
         },
         "next": [
-            "EventSalvageYesTeam",
-            "EventSalvageFixTeam"
+            "EventSalvage_YesTeam",
+            "EventSalvage_FixTeam"
         ]
     },
-    "EventSalvageYesTeam": {
+    "EventSalvage_YesTeam": {
         "pre_wait_freezes": 200,
         "post_wait_freezes": 200,
         "recognition": {
@@ -137,11 +137,11 @@
             }
         },
         "next": [
-            "EventSalvageYesTeam",
-            "EventSalvageStartFight"
+            "EventSalvage_YesTeam",
+            "EventSalvage_StartFight"
         ]
     },
-    "EventSalvageStartFight": {
+    "EventSalvage_StartFight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -169,13 +169,13 @@
             }
         },
         "next": [
-            "EventSalvageStartFight",
-            "EventSalvageClickTeam",
-            "EventSalvageSwipeL",
-            "EventSalvageMildSwipeR"
+            "EventSalvage_StartFight",
+            "EventSalvage_ClickTeam",
+            "EventSalvage_SwipeL",
+            "EventSalvage_SwipeRMild"
         ]
     },
-    "EventSalvageSwipeL": {
+    "EventSalvage_SwipeL": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -208,11 +208,11 @@
             }
         },
         "next": [
-            "EventSalvageClickTeam",
-            "EventSalvageMildSwipeR"
+            "EventSalvage_ClickTeam",
+            "EventSalvage_SwipeRMild"
         ]
     },
-    "EventSalvageMildSwipeR": {
+    "EventSalvage_SwipeRMild": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -245,11 +245,11 @@
             }
         },
         "next": [
-            "EventSalvageClickTeam",
-            "EventSalvageMildSwipeR"
+            "EventSalvage_ClickTeam",
+            "EventSalvage_SwipeRMild"
         ]
     },
-    "EventSalvageClickTeam": {
+    "EventSalvage_ClickTeam": {
         "pre_wait_freezes": 300,
         "recognition": {
             "type": "OCR",
@@ -278,12 +278,12 @@
             }
         },
         "next": [
-            "EventSalvageSupplyTeam",
-            "EventSalvageClickTeam",
-            "EventSalvageMildSwipeR"
+            "EventSalvage_SupplyTeam",
+            "EventSalvage_ClickTeam",
+            "EventSalvage_SwipeRMild"
         ]
     },
-    "EventSalvageSupplyTeam": {
+    "EventSalvage_SupplyTeam": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -302,11 +302,11 @@
             "type": "Click"
         },
         "next": [
-            "EventSalvageSupplyTeam",
-            "EventSalvageScheduleMode"
+            "EventSalvage_SupplyTeam",
+            "EventSalvage_ScheduleMode"
         ]
     },
-    "EventSalvageScheduleMode": {
+    "EventSalvage_ScheduleMode": {
         "pre_wait_freezes": 300,
         "recognition": {
             "type": "OCR",
@@ -334,11 +334,11 @@
             }
         },
         "next": [
-            "EventSalvageSwipetoTarget"
+            "EventSalvage_SwipetoTarget"
         ]
     },
 
-    "EventSalvageSwipetoTarget": {
+    "EventSalvage_SwipetoTarget": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -361,11 +361,11 @@
             }
         },
         "next": [
-            "EventSalvageClickTarget",
-            "EventSalvageSwipetoTarget"
+            "EventSalvage_ClickTarget",
+            "EventSalvage_SwipetoTarget"
         ]
     },
-    "EventSalvageClickTarget": {
+    "EventSalvage_ClickTarget": {
         "pre_wait_freezes":300,
         "recognition": {
             "type": "OCR",
@@ -385,11 +385,11 @@
             "type": "Click"
         },
         "next": [
-            "EventSalvageScheduleOK", 
-            "EventSalvageFighting"
+            "EventSalvage_ScheduleYes", 
+            "EventSalvage_Fighting"
         ]
     },
-    "EventSalvageScheduleOK": {
+    "EventSalvage_ScheduleYes": {
         "post_wait_freezes": 300,
         "recognition": {
             "type": "OCR",
@@ -409,11 +409,11 @@
             "type": "Click"
         },
         "next": [
-            "EventSalvageAgainstLagging",
-            "EventSalvageFighting"
+            "EventSalvage_AgainstLagging",
+            "EventSalvage_Fighting"
         ]
     },
-    "EventSalvageFighting": {
+    "EventSalvage_Fighting": {
         "rate_limit": 500,
         "recognition": {
             "type": "OCR",
@@ -445,16 +445,16 @@
             }
         },
         "next": [
-            "EventSalvageAgainstLagging",
-            "EventSalvageFighting",
-            "EventSalvageStartFight"
+            "EventSalvage_AgainstLagging",
+            "EventSalvage_Fighting",
+            "EventSalvage_StartFight"
         ],
         "interrupt": [
-            "EventSalvageButtonNo",
+            "EventSalvage_DoNotStopSchedule",
             "EventRecycle"
         ]
     },
-    "EventSalvageAgainstLagging": {
+    "EventSalvage_AgainstLagging": {
         "doc": "防止点到人形导致冻结时间",
         "rate_limit": 200,
         "recognition": {
@@ -483,16 +483,16 @@
             }
         },
         "next": [
-            "EventSalvageAgainstLagging",
-            "EventSalvageFighting",
-            "EventSalvageStartFight"
+            "EventSalvage_AgainstLagging",
+            "EventSalvage_Fighting",
+            "EventSalvage_StartFight"
         ],
         "interrupt": [
-            "EventSalvageButtonNo",
+            "EventSalvage_DoNotStopSchedule",
             "EventRecycle"
         ]
     },
-    "EventSalvageButtonNo": {
+    "EventSalvage_DoNotStopSchedule": {
         "rate_limit": 200,
         "post_delay": 2000,
         "recognition": {
