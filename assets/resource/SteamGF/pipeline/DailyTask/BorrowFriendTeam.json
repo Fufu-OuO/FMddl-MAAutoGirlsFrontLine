@@ -1,0 +1,748 @@
+{
+    "BorrowFriendTeam": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    444,
+                    172,
+                    127,
+                    130
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_ClickFight"
+        ],
+        "interrupt": [
+            "AssignmentAgain",
+            "Reward",
+            "GetGirl",
+            "ReturnHome"
+        ]
+    },
+    "BorrowFriendTeam_ClickFight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    561,
+                    195,
+                    591,
+                    453
+                ],
+                "expected": [
+                    "战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_Stage0.2",
+            "BorrowFriendTeam_Ep0",
+            "BorrowFriendTeam_EpSwipe",
+            "BorrowFriendTeam_Combat",
+            "BorrowFriendTeam_ClickFight"
+        ]
+    },
+    "BorrowFriendTeam_Combat": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    63,
+                    303,
+                    657
+                ],
+                "expected": [
+                    "作战任",
+                    "战任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_Stage0.2",
+            "BorrowFriendTeam_Ep0",
+            "BorrowFriendTeam_EpSwipe"
+        ]
+    },
+    "BorrowFriendTeam_EpSwipe": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    374,
+                    101,
+                    842,
+                    618
+                ],
+                "expected": [
+                    "难度选",
+                    "度选择",
+                    "普通"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin" : [
+                    241,
+                    156,
+                    1,
+                    1
+                ],
+                "end" : [
+                    243,
+                    630,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_Stage0.2",
+            "BorrowFriendTeam_Ep0",
+            "BorrowFriendTeam_EpSwipe",
+            "BorrowFriendTeam_Combat"
+        ]
+    },
+    "BorrowFriendTeam_Ep0": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    75,
+                    33,
+                    293,
+                    687
+                ],
+                "expected": [
+                    "第零"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_Stage0.2",
+            "BorrowFriendTeam_Ep0",
+            "BorrowFriendTeam_EpSwipe",
+            "BorrowFriendTeam_Combat"
+        ]
+    },
+    "BorrowFriendTeam_Stage0.2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    502,
+                    247,
+                    337,
+                    371
+                ],
+                "expected": [
+                    "黑色情",
+                    "色情报"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_EnterStage",
+            "BorrowFriendTeam_Stage0.2",
+            "BorrowFriendTeam_Combat"
+        ]
+    },
+    "BorrowFriendTeam_EnterStage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    429,
+                    188,
+                    787,
+                    531
+                ],
+                "expected": [
+                    "普通作",
+                    "通作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_Prepare",
+            "BorrowFriendTeam_EnterStage"
+        ]
+    },
+    "BorrowFriendTeam_Prepare": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    100,
+                    1900,
+                    1000
+                ],
+                "template": [
+                    "Fight/CommandPostA.png",
+                    "Fight/CommandPostA_720p.png"
+                ],
+                "threshold": 0.6
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_DogFoodTeam",
+            "BorrowFriendTeam_SwipeTeamUp",
+            "BorrowFriendTeam_Prepare"
+        ]
+    },
+    "BorrowFriendTeam_SwipeTeamUp": {
+        "recognition": {
+            "type": "ocr",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    497,
+                    379
+                ],
+                "expected": [
+                    "选择梯",
+                    "择梯队"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin" : [
+                    80,
+                    649,
+                    1,
+                    1
+                ],
+                "end" : [
+                    80,
+                    181,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_DogFoodTeam",
+            "BorrowFriendTeam_SwipeTeamDown"
+        ]
+    },
+    "BorrowFriendTeam_SwipeTeamDown": {
+        "recognition": {
+            "type": "ocr",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    497,
+                    379
+                ],
+                "expected": [
+                    "选择梯",
+                    "择梯队"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin" : [
+                    80,
+                    181,
+                    1,
+                    1
+                ],
+                "end" : [
+                    80,
+                    649,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_DogFoodTeam",
+            "BorrowFriendTeam_SwipeTeamUp"
+        ]
+    },
+    "BorrowFriendTeam_DogFoodTeam": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    225,
+                    720
+                ],
+                "template": [
+                    "Fight/TeamCaution1A.png",
+                    "Fight/TeamCaution1B.png",
+                    "Fight/TeamEchelon1A.png",
+                    "Fight/TeamEchelon1B.png",
+                    "Fight/TeamCaution1A_720p.png",
+                    "Fight/TeamCaution1B_720p.png",
+                    "Fight/TeamEchelon1A_720p.png",
+                    "Fight/TeamEchelon1B_720p.png"
+                ],
+                "threshold": 0.83
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_YesDogFoodTeam",
+            "BorrowFriendTeam_DogFoodTeam"
+        ]
+    },
+    "BorrowFriendTeam_YesDogFoodTeam": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    600,
+                    300,
+                    680,
+                    420
+                ],
+                "expected": [
+                    "确定",
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_YesDogFoodTeam",
+            "BorrowFriendTeam_StartFight"
+        ]
+    },
+    "BorrowFriendTeam_StartFight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    600,
+                    300,
+                    680,
+                    420
+                ],
+                "expected": [
+                    "点击指挥部",
+                    "进行部署"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_StartFight",
+            "BorrowFriendTeam_ClickAirport"
+        ]
+    },
+    "BorrowFriendTeam_ClickAirport": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    100,
+                    600,
+                    1000
+                ],
+                "expected": [
+                    "下回合被"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -10,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_CheckTime",
+            "BorrowFriendTeam_ClickAirport"
+        ]
+    },
+    "BorrowFriendTeam_CheckTime": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    660,
+                    0,
+                    556,
+                    265
+                ],
+                "expected": [
+                    "支援梯",
+                    "援梯队"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_TimeEnough",
+            "BorrowFriendTeam_ButtonCancel",
+            "BorrowFriendTeam_CheckTime"
+        ]
+    },
+    "BorrowFriendTeam_ButtonCancel": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    523,
+                    491
+                ],
+                "template": [
+                    "Room/RoomButtonCancelA.png",
+                    "Room/RoomButtonCancelB.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_TimeEnough",
+            "BorrowFriendTeam_ButtonCancel",
+            "BorrowFriendTeam_CheckTime",
+            "BorrowFriendTeam_FriendTeam"
+        ]
+    },
+    "BorrowFriendTeam_FriendTeam": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    660,
+                    0,
+                    556,
+                    265
+                ],
+                "expected": [
+                    "支援梯",
+                    "援梯队"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_BorrowTeam",
+            "BorrowFriendTeam_FriendTeam"
+        ]
+    },
+    "BorrowFriendTeam_BorrowTeam": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    685,
+                    720
+                ],
+                "expected": [
+                    "最后上",
+                    "后上线"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_YesFriendTeam",
+            "BorrowFriendTeam_BorrowTeam"
+        ]
+    },
+    "BorrowFriendTeam_YesFriendTeam": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    600,
+                    300,
+                    680,
+                    420
+                ],
+                "expected": [
+                    "确定",
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_FightShutup",
+            "BorrowFriendTeam_YesFriendTeam"
+        ]
+    },
+    "BorrowFriendTeam_FightShutup": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    600,
+                    200
+                ],
+                "expected": [
+                    "终止作",
+                    "止作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -10,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_FightStop",
+            "BorrowFriendTeam_FightShutup"
+        ]
+    },
+    "BorrowFriendTeam_FightStop": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    165,
+                    463,
+                    862,
+                    256
+                ],
+                "expected": [
+                    "终止作",
+                    "止作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_FightStop",
+            "BorrowFriendTeam_FightShutup",
+            "BorrowFriendTeam_Combat"
+        ]
+    },
+    "BorrowFriendTeam_TimeEnough": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1039,
+                    0,
+                    176,
+                    120
+                ],
+                "expected": [
+                    "2/20",
+                    "3/20",
+                    "4/20",
+                    "5/20",
+                    "6/20",
+                    "7/20",
+                    "8/20",
+                    "9/20",
+                    "10/20",
+                    "11/20",
+                    "12/20",
+                    "13/20",
+                    "14/20",
+                    "15/20",
+                    "16/20",
+                    "17/20",
+                    "18/20",
+                    "19/20",
+                    "20/20"
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_TaskOver",
+            "BorrowFriendTeam_FightFinish",
+            "BorrowFriendTeam_NoFriendTeam"
+        ]
+    },
+    "BorrowFriendTeam_NoFriendTeam": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    600,
+                    300,
+                    680,
+                    420
+                ],
+                "expected": [
+                    "取消",
+                    "撤离"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_NoFriendTeam",
+            "BorrowFriendTeam_FightFinish"
+        ]
+    },
+    "BorrowFriendTeam_FightFinish": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    600,
+                    200
+                ],
+                "expected": [
+                    "终止作",
+                    "止作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -10,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "BorrowFriendTeam_TaskOver",
+            "BorrowFriendTeam_FightFinish"
+        ]
+    },
+    "BorrowFriendTeam_TaskOver": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    165,
+                    463,
+                    862,
+                    256
+                ],
+                "expected": [
+                    "终止作",
+                    "止作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_FightFinish",
+            "BorrowFriendTeam_TaskOver",
+            "EnterHome"
+        ]
+    }
+}

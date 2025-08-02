@@ -19,12 +19,13 @@
         "interrupt": [
             "AssignmentAgain",
             "Reward",
+            "GetGirl",
             "ReturnHome"
         ]
     },
     "DailyAClickFight": {
         "recognition": {
-        "type": "OCR",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     561,
@@ -47,12 +48,13 @@
         ],
         "interrupt": [
             "AssignmentAgain",
-            "Reward"
+            "Reward",
+            "GetGirl"
         ]
     },
     "DailyASimulation": {
         "recognition": {
-        "type": "OCR",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     0,
@@ -89,8 +91,8 @@
                     177
                 ],
                 "expected": [
-                "基础动能",
-                "基础势能"
+                    "基础动能",
+                    "基础势能"
                 ]
             }
         },
@@ -117,7 +119,7 @@
     },
     "DailyASelection": {
         "recognition": {
-        "type": "OCR",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     75,
@@ -139,7 +141,7 @@
     },
     "DailyADifficulty": {
         "recognition": {
-        "type": "OCR",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     502,
@@ -163,7 +165,7 @@
     "DailyATimeClickCenter": {
         "post_wait_freezes": 500,
         "recognition": {
-        "type": "TemplateMatch",
+            "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     600,
@@ -188,7 +190,7 @@
     "DailyATimeAll": {
         "enabled": false,
         "recognition": {
-        "type": "TemplateMatch",
+            "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     626,
@@ -211,7 +213,7 @@
     },
     "DailyATimeAuto": {
         "recognition": {
-        "type": "TemplateMatch",
+            "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     626,
@@ -235,7 +237,7 @@
     },
     "DailyATimeEnough": {
         "recognition": {
-        "type": "OCR",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     772,
@@ -254,7 +256,7 @@
     },
     "DailyAStart": {
         "recognition": {
-        "type": "OCR",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     689,
