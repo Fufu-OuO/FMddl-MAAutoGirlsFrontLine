@@ -33,11 +33,7 @@
             }
         },
         "next": [
-            "ExploreGet",
-            "ExploreConductor",
-            "ExploreFormation",
-            "ExploreStart",
-            "EnterHome"
+            "ExploreGet"
         ]
     },
     "ExploreGet": {
@@ -70,10 +66,7 @@
         "next": [
             "ExploreReward",
             "ExploreButtonCancel1",
-            "ExploreConductor",
-            "ExploreFormation",
-            "ExploreStart",
-            "EnterHome"
+            "ExploreConductor"
         ]
     },
     "ExploreReward": {
@@ -109,8 +102,6 @@
             "ExploreReward",
             "ExploreButtonCancel1",
             "ExploreConductor",
-            "ExploreFormation",
-            "ExploreStart",
             "EnterHome"
         ]
     },

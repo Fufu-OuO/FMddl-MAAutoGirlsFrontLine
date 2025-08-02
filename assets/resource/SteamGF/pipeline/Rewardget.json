@@ -208,8 +208,7 @@
             "type": "Click"
         },
         "next": [
-            "ButtonTask",
-            "RewardgetTask",
+            "DailyQuest",
             "EnterHome"
         ],
         "interrupt": [
@@ -217,7 +216,7 @@
             "Reward"
         ]
     },
-    "RewardgetTask": {
+    "DailyQuest": {
         "post_delay": 2000,
         "recognition": {
             "type": "OCR",
@@ -251,13 +250,14 @@
             "type": "OCR",
             "param": {
                 "roi" : [
-                    915,
+                    900,
                     584,
-                    237,
+                    1000,
                     136
                 ],
                 "expected": [
-                    "任务结算"
+                    "结算",
+                    "COLLECT"
                 ]
             }
         }, 
@@ -266,12 +266,8 @@
         },
         "next": [
             "TaskReward",
-            "ButtonTask",
             "TaskFinish",
-            "TaskGift",
-            "TaskVitality",
-            "TaskToPass",
-            "EnterHome"
+            "DailyQuest"
         ]
     },
     "TaskGift": {
@@ -298,11 +294,8 @@
         },
         "next": [
             "TaskReward",
-            "ButtonTask",
-            "TaskFinish",
-            "TaskVitality",
-            "TaskToPass",
-            "EnterHome"
+            "TaskGift",
+            "DailyQuest"
         ]
     },
     "TaskVitality": {
@@ -328,12 +321,8 @@
         },
         "next": [
             "TaskReward",
-            "ButtonTask",
-            "RewardgetTask",
-            "TaskGift",
             "TaskVitality",
-            "TaskToPass",
-            "EnterHome"
+            "DailyQuest"
         ]
     },
     "TaskReward": {
@@ -350,7 +339,8 @@
                 "expected": [
                     "REW",
                     "REV",
-                    "ARD"
+                    "ARD",
+                    "ARB"
                 ]
             }
         },
@@ -366,7 +356,7 @@
             }
         },
         "next": [
-            "RewardgetTask",
+            "DailyQuest",
             "TaskReward"
         ]
     },

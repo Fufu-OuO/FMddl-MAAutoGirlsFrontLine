@@ -65,7 +65,8 @@
                 "expected": [
                     "REW",
                     "REV",
-                    "ARD"
+                    "ARD",
+                    "ARB"
                 ]
             }
         },
