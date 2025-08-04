@@ -12,10 +12,10 @@
             }
         },
         "next": [
-            "CafeEnterTeam",
-            "CafeOpenTeamMenu",
-            "CafeSwipeBackTeamMenu",
-            "ButtonRoomCafe"
+            "CafeEnter_Team",
+            "CafeEnter_OpenTeamMenu",
+            "CafeEnter_SwipeBackTeamMenu",
+            "CafeEnter_ButtonCafe"
         ],
         "interrupt": [
             "AssignmentAgain",
@@ -23,7 +23,7 @@
             "ReturnHome"
         ]
     },
-    "CafeEnterTeam": {
+    "CafeEnter_Team": {
         "doc":"组合任务",
         "recognition": {
         "type": "TemplateMatch",
@@ -48,17 +48,17 @@
         },
         "post_delay":1000,
         "next": [
-            "CafeEnterTeam",
-            "CafeOpenTeamMenu",
-            "CafeSwipeBackTeamMenu",
-            "ButtonRoomCafe"
+            "CafeEnter_Team",
+            "CafeEnter_OpenTeamMenu",
+            "CafeEnter_SwipeBackTeamMenu",
+            "CafeEnter_ButtonCafe"
         ],
         "interrupt": [
             "AssignmentAgain",
             "Reward"
         ]
     },
-    "CafeOpenTeamMenu": {
+    "CafeEnter_OpenTeamMenu": {
         "doc":"尚未点击的Home",
         "recognition": {
             "type": "TemplateMatch",
@@ -88,12 +88,12 @@
             }
         },
         "next": [
-            "ButtonRoomCafe",
-            "CafeEnterTeam",
-            "CafeSwipeBackTeamMenu"
+            "CafeEnter_ButtonCafe",
+            "CafeEnter_Team",
+            "CafeEnter_SwipeBackTeamMenu"
         ]
     },
-    "CafeSwipeBackTeamMenu": {
+    "CafeEnter_SwipeBackTeamMenu": {
         "doc":"拖动导航菜单至右",
         "recognition": {
             "type": "OCR",
@@ -128,12 +128,12 @@
             }
         },
         "next": [
-            "ButtonRoomCafe",
-            "CafeEnterTeam",
-            "CafeOpenTeamMenu"
+            "CafeEnter_ButtonCafe",
+            "CafeEnter_Team",
+            "CafeEnter_OpenTeamMenu"
         ]
     },
-    "ButtonRoomCafe": {
+    "CafeEnter_ButtonCafe": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -152,9 +152,9 @@
             "type": "Click"
         },
         "next": [
-            "ButtonRoomCafe",
-            "CafeSwipeBackTeamMenu",
-            "Coffee"
+            "CafeEnter_ButtonCafe",
+            "CafeEnter_SwipeBackTeamMenu",
+            "CafeWork_Machine"
         ]
     }
 }

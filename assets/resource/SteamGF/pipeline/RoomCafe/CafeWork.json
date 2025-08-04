@@ -1,8 +1,8 @@
 {
-    "Coffee": {
-        "doc": "点击咖啡机",
+    "CafeWork_Machine": {
+        "doc": "识别咖啡图标，点击咖啡机",
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     0,
@@ -10,8 +10,9 @@
                     600,
                     400
                 ],
-                "expected": [
-                    "咖啡机"
+                "template": [
+                    "Room/CafeNewStory.png",
+                    "Room/CafeNewStory_720p.png"
                 ]
             }
         },
@@ -19,12 +20,13 @@
             "type": "Click"
         },
         "next": [
-            "CafeNewStory",
-            "CafeNewStorySign",
-            "CafeButtonCancel"
+            "CafeWork_NewStory",
+            "CafeWork_NewStorySign",
+            "CafeWork_ButtonCancel",
+            "EnterHome"
         ]
     },
-    "CafeNewStorySign": {
+    "CafeWork_NewStorySign": {
         "post_wait_freezes": {
             "time": 2000,
             "param": {
@@ -64,12 +66,12 @@
             }
         },
         "next": [
-            "CafeNewStory",
-            "CafeNewStorySign",
-            "CafeButtonCancel"
+            "CafeWork_NewStory",
+            "CafeWork_NewStorySign",
+            "CafeWork_ButtonCancel"
         ]
     },
-    "CafeNewStory": {
+    "CafeWork_NewStory": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -89,12 +91,12 @@
             "type": "Click"
         },
         "next": [
-            "CafeNewStory",
-            "CafeNewStorySkip",
-            "CafeNewStoryReward"
+            "CafeWork_NewStory",
+            "CafeWork_StorySkip",
+            "CafeWork_StoryReward"
         ]
     },
-    "CafeNewStorySkip": {
+    "CafeWork_StorySkip": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -124,12 +126,12 @@
             }
         },
         "next": [
-            "CafeNewStorySkip",
-            "CafeNewStoryReward",
-            "Coffee"
+            "CafeWork_StorySkip",
+            "CafeWork_StoryReward",
+            "CafeWork_Machine"
         ]
     },
-    "CafeNewStoryReward": {
+    "CafeWork_StoryReward": {
         "rate_limit": 200,
         "recognition": {
             "type": "OCR",
@@ -159,11 +161,11 @@
             }
         },
         "next": [
-            "CafeNewStoryReward",
-            "Coffee"
+            "CafeWork_StoryReward",
+            "CafeWork_Machine"
         ]
     },
-    "CafeButtonCancel": {
+    "CafeWork_ButtonCancel": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -186,7 +188,7 @@
             }
         },
         "next": [
-            "CafeButtonCancel",
+            "CafeWork_ButtonCancel",
             "EnterHome"
         ]
     }
