@@ -284,6 +284,7 @@
         },
         "next": [
             "ExpFight_CheckFairyPoint",
+            "ExpFight_ButtonFairy",
             "ExpFight_SwipetoMark",
             "ExpFight_ClickTeam"
         ]
@@ -307,8 +308,31 @@
         },
         "next": [
             "ExpFight_FairyPointNotEnough",
-            "ExpFight_ScheduleMode",
-            "ExpFight_ClickTeam"
+            "ExpFight_ButtonFairy",
+            "ExpFight_ScheduleMode"
+        ]
+    },
+    "ExpFight_ButtonFairy": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1000,
+                    130,
+                    900,
+                    177
+                ],
+                "expected": [
+                    "关"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ExpFight_ButtonFairy",
+            "ExpFight_ScheduleMode"
         ]
     },
     "ExpFight_ScheduleMode": {

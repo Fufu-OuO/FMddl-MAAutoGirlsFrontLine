@@ -72,7 +72,8 @@
                 "活动打捞人形",
                 "活动打捞作战难度",
                 "活动打捞出战梯队",
-                "活动打捞梯队所部署的机场位置"
+                "活动打捞梯队所部署的机场位置",
+                "活动打捞是否释放妖精技能"
             ]
         },
         {
@@ -1069,6 +1070,52 @@
                                 }
                             }
                         }
+                }
+            ]
+        },
+        "活动打捞是否释放妖精技能": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "EventSalvage_ButtonFairy": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1000,
+                                        130,
+                                        900,
+                                        177
+                                    ],
+                                    "expected": [
+                                        "关"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "EventSalvage_ButtonFairy": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "roi" : [
+                                        1000,
+                                        130,
+                                        900,
+                                        177
+                                    ],
+                                    "expected": [
+                                        "开"
+                                    ]
+                                }
+                            }
+                        }
+                    }
                 }
             ]
         },

@@ -384,6 +384,31 @@
         },
         "next": [
             "EventSalvage_SupplyTeam",
+            "EventSalvage_ButtonFairy",
+            "EventSalvage_ScheduleMode"
+        ]
+    },
+    "EventSalvage_ButtonFairy": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1000,
+                    130,
+                    900,
+                    177
+                ],
+                "expected": [
+                    "关"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "EventSalvage_SupplyTeam",
+            "EventSalvage_ButtonFairy",
             "EventSalvage_ScheduleMode"
         ]
     },
