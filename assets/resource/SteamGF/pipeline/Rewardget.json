@@ -327,14 +327,15 @@
         ]
     },
     "TaskReward": {
+        "pre_delay": 1000,
         "rate_limit": 200,
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    900,
+                    700,
                     100,
-                    380,
+                    1000,
                     350
                 ],
                 "expected": [
