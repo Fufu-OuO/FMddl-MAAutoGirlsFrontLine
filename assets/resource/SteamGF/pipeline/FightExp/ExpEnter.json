@@ -233,6 +233,7 @@
         ]
     },
     "ExpEnter_EnterStage": {
+        "post_delay": 5000,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -252,34 +253,9 @@
             "type": "Click"
         },
         "next": [
-            "ExpEnter_Prepare",
+            "ExpFight_Prepare",
+            "ExpFight_SwipetoAirport",
             "ExpEnter_EnterStage"
-        ]
-    },
-    "ExpEnter_Prepare": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    0,
-                    100,
-                    1900,
-                    1000
-                ],
-                "template": [
-                    "Fight/CommandPostA.png",
-                    "Fight/CommandPostA_720p.png",
-                    "Fight/AirportOpenA_720p.png",
-                    "Fight/AirportOpenB_720p.png"
-                ],
-                "threshold": 0.6
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "ExpEnter_Prepare"
         ]
     }
 }

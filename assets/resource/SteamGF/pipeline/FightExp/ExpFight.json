@@ -37,10 +37,10 @@
                     594
                 ],
                 "template": [
-                    "EventNow/EventAirport1A.png",
-                    "EventNow/EventAirport1B.png",
-                    "EventNow/EventAirport2A.png",
-                    "EventNow/EventAirport2B.png"
+                    "Fight/AirportOpenA.png",
+                    "Fight/AirportOpenB.png",
+                    "Fight/AirportOpenA_720p.png",
+                    "Fight/AirportOpenB_720p.png"
                 ],
                 "threshold": 0.5
             }
@@ -138,20 +138,20 @@
                 "roi" : [
                     0,
                     0,
-                    225,
+                    200,
                     720
                 ],
                 "template": [
-                    "Fight/TeamCaution1A.png",
-                    "Fight/TeamCaution1B.png",
-                    "Fight/TeamEchelon1A.png",
-                    "Fight/TeamEchelon1B.png",
-                    "Fight/TeamCaution1A_720p.png",
-                    "Fight/TeamCaution1B_720p.png",
-                    "Fight/TeamEchelon1A_720p.png",
-                    "Fight/TeamEchelon1B_720p.png"
+                    "Fight/TeamCaution8A.png",
+                    "Fight/TeamCaution8B.png",
+                    "Fight/TeamEchelon8A.png",
+                    "Fight/TeamEchelon8B.png",
+                    "Fight/TeamCaution8A_720p.png",
+                    "Fight/TeamCaution8B_720p.png",
+                    "Fight/TeamEchelon8A_720p.png",
+                    "Fight/TeamEchelon8B_720p.png"
                 ],
-                "threshold": 0.83
+                "threshold": 0.85
             }
         },
         "action": {
@@ -250,87 +250,12 @@
         },
         "next": [
             "ExpFight_StartFight",
-            "ExpFight_ClickTeam",
-            "ExpFight_SwipeL",
-            "ExpFight_SwipeRMild"
-        ]
-    },
-    "ExpFight_SwipeL": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi" : [
-                    0,
-                    420,
-                    300,
-                    300
-                ],
-                "expected": [
-                    "计划模式"
-                ]
-            }
-        },
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin" : [
-                    300,
-                    251,
-                    1,
-                    1
-                ],
-                "end" : [
-                    600,
-                    251,
-                    1,
-                    1
-                ]
-            }
-        },
-        "next": [
-            "ExpFight_ClickTeam",
-            "ExpFight_SwipeRMild"
-        ]
-    },
-    "ExpFight_SwipeRMild": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi" : [
-                    0,
-                    420,
-                    300,
-                    300
-                ],
-                "expected": [
-                    "计划模式"
-                ]
-            }
-        },
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin" : [
-                    956,
-                    251,
-                    1,
-                    1
-                ],
-                "end" : [
-                    894,
-                    251,
-                    1,
-                    1
-                ]
-            }
-        },
-        "next": [
-            "ExpFight_ClickTeam",
-            "ExpFight_SwipeRMild"
+            "ExpFight_ClickTeam"
         ]
     },
     "ExpFight_ClickTeam": {
         "pre_wait_freezes": 300,
+        "post_delay": 2000,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -358,33 +283,32 @@
             }
         },
         "next": [
-            "ExpFight_SupplyTeam",
-            "ExpFight_SwipetoTarget",
-            "ExpFight_ClickTeam",
-            "ExpFight_SwipeRMild"
+            "ExpFight_CheckFairyPoint",
+            "ExpFight_SwipetoMark",
+            "ExpFight_ClickTeam"
         ]
     },
-    "ExpFight_SupplyTeam": {
+    "ExpFight_CheckFairyPoint": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
-                    700,
-                    460,
-                    580,
-                    260
+                    1097,
+                    108,
+                    182,
+                    168
                 ],
-                "template": [
-                    "Fight/TeamSupply.png"
-                ]
+                "expected": [
+                    "妖精",
+                    "指令"
+                ],
+                "threshold": 0.6
             }
         },
-        "action": {
-            "type": "Click"
-        },
         "next": [
-            "ExpFight_SupplyTeam",
-            "ExpFight_ScheduleMode"
+            "ExpFight_FairyPointNotEnough",
+            "ExpFight_ScheduleMode",
+            "ExpFight_ClickTeam"
         ]
     },
     "ExpFight_ScheduleMode": {
@@ -415,11 +339,11 @@
             }
         },
         "next": [
-            "ExpFight_SwipetoTarget"
+            "ExpFight_SwipetoMark"
         ]
     },
 
-    "ExpFight_SwipetoTarget": {
+    "ExpFight_SwipetoMark": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -439,14 +363,14 @@
             "type": "Swipe",
             "param": {
                 "duration": 100,
-"begin" : [823,127,1,1],
-"end" : [693,517,1,1]
+"begin" : [641,62,1,1],
+"end" : [641,625,1,1]
             }
         },
         "next": [
             "ExpFight_PressEnemyAccident",
-            "ExpFight_ClickTarget",
-            "ExpFight_SwipetoTarget"
+            "ExpFight_ClickTarget1",
+            "ExpFight_SwipetoMark"
         ]
     },
     "ExpFight_PressEnemyAccident": {
@@ -504,8 +428,8 @@
             "type": "Swipe",
             "param": {
                 "duration": 100,
-"begin" : [694,516,1,1],
-"end" : [824,126,1,1]
+"begin" : [641,545,1,1],
+"end" : [641,342,1,1]
             }
         },
         "next": [
@@ -514,7 +438,7 @@
             "ExpFight_SwipetoTeam"
         ]
     },
-    "ExpFight_ClickTarget": {
+    "ExpFight_ClickTarget1": {
         "pre_wait_freezes": 300,
         "recognition": {
             "type": "TemplateMatch",
@@ -526,21 +450,63 @@
                     660
                 ],
                 "template": [
-"Fight/AirportCloseA.png",
-"Fight/AirportCloseB.png",
-"Fight/AirportCloseC.png",
-"Fight/AirportCloseA_720p.png",
-"Fight/AirportCloseB_720p.png",
-"Fight/AirportCloseC_720p.png"
+"Fight/AirportOpenA.png",
+"Fight/AirportOpenB.png",
+"Fight/AirportOpenA_720p.png",
+"Fight/AirportOpenB_720p.png"
                 ],
                 "threshold": 0.7
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {
+                "target_offset": [
+-172,
+317,
+0,
+1
+                ]
+            }
         },
         "next": [
-            "ExpFight_ScheduleYes", 
+            "ExpFight_ClickTarget2"
+        ]
+    },
+    "ExpFight_ClickTarget2": {
+        "pre_wait_freezes": 300,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    60,
+                    1900,
+                    660
+                ],
+                "template": [
+"Fight/AirportOpenA.png",
+"Fight/AirportOpenB.png",
+"Fight/AirportOpenA_720p.png",
+"Fight/AirportOpenB_720p.png"
+                ],
+                "threshold": 0.7
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+157,
+248,
+0,
+1
+                ]
+            }
+        },
+        "next": [
+            "ExpFight_ScheduleYes",
+            "ExpFight_LackButYes",
             "ExpFight_Fighting"
         ]
     },
@@ -564,8 +530,47 @@
             "type": "Click"
         },
         "next": [
+            "ExpFight_LackButYes",
             "ExpFight_AgainstLagging",
             "ExpFight_Fighting"
+        ]
+    },
+    "ExpFight_LackButYes": {
+        "rate_limit": 200,
+        "post_delay": 2000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    193,
+                    300,
+                    855,
+                    420
+                ],
+                "template": [
+                    "Button/ButtonYesEmergency.png",
+                    "Button/ButtonYesEmergency_720p.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ],
+                "duration": 60
+            }
+        },
+        "next": [
+            "ExpFight_LackButYes",
+            "ExpFight_DoNotStopSchedule",
+            "ExpFight_AgainstLagging",
+            "ExpFight_Fighting",
+            "ExpFight_RoundEnd"
         ]
     },
     "ExpFight_Fighting": {
@@ -583,6 +588,7 @@
                     "全局经验",
                     "战斗胜",
                     "GeK",
+                    "★",
                     "获得",
                     "战利品",
                     "结算",
@@ -605,9 +611,11 @@
         "next": [
             "ExpFight_AgainstLagging",
             "ExpFight_Fighting",
-            "EventRecycle",
+            "ExpRecycle",
+            "ExpFight_LackButYes",
             "ExpFight_DoNotStopSchedule",
-            "ExpFight_StartFight"
+            "ExpFight_StartFight",
+            "ExpFight_RoundEnd"
         ]
     },
     "ExpFight_AgainstLagging": {
@@ -641,16 +649,18 @@
         "next": [
             "ExpFight_AgainstLagging",
             "ExpFight_Fighting",
-            "EventRecycle",
+            "ExpRecycle",
+            "ExpFight_LackButYes",
             "ExpFight_DoNotStopSchedule",
-            "ExpFight_StartFight"
+            "ExpFight_StartFight",
+            "ExpFight_RoundEnd"
         ]
     },
     "ExpFight_DoNotStopSchedule": {
         "rate_limit": 200,
         "post_delay": 2000,
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi" : [
                     193,
@@ -658,9 +668,8 @@
                     855,
                     420
                 ],
-                "template": [
-                    "Button/ButtonNoA.png",
-                    "Button/ButtonNoB.png"
+                "expected": [
+                    "取消"
                 ]
             }
         },
@@ -677,9 +686,178 @@
             }
         },
         "next": [
+            "ExpFight_LackButYes",
             "ExpFight_DoNotStopSchedule",
             "ExpFight_AgainstLagging",
-            "ExpFight_Fighting"
+            "ExpFight_Fighting",
+            "ExpFight_RoundEnd"
+        ]
+    },
+    "ExpFight_RoundEnd": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    830,
+                    492,
+                    1000,
+                    227
+                ],
+                "expected": [
+                    "00",
+                    "结束回合"
+                ]
+            }
+        },
+        "next": [
+            "ExpFight_FightRedo",
+            "ExpFight_OnceOver"
+        ]
+    },
+    "ExpFight_OnceOver": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    600,
+                    200
+                ],
+                "expected": [
+                    "终止作",
+                    "止作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -10,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "ExpFight_FightRedo",
+            "ExpFight_OnceOver"
+        ]
+    },
+    "ExpFight_FightRedo": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "post_delay": 5000,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    165,
+                    463,
+                    862,
+                    256
+                ],
+                "expected": [
+                    "重新作",
+                    "新作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ExpFight_FightRedo",
+            "ExpFight_StartFight"
+        ]
+    },
+    "ExpFight_FairyPointNotEnough": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1097,
+                    108,
+                    182,
+                    168
+                ],
+                "expected": [
+                    "003",
+                    "002",
+                    "001",
+                    "000"
+                ]
+            }
+        },
+        "next": [
+            "ExpFight_FightStop",
+            "ExpFight_FightShutup"
+        ]
+    },
+    "ExpFight_FightShutup": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    600,
+                    200
+                ],
+                "expected": [
+                    "终止作",
+                    "止作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -10,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "ExpFight_FightStop",
+            "ExpFight_FightShutup"
+        ]
+    },
+    "ExpFight_FightStop": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "post_delay": 2000,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    165,
+                    463,
+                    862,
+                    256
+                ],
+                "expected": [
+                    "终止作",
+                    "止作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ExpFight_FightStop",
+            "ExpFight_FightShutup",
+            "EnterHome"
         ]
     }
 }

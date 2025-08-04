@@ -49,10 +49,10 @@
             "type": "Click"
         },
         "next": [
-            "ExpRecycle_AutoChoose"
+            "ExpRecycle_AutoChooseCharacter"
         ]
     },
-    "ExpRecycle_AutoChoose": {
+    "ExpRecycle_AutoChooseCharacter": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -72,11 +72,80 @@
             "type": "Click"
         },
         "next": [
-            "ExpRecycle_AutoChoose",
-            "ExpRecycle_ButtonYes"
+            "ExpRecycle_AutoChooseCharacter",
+            "ExpRecycle_YesCharacter"
         ]
     },
-    "ExpRecycle_ButtonYes": {
+    "ExpRecycle_YesCharacter": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    900,
+                    500,
+                    600,
+                    220
+                ],
+                "expected": [
+                    "回收"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ExpRecycle_Equipment",
+            "ExpRecycle_ESC"
+        ]
+    },
+    "ExpRecycle_Equipment": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    191,
+                    93,
+                    317,
+                    238
+                ],
+                "expected": [
+                    "装备"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ExpRecycle_AutoChooseEquipment"
+        ]
+    },
+    "ExpRecycle_AutoChooseEquipment": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    900,
+                    500,
+                    600,
+                    220
+                ],
+                "expected": [
+                    "智能",
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ExpRecycle_AutoChooseEquipment",
+            "ExpRecycle_YesEquipment"
+        ]
+    },
+    "ExpRecycle_YesEquipment": {
         "recognition": {
             "type": "OCR",
             "param": {

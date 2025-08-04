@@ -103,6 +103,15 @@
             "name": "领取奖励",
             "doc": "请从主界面开始本任务，因为ym的神秘遮罩，可能会出现奖励领不完的情况，建议任务结束后手动校正以防漏领，并可与开发者联系",
             "entry": "Rewardget"
+        },
+        {
+            "name": "战役拖尸",
+            "entry": "ExpFight",
+            "doc": "请从主界面开始本任务，目前支持无补给海盗妖精8-1N！如果突然中断任务则为超时，如果捞错枪、点到敌人详情、拖动到无人处则是ym抽风，请重启游戏后再次尝试",
+            "option": [
+                "战役拖尸关卡",
+                "战役拖尸出战梯队"
+            ]
         }
     ],
     "option": {
@@ -1597,6 +1606,402 @@
                             }
                         }
                     }
+                }
+            ]
+        },
+        "战役拖尸关卡": {
+            "cases": [
+                {
+                    "name": "[海盗妖精] 8-1N",
+                        "pipeline_override": {
+                            "ExpEnter_Ep": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            75,
+                                            33,
+                                            293,
+                                            687
+                                        ],
+                                        "expected": [
+                                            "第八"
+                                        ]
+                                    }
+                                }
+                            },
+                            "ExpEnter_Difficulty": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            350,
+                                            101,
+                                            1550,
+                                            618
+                                        ],
+                                        "expected": [
+                                            "夜战",
+                                            "MIDNIGHT"
+                                        ]
+                                    }
+                                }
+                            },
+                            "ExpEnter_Stage": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            349,
+                                            179,
+                                            867,
+                                            540
+                                        ],
+                                        "template": [
+                                            "Fight/Stage8.1n.png"
+                                        ]
+                                    }
+                                }
+                            },
+                            "ExpFight_SwipetoMark": {
+                                "action": {
+                                    "type": "Swipe",
+                                    "param": {
+                                        "duration": 100,
+                                        "begin" : [641,62,1,1],
+                                        "end" : [641,625,1,1]
+                                    }
+                                }
+                            },
+                            "ExpFight_SwipetoTeam": {
+                                "action": {
+                                    "type": "Swipe",
+                                    "param": {
+                                        "duration": 100,
+                                        "begin" : [641,545,1,1],
+                                        "end" : [641,342,1,1]
+                                    }
+                                }
+                            },
+                            "ExpFight_ClickTarget1": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            60,
+                                            1900,
+                                            660
+                                        ],
+                                        "template": [
+                                            "Fight/AirportOpenA.png",
+                                            "Fight/AirportOpenB.png",
+                                            "Fight/AirportOpenA_720p.png",
+                                            "Fight/AirportOpenB_720p.png"
+                                        ],
+                                        "threshold": 0.7
+                                    }
+                                },
+                                "action": {
+                                    "type": "Click",
+                                    "param": {
+                                        "target_offset": [
+                                            -172,
+                                            317,
+                                            0,
+                                            1
+                                        ]
+                                    }
+                                }
+                            },
+                            "ExpFight_ClickTarget2": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            60,
+                                            1900,
+                                            660
+                                        ],
+                                        "template": [
+                                            "Fight/AirportOpenA.png",
+                                            "Fight/AirportOpenB.png",
+                                            "Fight/AirportOpenA_720p.png",
+                                            "Fight/AirportOpenB_720p.png"
+                                        ],
+                                        "threshold": 0.7
+                                    }
+                                },
+                                "action": {
+                                    "type": "Click",
+                                    "param": {
+                                        "target_offset": [
+                                            157,
+                                            248,
+                                            0,
+                                            1
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                }
+            ]
+        },
+        "战役拖尸出战梯队": {
+            "cases": [
+                {
+                    "name": "1",
+                        "pipeline_override": {
+                            "ExpFight_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution1A.png",
+                                            "Fight/TeamCaution1B.png",
+                                            "Fight/TeamEchelon1A.png",
+                                            "Fight/TeamEchelon1B.png",
+                                            "Fight/TeamCaution1A_720p.png",
+                                            "Fight/TeamCaution1B_720p.png",
+                                            "Fight/TeamEchelon1A_720p.png",
+                                            "Fight/TeamEchelon1B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "2",
+                        "pipeline_override": {
+                            "ExpFight_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution2A.png",
+                                            "Fight/TeamCaution2B.png",
+                                            "Fight/TeamEchelon2A.png",
+                                            "Fight/TeamEchelon2B.png",
+                                            "Fight/TeamCaution2A_720p.png",
+                                            "Fight/TeamCaution2B_720p.png",
+                                            "Fight/TeamEchelon2A_720p.png",
+                                            "Fight/TeamEchelon2B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "3",
+                        "pipeline_override": {
+                            "ExpFight_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution3A.png",
+                                            "Fight/TeamCaution3B.png",
+                                            "Fight/TeamEchelon3A.png",
+                                            "Fight/TeamEchelon3B.png",
+                                            "Fight/TeamCaution3A_720p.png",
+                                            "Fight/TeamCaution3B_720p.png",
+                                            "Fight/TeamEchelon3A_720p.png",
+                                            "Fight/TeamEchelon3B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "4",
+                        "pipeline_override": {
+                            "ExpFight_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution4A.png",
+                                            "Fight/TeamCaution4B.png",
+                                            "Fight/TeamEchelon4A.png",
+                                            "Fight/TeamEchelon4B.png",
+                                            "Fight/TeamCaution4A_720p.png",
+                                            "Fight/TeamCaution4B_720p.png",
+                                            "Fight/TeamEchelon4A_720p.png",
+                                            "Fight/TeamEchelon4B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "5",
+                        "pipeline_override": {
+                            "ExpFight_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution5A.png",
+                                            "Fight/TeamCaution5B.png",
+                                            "Fight/TeamEchelon5A.png",
+                                            "Fight/TeamEchelon5B.png",
+                                            "Fight/TeamCaution5A_720p.png",
+                                            "Fight/TeamCaution5B_720p.png",
+                                            "Fight/TeamEchelon5A_720p.png",
+                                            "Fight/TeamEchelon5B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "6",
+                        "pipeline_override": {
+                            "ExpFight_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution6A.png",
+                                            "Fight/TeamCaution6B.png",
+                                            "Fight/TeamEchelon6A.png",
+                                            "Fight/TeamEchelon6B.png",
+                                            "Fight/TeamCaution6A_720p.png",
+                                            "Fight/TeamCaution6B_720p.png",
+                                            "Fight/TeamEchelon6A_720p.png",
+                                            "Fight/TeamEchelon6B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "7",
+                        "pipeline_override": {
+                            "ExpFight_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution7A.png",
+                                            "Fight/TeamCaution7B.png",
+                                            "Fight/TeamEchelon7A.png",
+                                            "Fight/TeamEchelon7B.png",
+                                            "Fight/TeamCaution7A_720p.png",
+                                            "Fight/TeamCaution7B_720p.png",
+                                            "Fight/TeamEchelon7A_720p.png",
+                                            "Fight/TeamEchelon7B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "8",
+                        "pipeline_override": {
+                            "ExpFight_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution8A.png",
+                                            "Fight/TeamCaution8B.png",
+                                            "Fight/TeamEchelon8A.png",
+                                            "Fight/TeamEchelon8B.png",
+                                            "Fight/TeamCaution8A_720p.png",
+                                            "Fight/TeamCaution8B_720p.png",
+                                            "Fight/TeamEchelon8A_720p.png",
+                                            "Fight/TeamEchelon8B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "9",
+                        "pipeline_override": {
+                            "ExpFight_ChooseTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution9A.png",
+                                            "Fight/TeamCaution9B.png",
+                                            "Fight/TeamEchelon9A.png",
+                                            "Fight/TeamEchelon9B.png",
+                                            "Fight/TeamCaution9A_720p.png",
+                                            "Fight/TeamCaution9B_720p.png",
+                                            "Fight/TeamEchelon9A_720p.png",
+                                            "Fight/TeamEchelon9B_720p.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
                 }
             ]
         }
