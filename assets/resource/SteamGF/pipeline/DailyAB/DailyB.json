@@ -12,9 +12,9 @@
             }
         },
         "next": [
-            "DailyBClickFight",
-            "DailyBSimulation",
-            "DailyBSwipe"
+            "DailyB_ClickFight",
+            "DailyB_Simulation",
+            "DailyB_Swipe"
         ],
         "interrupt": [
             "AssignmentAgain",
@@ -22,7 +22,7 @@
             "ReturnHome"
         ]
     },
-    "DailyBClickFight": {
+    "DailyB_ClickFight": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -41,16 +41,16 @@
             "type": "Click"
         },
         "next": [
-            "DailyBClickFight",
-            "DailyBSimulation",
-            "DailyBSwipe"
+            "DailyB_ClickFight",
+            "DailyB_Simulation",
+            "DailyB_Swipe"
         ],
         "interrupt": [
             "AssignmentAgain",
             "Reward"
         ]
     },
-    "DailyBSimulation": {
+    "DailyB_Simulation": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -70,15 +70,15 @@
             "type": "Click"
         },
         "next": [
-            "DailyBSwipe",
-            "DailyBSimulation"
+            "DailyB_Swipe",
+            "DailyB_Simulation"
         ],
         "interrupt": [
             "AssignmentAgain",
             "Reward"
         ]
     },
-    "DailyBSwipe": {
+    "DailyB_Swipe": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -112,10 +112,10 @@
             }
         },
         "next": [
-            "DailyBSelection"
+            "DailyB_Selection"
         ]
     },
-    "DailyBSelection": {
+    "DailyB_Selection": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -134,10 +134,10 @@
             "type": "Click"
         },
         "next": [
-            "DailyBDifficulty"
+            "DailyB_Difficulty"
         ]
     },
-    "DailyBDifficulty": {
+    "DailyB_Difficulty": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -164,11 +164,11 @@
             }
         },
         "next": [
-            "DailyBDataClick",
-            "DailyBTimeClickCenter"
+            "DailyB_DataClick",
+            "DailyB_ClickPotential"
         ]
     },
-    "DailyBDataClick": {
+    "DailyB_DataClick": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -187,11 +187,11 @@
             "type": "Click"
         },
         "next": [
-            "DailyBDataClick",
-            "DailyBTimeClickCenter"
+            "DailyB_DataClick",
+            "DailyB_ClickPotential"
         ]
     },
-    "DailyBTimeClickCenter": {
+    "DailyB_ClickPotential": {
         "post_wait_freezes": 500,
         "recognition": {
         "type": "TemplateMatch",
@@ -211,12 +211,12 @@
             "type": "Click"
         },
         "next": [
-            "DailyBDifficulty",
-            "DailyBTimeAll",
-            "DailyBTimeAuto"
+            "DailyB_Difficulty",
+            "DailyB_TimeAll",
+            "DailyB_TimeAuto"
         ]
     },
-    "DailyBTimeAll": {
+    "DailyB_TimeAll": {
         "enabled": false,
         "recognition": {
         "type": "TemplateMatch",
@@ -237,10 +237,10 @@
         },
         "next": [
             "DailyAB_None",
-            "DailyBStart"
+            "DailyB_Start"
         ]
     },
-    "DailyBTimeAuto": {
+    "DailyB_TimeAuto": {
         "recognition": {
         "type": "TemplateMatch",
             "param": {
@@ -259,12 +259,12 @@
             "type": "Click"
         },
         "next": [
-            "DailyBTimeEnough",
+            "DailyB_TimeEnough",
             "DailyAB_None",
-            "DailyBTimeAuto"
+            "DailyB_TimeAuto"
         ]
     },
-    "DailyBTimeEnough": {
+    "DailyB_TimeEnough": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -280,10 +280,10 @@
             }
         },
         "next": [
-            "DailyBStart"
+            "DailyB_Start"
         ]
     },
-    "DailyBStart": {
+    "DailyB_Start": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -302,12 +302,12 @@
             "type": "Click"
         },
         "next": [
-            "DailyBButtonYes",
-            "DailyBStart",
+            "DailyB_ButtonYes",
+            "DailyB_Start",
             "DailyAB_ButtonCancel"
         ]
     },
-    "DailyBButtonYes": {
+    "DailyB_ButtonYes": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -337,7 +337,7 @@
             }
         },
         "next": [
-            "DailyBButtonYes",
+            "DailyB_ButtonYes",
             "DailyAB_ButtonCancel",
             "EnterHome"
         ],

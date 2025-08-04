@@ -423,7 +423,7 @@
                 {
                     "name": "[融合经验] 防卫构思集训",
                     "pipeline_override": {
-                        "DailyBDifficulty": {
+                        "DailyB_Difficulty": {
                             "recognition": {
                             "type": "OCR",
                                 "param": {
@@ -455,7 +455,7 @@
                 {
                     "name": "[融合升星] 开发调节操练",
                     "pipeline_override": {
-                        "DailyBDifficulty": {
+                        "DailyB_Difficulty": {
                             "recognition": {
                             "type": "OCR",
                                 "param": {
@@ -487,7 +487,7 @@
                 {
                     "name": "[融合初资] 解密算法练习",
                     "pipeline_override": {
-                        "DailyBDifficulty": {
+                        "DailyB_Difficulty": {
                             "recognition": {
                             "type": "OCR",
                                 "param": {
@@ -519,7 +519,7 @@
                 {
                     "name": "[融合高资] 解密算法练习",
                     "pipeline_override": {
-                        "DailyBDifficulty": {
+                        "DailyB_Difficulty": {
                             "recognition": {
                             "type": "OCR",
                                 "param": {
@@ -555,7 +555,7 @@
                 {
                     "name": "消耗全部势能",
                     "pipeline_override": {
-                        "DailyBTimeAll": {
+                        "DailyB_TimeAll": {
                             "enabled": true
                         }
                     }
@@ -563,7 +563,7 @@
                 {
                     "name": "（Bug勿选！）消耗12点基础势能",
                     "pipeline_override": {
-                        "DailyBTimeAll": {
+                        "DailyB_TimeAll": {
                             "enabled": false
                         }
                     }
