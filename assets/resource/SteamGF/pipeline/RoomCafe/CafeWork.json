@@ -162,7 +162,8 @@
         },
         "next": [
             "CafeWork_StoryReward",
-            "CafeWork_Machine"
+            "CafeWork_Machine",
+            "EnterHome"
         ]
     },
     "CafeWork_ButtonCancel": {
