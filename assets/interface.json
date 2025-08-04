@@ -1773,7 +1773,8 @@
                                             "Fight/TeamCaution1B_720p.png",
                                             "Fight/TeamEchelon1A_720p.png",
                                             "Fight/TeamEchelon1B_720p.png"
-                                        ]
+                                        ],
+                                        "threshold": 0.85
                                     }
                                 }
                             }
@@ -1801,7 +1802,8 @@
                                             "Fight/TeamCaution2B_720p.png",
                                             "Fight/TeamEchelon2A_720p.png",
                                             "Fight/TeamEchelon2B_720p.png"
-                                        ]
+                                        ],
+                                        "threshold": 0.85
                                     }
                                 }
                             }
@@ -1829,7 +1831,8 @@
                                             "Fight/TeamCaution3B_720p.png",
                                             "Fight/TeamEchelon3A_720p.png",
                                             "Fight/TeamEchelon3B_720p.png"
-                                        ]
+                                        ],
+                                        "threshold": 0.85
                                     }
                                 }
                             }
@@ -1857,7 +1860,8 @@
                                             "Fight/TeamCaution4B_720p.png",
                                             "Fight/TeamEchelon4A_720p.png",
                                             "Fight/TeamEchelon4B_720p.png"
-                                        ]
+                                        ],
+                                        "threshold": 0.85
                                     }
                                 }
                             }
@@ -1885,7 +1889,8 @@
                                             "Fight/TeamCaution5B_720p.png",
                                             "Fight/TeamEchelon5A_720p.png",
                                             "Fight/TeamEchelon5B_720p.png"
-                                        ]
+                                        ],
+                                        "threshold": 0.85
                                     }
                                 }
                             }
@@ -1913,7 +1918,8 @@
                                             "Fight/TeamCaution6B_720p.png",
                                             "Fight/TeamEchelon6A_720p.png",
                                             "Fight/TeamEchelon6B_720p.png"
-                                        ]
+                                        ],
+                                        "threshold": 0.85
                                     }
                                 }
                             }
@@ -1941,7 +1947,8 @@
                                             "Fight/TeamCaution7B_720p.png",
                                             "Fight/TeamEchelon7A_720p.png",
                                             "Fight/TeamEchelon7B_720p.png"
-                                        ]
+                                        ],
+                                        "threshold": 0.85
                                     }
                                 }
                             }
@@ -1969,7 +1976,8 @@
                                             "Fight/TeamCaution8B_720p.png",
                                             "Fight/TeamEchelon8A_720p.png",
                                             "Fight/TeamEchelon8B_720p.png"
-                                        ]
+                                        ],
+                                        "threshold": 0.85
                                     }
                                 }
                             }
@@ -1997,7 +2005,8 @@
                                             "Fight/TeamCaution9B_720p.png",
                                             "Fight/TeamEchelon9A_720p.png",
                                             "Fight/TeamEchelon9B_720p.png"
-                                        ]
+                                        ],
+                                        "threshold": 0.85
                                     }
                                 }
                             }
