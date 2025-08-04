@@ -236,7 +236,7 @@
                 {
                     "name": "[人形胶囊] 强化练习",
                     "pipeline_override": {
-                        "DailyASelection": {
+                        "DailyA_Selection": {
                             "recognition": {
                                 "type": "OCR",
                                     "param": {
@@ -260,7 +260,7 @@
                 {
                     "name": "[人形资料] 资料采样",
                     "pipeline_override": {
-                        "DailyASelection": {
+                        "DailyA_Selection": {
                             "recognition": {
                                 "type": "OCR",
                                     "param": {
@@ -284,7 +284,7 @@
                 {
                     "name": "[人形经验] 经验特训",
                     "pipeline_override": {
-                        "DailyASelection": {
+                        "DailyA_Selection": {
                             "recognition": {
                                 "type": "OCR",
                                     "param": {
@@ -308,7 +308,7 @@
                 {
                     "name": "[人形心智] 云图回廊",
                     "pipeline_override": {
-                        "DailyASelection": {
+                        "DailyA_Selection": {
                             "recognition": {
                                 "type": "OCR",
                                     "param": {
@@ -336,7 +336,7 @@
                 {
                     "name": "[高级] 4点每次",
                     "pipeline_override": {
-                        "DailyADifficulty": {
+                        "DailyA_Difficulty": {
                             "recognition": {
                             "type": "OCR",
                                 "param": {
@@ -357,7 +357,7 @@
                 {
                     "name": "[中级] 2点每次",
                     "pipeline_override": {
-                        "DailyADifficulty": {
+                        "DailyA_Difficulty": {
                             "recognition": {
                             "type": "OCR",
                                 "param": {
@@ -378,7 +378,7 @@
                 {
                     "name": "[初级] 1点每次",
                     "pipeline_override": {
-                        "DailyADifficulty": {
+                        "DailyA_Difficulty": {
                             "recognition": {
                             "type": "OCR",
                                 "param": {
@@ -403,7 +403,7 @@
                 {
                     "name": "消耗全部动能",
                     "pipeline_override": {
-                        "DailyATimeAll": {
+                        "DailyA_TimeAll": {
                             "enabled": true
                         }
                     }
@@ -411,7 +411,7 @@
                 {
                     "name": "（Bug勿选！）消耗12点基础动能",
                     "pipeline_override": {
-                        "DailyATimeAll": {
+                        "DailyA_TimeAll": {
                             "enabled": false
                         }
                     }

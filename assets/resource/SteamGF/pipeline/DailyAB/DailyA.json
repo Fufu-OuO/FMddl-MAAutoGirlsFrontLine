@@ -12,9 +12,9 @@
             }
         },
         "next": [
-            "DailyAClickFight",
-            "DailyASimulation",
-            "DailyASwipe"
+            "DailyA_ClickFight",
+            "DailyA_Simulation",
+            "DailyA_Swipe"
         ],
         "interrupt": [
             "AssignmentAgain",
@@ -23,7 +23,7 @@
             "ReturnHome"
         ]
     },
-    "DailyAClickFight": {
+    "DailyA_ClickFight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -42,9 +42,9 @@
             "type": "Click"
         },
         "next": [
-            "DailyAClickFight",
-            "DailyASimulation",
-            "DailyASwipe"
+            "DailyA_ClickFight",
+            "DailyA_Simulation",
+            "DailyA_Swipe"
         ],
         "interrupt": [
             "AssignmentAgain",
@@ -52,7 +52,7 @@
             "GetGirl"
         ]
     },
-    "DailyASimulation": {
+    "DailyA_Simulation": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -72,15 +72,15 @@
             "type": "Click"
         },
         "next": [
-            "DailyASwipe",
-            "DailyASimulation"
+            "DailyA_Swipe",
+            "DailyA_Simulation"
         ],
         "interrupt": [
             "AssignmentAgain",
             "Reward"
         ]
     },
-    "DailyASwipe": {
+    "DailyA_Swipe": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -114,10 +114,10 @@
             }
         },
         "next": [
-            "DailyASelection"
+            "DailyA_Selection"
         ]
     },
-    "DailyASelection": {
+    "DailyA_Selection": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -136,10 +136,10 @@
             "type": "Click"
         },
         "next": [
-            "DailyADifficulty"
+            "DailyA_Difficulty"
         ]
     },
-    "DailyADifficulty": {
+    "DailyA_Difficulty": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -158,11 +158,11 @@
             "type": "Click"
         },
         "next": [
-            "DailyADifficulty",
-            "DailyATimeClickCenter"
+            "DailyA_Difficulty",
+            "DailyA_ClickKinetic"
         ]
     },
-    "DailyATimeClickCenter": {
+    "DailyA_ClickKinetic": {
         "post_wait_freezes": 500,
         "recognition": {
             "type": "TemplateMatch",
@@ -182,12 +182,12 @@
             "type": "Click"
         },
         "next": [
-            "DailyADifficulty",
-            "DailyATimeAll",
-            "DailyATimeAuto"
+            "DailyA_Difficulty",
+            "DailyA_TimeAll",
+            "DailyA_TimeAuto"
         ]
     },
-    "DailyATimeAll": {
+    "DailyA_TimeAll": {
         "enabled": false,
         "recognition": {
             "type": "TemplateMatch",
@@ -207,11 +207,11 @@
             "type": "Click"
         },
         "next": [
-            "DailyABNone",
-            "DailyAStart"
+            "DailyAB_None",
+            "DailyA_Start"
         ]
     },
-    "DailyATimeAuto": {
+    "DailyA_TimeAuto": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -230,12 +230,12 @@
             "type": "Click"
         },
         "next": [
-            "DailyATimeEnough",
-            "DailyABNone",
-            "DailyATimeAuto"
+            "DailyA_TimeEnough",
+            "DailyAB_None",
+            "DailyA_TimeAuto"
         ]
     },
-    "DailyATimeEnough": {
+    "DailyA_TimeEnough": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -251,10 +251,10 @@
             }
         },
         "next": [
-            "DailyAStart"
+            "DailyA_Start"
         ]
     },
-    "DailyAStart": {
+    "DailyA_Start": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -273,12 +273,12 @@
             "type": "Click"
         },
         "next": [
-            "DailyAButtonYes",
-            "DailyAStart",
-            "DailyAButtonCancel"
+            "DailyA_ButtonYes",
+            "DailyA_Start",
+            "DailyAB_ButtonCancel"
         ]
     },
-    "DailyAButtonYes": {
+    "DailyA_ButtonYes": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -308,8 +308,8 @@
             }
         },
         "next": [
-            "DailyAButtonYes",
-            "DailyAButtonCancel",
+            "DailyA_ButtonYes",
+            "DailyAB_ButtonCancel",
             "EnterHome"
         ],
         "interrupt": [
@@ -317,7 +317,7 @@
         ]
     },
 
-    "DailyAButtonCancel":{
+    "DailyAB_ButtonCancel":{
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -337,11 +337,11 @@
             "type": "Click"
         },
         "next": [
-            "DailyAButtonCancel",
+            "DailyAB_ButtonCancel",
             "EnterHome"
         ]
     },
-    "DailyABNone": {
+    "DailyAB_None": {
         "recognition": {
         "type": "OCR",
             "param": {

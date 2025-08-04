@@ -236,7 +236,7 @@
             "type": "Click"
         },
         "next": [
-            "DailyABNone",
+            "DailyAB_None",
             "DailyBStart"
         ]
     },
@@ -260,7 +260,7 @@
         },
         "next": [
             "DailyBTimeEnough",
-            "DailyABNone",
+            "DailyAB_None",
             "DailyBTimeAuto"
         ]
     },
@@ -304,7 +304,7 @@
         "next": [
             "DailyBButtonYes",
             "DailyBStart",
-            "DailyBButtonCancel"
+            "DailyAB_ButtonCancel"
         ]
     },
     "DailyBButtonYes": {
@@ -338,36 +338,11 @@
         },
         "next": [
             "DailyBButtonYes",
-            "DailyBButtonCancel",
+            "DailyAB_ButtonCancel",
             "EnterHome"
         ],
         "interrupt": [
             "Reward"
-        ]
-    },
-
-    "DailyBButtonCancel":{
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    62,
-                    30,
-                    288,
-                    217
-                ],
-                "template": [
-                    "Room/RoomButtonCancelA.png",
-                    "Room/RoomButtonCancelB.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "DailyAButtonCancel",
-            "EnterHome"
         ]
     }
 }
