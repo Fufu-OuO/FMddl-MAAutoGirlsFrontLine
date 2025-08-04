@@ -664,14 +664,14 @@
                         }
                 },
                 {
-"name": "（手动点怪）[5★] TKB-408",
+"name": "[5★] TKB-408",
                         "pipeline_override": {
                             "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
                                         "param": {
                                             "duration": 100,
-"begin" : [711,585,1,1],
+"begin" : [711,685,1,1],
 "end" : [709,207,1,1]
                                         }
                                 }
@@ -682,8 +682,25 @@
                                         "param": {
                                             "duration": 100,
 "begin" : [708,208,1,1],
-"end" : [712,584,1,1]
+"end" : [712,484,1,1]
                                         }
+                                }
+                            },
+                            "EventSalvage_ClickTarget": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            60,
+                                            1900,
+                                            660
+                                        ],
+                                        "expected": [
+"46614",
+"7066"
+                                        ]
+                                    }
                                 }
                             }
                         }
