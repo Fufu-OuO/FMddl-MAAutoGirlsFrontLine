@@ -207,7 +207,7 @@
             "type": "Click"
         },
         "next": [
-            "DailyAB_None",
+            "DailyA_None",
             "DailyA_Start"
         ]
     },
@@ -231,7 +231,7 @@
         },
         "next": [
             "DailyA_TimeEnough",
-            "DailyAB_None",
+            "DailyA_None",
             "DailyA_TimeAuto"
         ]
     },
@@ -275,7 +275,7 @@
         "next": [
             "DailyA_ButtonYes",
             "DailyA_Start",
-            "DailyAB_ButtonCancel"
+            "DailyA_ButtonCancel"
         ]
     },
     "DailyA_ButtonYes": {
@@ -309,15 +309,15 @@
         },
         "next": [
             "DailyA_ButtonYes",
-            "DailyAB_ButtonCancel",
-            "EnterHome"
+            "DailyA_ButtonCancel",
+            "DailyB"
         ],
         "interrupt": [
             "Reward"
         ]
     },
 
-    "DailyAB_ButtonCancel":{
+    "DailyA_ButtonCancel":{
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -337,11 +337,11 @@
             "type": "Click"
         },
         "next": [
-            "DailyAB_ButtonCancel",
-            "EnterHome"
+            "DailyA_ButtonCancel",
+            "DailyB"
         ]
     },
-    "DailyAB_None": {
+    "DailyA_None": {
         "recognition": {
         "type": "OCR",
             "param": {
@@ -357,7 +357,7 @@
             }
         },
         "next": [
-            "EnterHome"
+            "DailyB"
         ]
     }
 }
