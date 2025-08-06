@@ -569,6 +569,15 @@
                 {
 "name": "[4★] M1895CB",
                         "pipeline_override": {
+                            "EventSalvage_SwipetoAirport": {
+                                "action": {
+                                    "type": "Swipe",
+                                    "param": {
+"begin" : [50,378,1,1],
+"end" : [1150,383,1,1]
+                                    }
+                                }
+                            },
                             "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
@@ -594,6 +603,15 @@
                 {
 "name": "[4★] CX4 风暴",
                         "pipeline_override": {
+                            "EventSalvage_SwipetoAirport": {
+                                "action": {
+                                    "type": "Swipe",
+                                    "param": {
+"begin" : [50,378,1,1],
+"end" : [1150,383,1,1]
+                                    }
+                                }
+                            },
                             "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
@@ -619,6 +637,15 @@
                 {
 "name": "[5★] SRS",
                         "pipeline_override": {
+                            "EventSalvage_SwipetoAirport": {
+                                "action": {
+                                    "type": "Swipe",
+                                    "param": {
+"begin" : [50,378,1,1],
+"end" : [50,380,1,1]
+                                    }
+                                }
+                            },
                             "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
@@ -644,6 +671,15 @@
                 {
 "name": "[5★] AK-74U",
                         "pipeline_override": {
+                            "EventSalvage_SwipetoAirport": {
+                                "action": {
+                                    "type": "Swipe",
+                                    "param": {
+"begin" : [50,378,1,1],
+"end" : [50,380,1,1]
+                                    }
+                                }
+                            },
                             "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
@@ -669,6 +705,15 @@
                 {
 "name": "[5★] TKB-408",
                         "pipeline_override": {
+                            "EventSalvage_SwipetoAirport": {
+                                "action": {
+                                    "type": "Swipe",
+                                    "param": {
+"begin" : [915,119,1,1],
+"end" : [701,691,1,1]
+                                    }
+                                }
+                            },
                             "EventSalvage_SwipetoTarget": {
                                 "action": {
                                     "type": "Swipe",
