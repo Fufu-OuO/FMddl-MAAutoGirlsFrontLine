@@ -1,6 +1,6 @@
 {
     "name": "FMddl-MAA",
-    "version": "v0.2.3_fix",
+    "version": "v0.2.4",
     "message": "欢迎使用费马喵，感谢支持喵 ᨐᵉᵒʷ",
     "mirrorchyan_rid":  "FMddl-MAAutoGirlsFrontLine",
     "mirrorchyan_multiplatform":  false, 
@@ -719,8 +719,8 @@
                                     "type": "Swipe",
                                         "param": {
                                             "duration": 100,
-"begin" : [711,685,1,1],
-"end" : [709,207,1,1]
+"begin" : [711,700,1,1],
+"end" : [709,180,1,1]
                                         }
                                 }
                             },
@@ -754,8 +754,8 @@
                                     "type": "Click",
                                     "param": {
                                         "target_offset": [
-                                            182,
-                                            9,
+                                            -182,
+                                            -9,
                                             1,
                                             0
                                         ]
