@@ -749,6 +749,17 @@
 "7066"
                                         ]
                                     }
+                                },
+                                "action": {
+                                    "type": "Click",
+                                    "param": {
+                                        "target_offset": [
+                                            182,
+                                            9,
+                                            1,
+                                            0
+                                        ]
+                                    }
                                 }
                             }
                         }
