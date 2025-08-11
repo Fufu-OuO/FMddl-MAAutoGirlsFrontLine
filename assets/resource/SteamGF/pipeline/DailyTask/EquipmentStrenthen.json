@@ -270,6 +270,7 @@
         ]
     },
     "EquipmentStrengthen_ESC": {
+        "pre_delay": 3000,
         "action": {
             "type": "Key",
             "param": {

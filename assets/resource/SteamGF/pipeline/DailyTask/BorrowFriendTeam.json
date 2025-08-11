@@ -1,5 +1,19 @@
 {
     "BorrowFriendTeam": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    561,
+                    195,
+                    591,
+                    453
+                ],
+                "expected": [
+                    "战斗"
+                ]
+            }
+        },
         "action": {
             "type": "Click",
             "param": {
