@@ -165,7 +165,24 @@
             "type": "Click"
         },
         "next": [
+            "ExpRecycle_EmptyClick",
             "ExpRecycle_ESC"
+        ]
+    },
+    "ExpRecycle_EmptyClick": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    444,
+                    172,
+                    127,
+                    130
+                ]
+            }
+        },
+        "next": [
+            "EventRecycle_ESC"
         ]
     },
     "ExpRecycle_ESC": {
