@@ -14,7 +14,8 @@
         "next": [
             "Event_Entrance",
             "Event_Difficulty",
-            "Event_SwipeL"
+            "Event_SwipeL",
+            "EventRecycle_ESC"
         ],
         "interrupt": [
             "AssignmentAgain",

@@ -12,7 +12,8 @@
             }
         },
         "next": [
-            "ExpEnter_ClickFight"
+            "ExpEnter_ClickFight",
+            "ExpRecycle_ESC"
         ],
         "interrupt": [
             "AssignmentAgain",
