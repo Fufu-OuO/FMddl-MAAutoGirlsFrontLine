@@ -1,4 +1,28 @@
 {
+    "RoomDorm":{
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    444,
+                    172,
+                    127,
+                    130
+                ]
+            }
+        },
+        "next": [
+            "EnterRoomDorm",
+            "DormWork_Love",
+            "DormFriend",
+            "EnterHome"
+        ],
+        "interrupt": [
+            "Assignment_Again",
+            "Reward",
+            "ReturnHome"
+        ]
+    },
     "EnterRoomDorm": {
         "next": [
             "DormEnter_EnterTeam",
