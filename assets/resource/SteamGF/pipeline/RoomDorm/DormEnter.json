@@ -1,9 +1,9 @@
 {
     "EnterRoomDorm": {
         "next": [
-            "RoomDorm_EnterTeam",
-            "RoomDorm_OpenMenu",
-            "RoomDorm_EnterRoom",
+            "DormEnter_EnterTeam",
+            "DormEnter_OpenMenu",
+            "DormEnter_EnterRoom",
             "DormWork_Love"
         ],
         "interrupt": [
@@ -11,7 +11,7 @@
             "Reward"
         ]
     },
-    "RoomDorm_EnterTeam": {
+    "DormEnter_EnterTeam": {
         "post_wait_freezes": 1000,
         "doc":"组合任务",
         "recognition": {
@@ -36,9 +36,9 @@
             "type": "Click"
         },
         "next": [
-            "RoomDorm_EnterTeam",
-            "RoomDorm_OpenMenu",
-            "RoomDorm_EnterRoom",
+            "DormEnter_EnterTeam",
+            "DormEnter_OpenMenu",
+            "DormEnter_EnterRoom",
             "DormWork_Love"
         ],
         "interrupt": [
@@ -46,7 +46,7 @@
             "Reward"
         ]
     },
-    "RoomDorm_OpenMenu": {
+    "DormEnter_OpenMenu": {
         "doc":"尚未点击的Home",
         "recognition": {
             "type": "TemplateMatch",
@@ -75,12 +75,12 @@
             }
         },
         "next": [
-            "RoomDorm_EnterTeam",
-            "RoomDorm_EnterRoom",
+            "DormEnter_EnterTeam",
+            "DormEnter_EnterRoom",
             "DormWork_Love"
         ]
     },
-    "RoomDorm_EnterRoom": {
+    "DormEnter_EnterRoom": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -99,7 +99,7 @@
             "type": "Click"
         },
         "next": [
-            "RoomDorm_EnterRoom",
+            "DormEnter_EnterRoom",
             "DormWork_Love",
             "DormWork_Battery",
             "DormFriend"
