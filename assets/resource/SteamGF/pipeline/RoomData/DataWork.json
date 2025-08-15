@@ -1,6 +1,5 @@
 {
     "DataWork_RoomSwipe": {
-        "doc": "拉到房间最右侧",
         "recognition": {
             "type": "OCR",
             "param": {
