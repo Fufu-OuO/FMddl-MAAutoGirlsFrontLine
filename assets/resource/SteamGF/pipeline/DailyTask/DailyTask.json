@@ -12,20 +12,20 @@
             }
         },
         "next": [
-            "DailyTaskMenuBtoA",
+            "DailyTask_MenuBtoA",
             "KalinaLove",
             "Send1Report",
             "EquipmentStrengthen",
             "BorrowFriendTeam"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl",
             "ReturnHome"
         ]
     },
-    "DailyTaskMenuBtoA": {
+    "DailyTask_MenuBtoA": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -55,7 +55,7 @@
             "DailyTask"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]

@@ -57,7 +57,7 @@
             "ServerWait",
             "GameStart",
             "Reward",
-            "AssignmentAgain",
+            "Assignment_Again",
             "HomeAlready"
         ],
         "interrupt": [
@@ -91,7 +91,7 @@
             "ServerEnter",
             "ServerSelection",
             "Reward",
-            "AssignmentAgain",
+            "Assignment_Again",
             "HomeAlready"
         ],
         "interrupt": [
@@ -127,7 +127,7 @@
             "ServerWait",
             "GameStart",
             "Reward",
-            "AssignmentAgain",
+            "Assignment_Again",
             "HomeAlready"
         ],
         "interrupt": [

@@ -36,7 +36,7 @@
             "KalinaLove_ClickLove3"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]
@@ -67,7 +67,7 @@
             "KalinaLove_ClickKalina"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]
@@ -225,7 +225,7 @@
             "Send1Report"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]

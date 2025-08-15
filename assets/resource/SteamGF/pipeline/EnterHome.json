@@ -9,7 +9,7 @@
         },
         "next": [
             "ButtonBack",
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl",
             "HomeAlready",
@@ -29,7 +29,7 @@
         },
         "next": [
             "ButtonBack",
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl",
             "HomeAlready",
@@ -61,7 +61,7 @@
         },
         "next": [
             "ButtonBack",
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl",
             "HomeAlready",

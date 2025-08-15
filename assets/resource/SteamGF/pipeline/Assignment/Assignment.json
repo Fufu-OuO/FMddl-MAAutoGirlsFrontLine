@@ -1,5 +1,5 @@
 {
-    "AssignmentAgain": {
+    "Assignment_Again": {
         "doc": "全体出征",
         "recognition": {
             "type": "OCR",
@@ -20,11 +20,11 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "AssignmentButtonYes",
-            "AssignmentAgain"
+            "Assignment_ButtonYes",
+            "Assignment_Again"
         ]
     },
-    "AssignmentButtonYes": {
+    "Assignment_ButtonYes": {
         "recognition": {
             "type": "OCR",
             "param": {

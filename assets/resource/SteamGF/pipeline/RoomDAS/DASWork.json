@@ -1,7 +1,7 @@
 {
     "DAS": {
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward"
         ]
     },

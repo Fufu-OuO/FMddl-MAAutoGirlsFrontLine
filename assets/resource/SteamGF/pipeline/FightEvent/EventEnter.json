@@ -18,7 +18,7 @@
             "EventRecycle_ESC"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl",
             "ReturnHome"
@@ -50,7 +50,7 @@
             "Event_SwipeL"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]

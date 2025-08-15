@@ -52,7 +52,7 @@
             "type": "Click"
         },
         "next": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl",
             "DormFriend",
@@ -118,7 +118,7 @@
             "DormFriendMenuBtoA"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]

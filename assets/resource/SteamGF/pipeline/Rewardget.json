@@ -34,7 +34,7 @@
             "ButtonMail"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward"
         ]
     },
@@ -65,7 +65,7 @@
             }
         },
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward"
         ]
     },
@@ -100,7 +100,7 @@
             "ButtonMail"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]
@@ -212,7 +212,7 @@
             "EnterHome"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward"
         ]
     },
@@ -415,7 +415,7 @@
             "EnterHome"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward"
         ]
     }

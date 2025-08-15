@@ -18,7 +18,7 @@
             "ButtonRoomExplore"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "ReturnHome"
         ]
@@ -54,7 +54,7 @@
             "ButtonRoomExplore"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward"
         ]
     },

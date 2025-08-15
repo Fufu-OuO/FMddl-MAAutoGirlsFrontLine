@@ -17,7 +17,7 @@
             "DailyA_Swipe"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl",
             "ReturnHome"
@@ -47,7 +47,7 @@
             "DailyA_Swipe"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]
@@ -76,7 +76,7 @@
             "DailyA_Simulation"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward"
         ]
     },

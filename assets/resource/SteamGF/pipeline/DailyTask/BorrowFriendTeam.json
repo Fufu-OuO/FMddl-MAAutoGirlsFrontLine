@@ -29,7 +29,7 @@
             "BorrowFriendTeam_ClickFight"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl",
             "ReturnHome"

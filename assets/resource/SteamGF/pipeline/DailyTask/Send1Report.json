@@ -34,7 +34,7 @@
             "Send1Report_DownAndUp"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]
@@ -64,7 +64,7 @@
             "Send1Report_ClickTheFirst"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]
@@ -230,7 +230,7 @@
             "Send1Report_SendThenBack"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl"
         ]

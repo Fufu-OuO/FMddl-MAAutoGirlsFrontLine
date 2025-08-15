@@ -18,7 +18,7 @@
             "EnterHome"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "ReturnHome"
         ]

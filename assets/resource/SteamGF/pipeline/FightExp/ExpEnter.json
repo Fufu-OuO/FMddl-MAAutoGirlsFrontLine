@@ -16,7 +16,7 @@
             "ExpRecycle_ESC"
         ],
         "interrupt": [
-            "AssignmentAgain",
+            "Assignment_Again",
             "Reward",
             "GetGirl",
             "ReturnHome"
