@@ -3,8 +3,8 @@
         "doc":"组合任务：顺序执行LogoMica、LogoSunborn",
         "post_wait_freezes": 300,
         "next": [
-            "LogoMica",
-            "LogoSunborn",
+            "Logo_Mica",
+            "Logo_Sunborn",
             "HomeAssignmentAgain",
             "HomeReward",
             "CloseAnnouncement",
@@ -15,16 +15,16 @@
             "Server"
         ],
         "interrupt": [
-            "ServerLagging",
-            "ServerNeedDownload",
-            "ServerClose",
-            "ServerEmpty",
+            "Server_Lagging",
+            "Server_NeedDownload",
+            "Server_Close",
+            "Server_Empty",
             "EnterHome",
             "GetGirl"
         ],
         "post_delay":1000
         },
-    "LogoMica": {
+    "Logo_Mica": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -41,8 +41,8 @@
         },
         "next": [
             "GameStart",
-            "LogoMica",
-            "LogoSunborn",
+            "Logo_Mica",
+            "Logo_Sunborn",
             "Server"
         ],
         "interrupt": [
@@ -52,7 +52,7 @@
             "GetGirl"
         ]
     },
-    "LogoSunborn": {
+    "Logo_Sunborn": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -69,8 +69,8 @@
             }
         },
         "next": [
-            "LogoMica",
-            "LogoSunborn",
+            "Logo_Mica",
+            "Logo_Sunborn",
             "Server",
             "GameStart"
         ],

@@ -9,15 +9,15 @@
             "CloseAnnouncement",
             "CloseEvent",
             "HomeAlready",
-            "ServerNeedDownload",
+            "Server_NeedDownload",
             "GameStart",
             "Account",
             "Server",
             "GameLoading"
         ],
         "interrupt": [
-            "ServerClose",
-            "ServerEmpty",
+            "Server_Close",
+            "Server_Empty",
             "EnterHome",
             "GetGirl"
         ]

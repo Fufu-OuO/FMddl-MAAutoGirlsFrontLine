@@ -17,20 +17,20 @@
             }
         },
         "next": [
-            "ServerChange",
-            "ServerSelection",
-            "ServerEnter",
-            "ServerWait",
+            "Server_Change",
+            "Server_Selection",
+            "Server_Enter",
+            "Server_Wait",
             "GameStart"
         ],
         "interrupt": [
-            "ServerLagging",
-            "ServerClose",
-            "ServerEmpty"
+            "Server_Lagging",
+            "Server_Close",
+            "Server_Empty"
         ],
         "post_delay":1000
     },
-    "ServerChange": {
+    "Server_Change": {
         "doc": "服务器列表未展开，点击“变更”",
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 2000,
@@ -52,22 +52,22 @@
             "type": "Click"
         },
         "next": [
-            "ServerSelection",
-            "ServerEnter",
-            "ServerWait",
+            "Server_Selection",
+            "Server_Enter",
+            "Server_Wait",
             "GameStart",
             "Reward",
             "Assignment_Again",
             "HomeAlready"
         ],
         "interrupt": [
-            "ServerLagging",
-            "ServerNeedDownload",
-            "ServerClose",
-            "ServerEmpty"
+            "Server_Lagging",
+            "Server_NeedDownload",
+            "Server_Close",
+            "Server_Empty"
         ]
     },
-    "ServerSelection": {
+    "Server_Selection": {
         "doc": "服务器列表已展开，选择服务器",
         "recognition": {
             "type": "OCR",
@@ -88,20 +88,20 @@
             "type": "Click"
         },
         "next": [
-            "ServerEnter",
-            "ServerSelection",
+            "Server_Enter",
+            "Server_Selection",
             "Reward",
             "Assignment_Again",
             "HomeAlready"
         ],
         "interrupt": [
-            "ServerLagging",
-            "ServerNeedDownload",
-            "ServerClose",
-            "ServerEmpty"
+            "Server_Lagging",
+            "Server_NeedDownload",
+            "Server_Close",
+            "Server_Empty"
         ]
     },
-    "ServerEnter": {
+    "Server_Enter": {
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 3000,
         "recognition": {
@@ -122,21 +122,21 @@
                 "type": "Click"
         },
         "next": [
-            "ServerEnter",
-            "ServerNeedDownload",
-            "ServerWait",
+            "Server_Enter",
+            "Server_NeedDownload",
+            "Server_Wait",
             "GameStart",
             "Reward",
             "Assignment_Again",
             "HomeAlready"
         ],
         "interrupt": [
-            "ServerLagging",
-            "ServerClose",
-            "ServerEmpty"
+            "Server_Lagging",
+            "Server_Close",
+            "Server_Empty"
         ]
     },
-    "ServerWait": {
+    "Server_Wait": {
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 3000,
         "recognition": {
@@ -177,10 +177,10 @@
             }
         },
         "next": [
-            "AccountLogin"
+            "Account_Login"
         ]
     },
-    "AccountLogin": {
+    "Account_Login": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -199,11 +199,11 @@
             "type": "Click"
         },
         "next": [
-            "AccountLogin",
-            "ServerChange"
+            "Account_Login",
+            "Server_Change"
         ]
     },
-    "ServerLagging": {
+    "Server_Lagging": {
         "doc": "服务器列表加载中，等待",
         "pre_wait_freezes": 1000,
         "post_wait_freezes":1000,
@@ -222,7 +222,7 @@
             }
         }
     },
-    "ServerEmpty": {
+    "Server_Empty": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -243,14 +243,14 @@
                 ]
             },
         "next": [
-            "ServerButtonNo",
+            "Server_ButtonNo",
             "Server",
             "GameStart"
         ],
         "timeout": 20000
         }
     },
-    "ServerClose": {
+    "Server_Close": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -267,14 +267,14 @@
                 ]
             },
         "next": [
-            "ServerButtonYes",
-            "ServerButtonNo",
+            "Server_ButtonYes",
+            "Server_ButtonNo",
             "Server",
             "GameStart"
         ]
         }
     },
-    "ServerNeedDownload": {
+    "Server_NeedDownload": {
         "post_wait_freezes": {
             "time": 2000,
             "param": {
@@ -304,11 +304,11 @@
             }
         },
         "next": [
-            "ServerDownload",
-            "ServerDownloading"
+            "Server_Download",
+            "Server_Downloading"
         ]
     },
-    "ServerDownload": {
+    "Server_Download": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -328,10 +328,10 @@
             "type": "Click"
         },
         "next": [
-            "ServerDownloading"
+            "Server_Downloading"
         ]
     },
-    "ServerDownloading": {
+    "Server_Downloading": {
         "timeout": 3600000,
         "rate_limit": 10000,
         "pre_wait_freezes": {
@@ -363,11 +363,11 @@
             "type": "Click"
         },
         "next": [
-            "ServerEnter",
+            "Server_Enter",
             "GameStart"
         ]
     },
-    "ServerButtonYes": {
+    "Server_ButtonYes": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -387,12 +387,12 @@
             "type": "Click"
         },
         "next": [
-            "ServerButtonNo",
+            "Server_ButtonNo",
             "Server",
             "GameStart"
         ]
     },
-    "ServerButtonNo": {
+    "Server_ButtonNo": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -418,7 +418,7 @@
                 ]
         },
         "next": [
-            "ServerButtonYes",
+            "Server_ButtonYes",
             "Server",
             "GameStart"
         ]

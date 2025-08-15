@@ -46,9 +46,9 @@
             "EnterHome"
         ],
         "interrupt": [
-            "ServerChange",
-            "ServerClose",
-            "ServerEmpty",
+            "Server_Change",
+            "Server_Close",
+            "Server_Empty",
             "GetGirl"
         ]
     },
