@@ -12,10 +12,10 @@
             }
         },
         "next": [
-            "DASEnterTeam",
-            "DASOpenTeamMenu",
-            "DASSwipeBackTeamMenu",
-            "ButtonRoomDAS"
+            "DASEnter_EnterTeam",
+            "DASEnter_OpenMenu",
+            "DASEnter_SwipeBackMenu",
+            "DASEnter_EnterRoom"
         ],
         "interrupt": [
             "Assignment_Again",
@@ -23,7 +23,7 @@
             "ReturnHome"
         ]
     },
-    "DASEnterTeam": {
+    "DASEnter_EnterTeam": {
         "doc":"组合任务",
         "recognition": {
         "type": "TemplateMatch",
@@ -48,17 +48,17 @@
         },
         "post_delay":1000,
         "next": [
-            "DASEnterTeam",
-            "DASOpenTeamMenu",
-            "DASSwipeBackTeamMenu",
-            "ButtonRoomDAS"
+            "DASEnter_EnterTeam",
+            "DASEnter_OpenMenu",
+            "DASEnter_SwipeBackMenu",
+            "DASEnter_EnterRoom"
         ],
         "interrupt": [
             "Assignment_Again",
             "Reward"
         ]
     },
-    "DASOpenTeamMenu": {
+    "DASEnter_OpenMenu": {
         "doc":"尚未点击的Home",
         "recognition": {
             "type": "TemplateMatch",
@@ -88,12 +88,12 @@
             }
         },
         "next": [
-            "ButtonRoomDAS",
-            "DASEnterTeam",
-            "DASSwipeBackTeamMenu"
+            "DASEnter_EnterRoom",
+            "DASEnter_EnterTeam",
+            "DASEnter_SwipeBackMenu"
         ]
     },
-    "DASSwipeBackTeamMenu": {
+    "DASEnter_SwipeBackMenu": {
         "doc":"拖动导航菜单至右",
         "recognition": {
             "type": "OCR",
@@ -128,12 +128,12 @@
             }
         },
         "next": [
-            "ButtonRoomDAS",
-            "DASEnterTeam",
-            "DASOpenTeamMenu"
+            "DASEnter_EnterRoom",
+            "DASEnter_EnterTeam",
+            "DASEnter_OpenMenu"
         ]
     },
-    "ButtonRoomDAS": {
+    "DASEnter_EnterRoom": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -152,8 +152,8 @@
             "type": "Click"
         },
         "next": [
-            "ButtonRoomDAS",
-            "DASSwipeBackTeamMenu"
+            "DASEnter_EnterRoom",
+            "DASEnter_SwipeBackMenu"
         ]
     }
 }
