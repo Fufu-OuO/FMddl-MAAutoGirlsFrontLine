@@ -96,13 +96,36 @@
             }
         },
         "next": [
+            "DataWork_ChooseBook",
             "DataWork_ButtonYes",
             "DataWork_StartWrite",
             "DataWork_ButtonCancel"
         ]
     },
     "DataWork_ChooseBook": {
-
+        "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    64,
+                    178,
+                    1091,
+                    198
+                ],
+                "expected": [
+                    "特种"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "DataWork_ButtonYes",
+            "DataWork_StartWrite",
+            "DataWork_ButtonCancel"
+        ]
     },
     "DataWork_StartWrite": {
         "recognition": {

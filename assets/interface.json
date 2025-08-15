@@ -81,7 +81,10 @@
         {
             "name": "资料室（人形经验书）",
             "doc": "请从主界面开始本任务",
-            "entry": "RoomData"
+            "entry": "RoomData",
+            "option": [
+                "撰写报告"
+            ]
         },
         {
             "name": "前进营地（已出发则不操作）",
@@ -1334,6 +1337,26 @@
                                     ]
                                 }
                             }
+                        }
+                    }
+                }
+            ]
+        },
+        "撰写报告": {
+            "cases": [
+                {
+                    "name": "[人形经验] 作战报告",
+                    "pipeline_override": {
+                        "DataWork_ChooseBook": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "[重装经验] 特种作战报告",
+                    "pipeline_override": {
+                        "DataWork_ChooseBook": {
+                            "enabled": true
                         }
                     }
                 }
