@@ -1,5 +1,5 @@
 {
-    "ExploreSwipe": {
+    "ExploreWork_RoomSwipe": {
         "doc": "拉到房间最右侧",
         "recognition": {
             "type": "OCR",
@@ -33,10 +33,10 @@
             }
         },
         "next": [
-            "ExploreGet"
+            "ExploreWork_Get"
         ]
     },
-    "ExploreGet": {
+    "ExploreWork_Get": {
         "post_wait_freezes": 1000,
         "recognition": {
             "type": "OCR",
@@ -64,12 +64,12 @@
             }
         },
         "next": [
-            "ExploreReward",
-            "ExploreButtonCancel1",
-            "ExploreConductor"
+            "ExploreWork_RewardClose",
+            "ExploreWork_ButtonCancel1",
+            "ExploreWork_OpenConductor"
         ]
     },
-    "ExploreReward": {
+    "ExploreWork_RewardClose": {
         "rate_limit": 200,
         "recognition": {
             "type": "OCR",
@@ -99,13 +99,13 @@
             }
         },
         "next": [
-            "ExploreReward",
-            "ExploreButtonCancel1",
-            "ExploreConductor",
+            "ExploreWork_RewardClose",
+            "ExploreWork_ButtonCancel1",
+            "ExploreWork_OpenConductor",
             "EnterHome"
         ]
     },
-    "ExploreConductor": {
+    "ExploreWork_OpenConductor": {
         "doc": "打开探索控制台",
         "recognition": {
             "type": "TemplateMatch",
@@ -134,14 +134,13 @@
             }
         },
         "next": [
-            "ExploreFormation",
-            "ExploreFormationButtonYes",
-            "ExploreStart",
+            "ExploreWork_Formation",
+            "ExploreWork_FormationButtonYes",
+            "ExploreWork_ExploreStart",
             "EnterHome"
         ]
     },
-    "ExploreFormation": {
-        "doc": "自动编队",
+    "ExploreWork_Formation": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -162,12 +161,12 @@
             "type": "Click"
         },
         "next": [
-            "ExploreStart",
-            "ExploreFormationButtonYes",
+            "ExploreWork_ExploreStart",
+            "ExploreWork_FormationButtonYes",
             "EnterHome"
         ]
     },
-    "ExploreFormationButtonYes": {
+    "ExploreWork_FormationButtonYes": {
         "doc": "确认自动编队",
         "recognition": {
             "type": "TemplateMatch",
@@ -198,12 +197,12 @@
             }
         },
         "next": [
-            "ExploreStart",
-            "ExploreFormationButtonYes",
+            "ExploreWork_ExploreStart",
+            "ExploreWork_FormationButtonYes",
             "EnterHome"
         ]
     },
-    "ExploreStart": {
+    "ExploreWork_ExploreStart": {
         "doc": "立即出发",
         "recognition": {
             "type": "OCR",
@@ -225,12 +224,12 @@
             "type": "Click"
         },
         "next": [
-            "ExploreStart",
-            "ExploreButtonCancel2",
+            "ExploreWork_ExploreStart",
+            "ExploreWork_ButtonCancel2",
             "EnterHome"
         ]
     },
-    "ExploreButtonCancel1": {
+    "ExploreWork_ButtonCancel1": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -253,13 +252,13 @@
             }
         },
         "next": [
-            "ExploreConductor",
-            "ExploreFormation",
-            "ExploreStart",
+            "ExploreWork_OpenConductor",
+            "ExploreWork_Formation",
+            "ExploreWork_ExploreStart",
             "EnterHome"
         ]
     },
-    "ExploreButtonCancel2": {
+    "ExploreWork_ButtonCancel2": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {

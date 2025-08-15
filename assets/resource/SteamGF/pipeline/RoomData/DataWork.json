@@ -1,5 +1,5 @@
 {
-    "DataSwipe": {
+    "DataWork_RoomSwipe": {
         "doc": "拉到房间最右侧",
         "recognition": {
             "type": "OCR",
@@ -33,11 +33,44 @@
             }
         },
         "next": [
-            "DataWrite"
+            "DataWork_ClickKalina"
         ]
     },
-    "DataWrite": {
-        "doc": "大橘猫开工",
+    "DataWork_RewardClose": {
+        "rate_limit": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    900,
+                    100,
+                    380,
+                    350
+                ],
+                "expected": [
+                    "REW",
+                    "REV",
+                    "ARD"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    231,
+                    102,
+                    218,
+                    109
+                ]
+            }
+        },
+        "next": [
+            "DataWork_RewardClose",
+            "DataWork_RoomSwipe"
+        ]
+    },
+    "DataWork_ClickKalina": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -64,12 +97,15 @@
             }
         },
         "next": [
-            "DataWorkButtonYes",
-            "DataWork",
-            "DataButtonCancel"
+            "DataWork_ButtonYes",
+            "DataWork_StartWrite",
+            "DataWork_ButtonCancel"
         ]
     },
-    "DataWork": {
+    "DataWork_ChooseBook": {
+
+    },
+    "DataWork_StartWrite": {
         "recognition": {
         "type": "TemplateMatch",
             "param": {
@@ -90,12 +126,12 @@
         },
         "post_delay":1000,
         "next": [
-            "DataWorkButtonYes",
-            "DataButtonCancel",
+            "DataWork_ButtonYes",
+            "DataWork_ButtonCancel",
             "EnterHome"
         ]
     },
-    "DataWorkButtonYes": {
+    "DataWork_ButtonYes": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -125,11 +161,11 @@
             }
         },
         "next": [
-            "DataButtonCancel",
+            "DataWork_ButtonCancel",
             "EnterHome"
         ]
     },
-    "DataButtonCancel": {
+    "DataWork_ButtonCancel": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {

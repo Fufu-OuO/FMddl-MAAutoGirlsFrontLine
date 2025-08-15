@@ -12,10 +12,10 @@
             }
         },
         "next": [
-            "DataEnterTeam",
-            "DataOpenTeamMenu",
-            "DataSwipeBackTeamMenu",
-            "ButtonRoomData"
+            "RoomData_EnterTeam",
+            "RoomData_OpenMenu",
+            "RoomData_SwipeBackMenu",
+            "RoomData_EnterRoom"
         ],
         "interrupt": [
             "Assignment_Again",
@@ -23,7 +23,7 @@
             "ReturnHome"
         ]
     },
-    "DataEnterTeam": {
+    "RoomData_EnterTeam": {
         "doc":"组合任务",
         "recognition": {
         "type": "TemplateMatch",
@@ -46,17 +46,17 @@
         },
         "post_delay":1000,
         "next": [
-            "DataEnterTeam",
-            "DataOpenTeamMenu",
-            "DataSwipeBackTeamMenu",
-            "ButtonRoomData"
+            "RoomData_EnterTeam",
+            "RoomData_OpenMenu",
+            "RoomData_SwipeBackMenu",
+            "RoomData_EnterRoom"
         ],
         "interrupt": [
             "Assignment_Again",
             "Reward"
         ]
     },
-    "DataOpenTeamMenu": {
+    "RoomData_OpenMenu": {
         "doc":"尚未点击的Home",
         "recognition": {
             "type": "TemplateMatch",
@@ -86,12 +86,12 @@
             }
         },
         "next": [
-            "ButtonRoomData",
-            "DataEnterTeam",
-            "DataSwipeBackTeamMenu"
+            "RoomData_EnterRoom",
+            "RoomData_EnterTeam",
+            "RoomData_SwipeBackMenu"
         ]
     },
-    "DataSwipeBackTeamMenu": {
+    "RoomData_SwipeBackMenu": {
         "doc":"拖动导航菜单至左",
         "recognition": {
             "type": "OCR",
@@ -126,12 +126,12 @@
             }
         },
         "next": [
-            "ButtonRoomData",
-            "DataEnterTeam",
-            "DataOpenTeamMenu"
+            "RoomData_EnterRoom",
+            "RoomData_EnterTeam",
+            "RoomData_OpenMenu"
         ]
     },
-    "ButtonRoomData": {
+    "RoomData_EnterRoom": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -150,9 +150,10 @@
             "type": "Click"
         },
         "next": [
-            "ButtonRoomData",
-            "DataSwipeBackTeamMenu",
-            "DataSwipe"
+            "RoomData_EnterRoom",
+            "RoomData_SwipeBackMenu",
+            "DataWork_RewardClose",
+            "DataWork_RoomSwipe"
         ]
     }
 }

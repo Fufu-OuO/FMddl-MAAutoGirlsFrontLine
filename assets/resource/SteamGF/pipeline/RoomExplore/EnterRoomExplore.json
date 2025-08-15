@@ -12,10 +12,10 @@
             }
         },
         "next": [
-            "ExploreEnterTeam",
-            "ExploreOpenTeamMenu",
-            "ExploreSwipeBackTeamMenu",
-            "ButtonRoomExplore"
+            "RoomExplore_EnterTeam",
+            "RoomExplore_OpenMenu",
+            "RoomExplore_SwipeBackMenu",
+            "RoomExplore_EnterRoom"
         ],
         "interrupt": [
             "Assignment_Again",
@@ -23,7 +23,7 @@
             "ReturnHome"
         ]
     },
-    "ExploreEnterTeam": {
+    "RoomExplore_EnterTeam": {
         "doc":"组合任务",
         "recognition": {
         "type": "TemplateMatch",
@@ -48,17 +48,17 @@
         },
         "post_delay":1000,
         "next": [
-            "ExploreEnterTeam",
-            "ExploreOpenTeamMenu",
-            "ExploreSwipeBackTeamMenu",
-            "ButtonRoomExplore"
+            "RoomExplore_EnterTeam",
+            "RoomExplore_OpenMenu",
+            "RoomExplore_SwipeBackMenu",
+            "RoomExplore_EnterRoom"
         ],
         "interrupt": [
             "Assignment_Again",
             "Reward"
         ]
     },
-    "ExploreOpenTeamMenu": {
+    "RoomExplore_OpenMenu": {
         "doc":"尚未点击的Home",
         "recognition": {
             "type": "TemplateMatch",
@@ -88,12 +88,12 @@
             }
         },
         "next": [
-            "ButtonRoomExplore",
-            "ExploreEnterTeam",
-            "ExploreSwipeBackTeamMenu"
+            "RoomExplore_EnterRoom",
+            "RoomExplore_EnterTeam",
+            "RoomExplore_SwipeBackMenu"
         ]
     },
-    "ExploreSwipeBackTeamMenu": {
+    "RoomExplore_SwipeBackMenu": {
         "doc":"拖动导航菜单至右",
         "recognition": {
             "type": "OCR",
@@ -128,12 +128,12 @@
             }
         },
         "next": [
-            "ButtonRoomExplore",
-            "ExploreEnterTeam",
-            "ExploreOpenTeamMenu"
+            "RoomExplore_EnterRoom",
+            "RoomExplore_EnterTeam",
+            "RoomExplore_OpenMenu"
         ]
     },
-    "ButtonRoomExplore": {
+    "RoomExplore_EnterRoom": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -152,9 +152,9 @@
             "type": "Click"
         },
         "next": [
-            "ButtonRoomExplore",
-            "ExploreSwipeBackTeamMenu",
-            "ExploreSwipe"
+            "RoomExplore_EnterRoom",
+            "RoomExplore_SwipeBackMenu",
+            "ExploreWork_RoomSwipe"
         ]
     }
 }
