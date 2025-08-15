@@ -1,5 +1,5 @@
 {
-    "DormLove": {
+    "DormWork_Love": {
         "pre_delay": 200,
         "pre_wait_freezes": 100,
         "post_wait_freezes": 100,
@@ -25,12 +25,12 @@
             "type": "Click"
         },
         "next": [
-            "DormLove",
-            "DormBattery",
+            "DormWork_Love",
+            "DormWork_Battery",
             "DormFriend"
         ]
     },
-    "DormBattery": {
+    "DormWork_Battery": {
         "pre_delay": 4000,
         "pre_wait_freezes": 100,
         "post_wait_freezes": 100,
@@ -55,14 +55,14 @@
             }
         },
         "next": [
-            "DormBatteryButtonNo",
+            "DormWork_BatteryButtonNo",
             "DormFriend"
         ],
         "interrupt": [
-            "DormBatteryButtonCancel"
+            "DormWork_BatteryButtonCancel"
         ]
     },
-    "DormBatteryButtonCancel": {
+    "DormWork_BatteryButtonCancel": {
         "pre_wait_freezes": 1000,
         "post_wait_freezes": 500,
         "recognition": {
@@ -87,7 +87,7 @@
             }
         }
     },
-    "DormBatteryButtonNo": {
+    "DormWork_BatteryButtonNo": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -117,8 +117,8 @@
             }
         },
         "next": [
-            "DormBatteryButtonNo",
-            "DormLove",
+            "DormWork_BatteryButtonNo",
+            "DormWork_Love",
             "DormFriend"
         ]
     }

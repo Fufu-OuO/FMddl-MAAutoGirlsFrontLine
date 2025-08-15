@@ -2,9 +2,9 @@
     "EnterRoomDorm": {
         "next": [
             "RoomDorm_EnterTeam",
-            "DormOpenTeamMenu",
-            "ButtonRoomDorm",
-            "DormLove"
+            "RoomDorm_OpenMenu",
+            "RoomDorm_EnterRoom",
+            "DormWork_Love"
         ],
         "interrupt": [
             "Assignment_Again",
@@ -37,16 +37,16 @@
         },
         "next": [
             "RoomDorm_EnterTeam",
-            "DormOpenTeamMenu",
-            "ButtonRoomDorm",
-            "DormLove"
+            "RoomDorm_OpenMenu",
+            "RoomDorm_EnterRoom",
+            "DormWork_Love"
         ],
         "interrupt": [
             "Assignment_Again",
             "Reward"
         ]
     },
-    "DormOpenTeamMenu": {
+    "RoomDorm_OpenMenu": {
         "doc":"尚未点击的Home",
         "recognition": {
             "type": "TemplateMatch",
@@ -76,11 +76,11 @@
         },
         "next": [
             "RoomDorm_EnterTeam",
-            "ButtonRoomDorm",
-            "DormLove"
+            "RoomDorm_EnterRoom",
+            "DormWork_Love"
         ]
     },
-    "ButtonRoomDorm": {
+    "RoomDorm_EnterRoom": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -99,9 +99,9 @@
             "type": "Click"
         },
         "next": [
-            "ButtonRoomDorm",
-            "DormLove",
-            "DormBattery",
+            "RoomDorm_EnterRoom",
+            "DormWork_Love",
+            "DormWork_Battery",
             "DormFriend"
         ]
     }

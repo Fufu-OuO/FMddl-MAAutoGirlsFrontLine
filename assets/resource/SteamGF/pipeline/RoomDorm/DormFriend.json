@@ -24,15 +24,15 @@
             "type": "Click"
         },
         "next": [
-            "DormFriendHomePage",
+            "DormFriend_BackToHome",
             "DormFriend",
-            "DormFriendHomeAlready"
+            "DormFriend_HomeAlready"
         ],
         "interrupt":[
             "RoomStuck"
         ]
     },
-    "DormFriendHomePage":{
+    "DormFriend_BackToHome":{
         "recognition": {
             "type": "OCR",
             "param": {
@@ -56,14 +56,14 @@
             "Reward",
             "GetGirl",
             "DormFriend",
-            "DormFriendHomePage",
-            "DormFriendHomeAlready"
+            "DormFriend_BackToHome",
+            "DormFriend_HomeAlready"
         ],
         "interrupt":[
             "RoomStuck"
         ]
     },
-    "DormFriendHomeAlready": {
+    "DormFriend_HomeAlready": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -83,11 +83,11 @@
             }
         },
         "next": [
-            "ButtonFriend",
-            "DormFriendMenuBtoA"
+            "DormFriend_ButtonFriend",
+            "DormFriend_MenuBtoA"
         ]
     },
-    "DormFriendMenuBtoA": {
+    "DormFriend_MenuBtoA": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -114,8 +114,8 @@
             }
         },
         "next": [
-            "ButtonFriend",
-            "DormFriendMenuBtoA"
+            "DormFriend_ButtonFriend",
+            "DormFriend_MenuBtoA"
         ],
         "interrupt": [
             "Assignment_Again",
@@ -123,7 +123,7 @@
             "GetGirl"
         ]
     },
-    "ButtonFriend": {
+    "DormFriend_ButtonFriend": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -142,11 +142,11 @@
             "type": "Click"
         },
         "next": [
-            "ButtonFriend",
-            "Friendlist"
+            "DormFriend_ButtonFriend",
+            "DormFriend_Friendlist"
         ]
     },
-    "Friendlist": {
+    "DormFriend_Friendlist": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -165,11 +165,11 @@
             "type": "Click"
         },
         "next": [
-            "FriendOrderBy",
-            "ChooseFriendOrder"
+            "DormFriend_FriendOrderBy",
+            "DormFriend_ChooseFriendOrder"
         ]
     },
-    "FriendOrderBy": {
+    "DormFriend_FriendOrderBy": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -191,11 +191,11 @@
             "type": "Click"
         },
         "next": [
-            "ChooseFriendOrder",
-            "FriendOrderBy"
+            "DormFriend_ChooseFriendOrder",
+            "DormFriend_FriendOrderBy"
         ]
     },
-    "ChooseFriendOrder": {
+    "DormFriend_ChooseFriendOrder": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -214,11 +214,11 @@
             "type": "Click"
         },
         "next": [
-            "FriendBusinessCard",
-            "FriendVisit"
+            "DormFriend_FriendBusinessCard",
+            "DormFriend_VisitFriend"
         ]
     },
-    "FriendBusinessCard": {
+    "DormFriend_FriendBusinessCard": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -238,11 +238,11 @@
             "type": "Click"
         },
         "next": [
-            "FriendVisit",
-            "FriendBusinessCard"
+            "DormFriend_VisitFriend",
+            "DormFriend_FriendBusinessCard"
         ]
     },
-    "FriendVisit": {
+    "DormFriend_VisitFriend": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -261,14 +261,14 @@
             "type": "Click"
         },
         "next": [
-            "FriendVisit",
-            "DormFriendLike",
-            "DormFriendBattery",
-            "DormFriendBatteryButtonNo",
-            "DormFriendNext"
+            "DormFriend_VisitFriend",
+            "DormFriend_Like",
+            "DormFriend_Battery",
+            "DormFriend_BatteryButtonNo",
+            "DormFriend_Next"
         ]
     },
-    "DormFriendLike": {
+    "DormFriend_Like": {
         "pre_delay": 2000,
         "pre_wait_freezes": 100,
         "post_wait_freezes": 100,
@@ -291,12 +291,12 @@
             "type": "Click"
         },
         "next": [
-            "DormFriendLike",
-            "DormFriendBattery",
-            "DormFriendNext"
+            "DormFriend_Like",
+            "DormFriend_Battery",
+            "DormFriend_Next"
         ]
     },
-    "DormFriendBattery": {
+    "DormFriend_Battery": {
         "pre_wait_freezes": 100,
         "post_wait_freezes": 100,
         "recognition": {
@@ -318,13 +318,13 @@
             "type": "Click"
         },
         "next": [
-            "DormFriendBatteryButtonNo",
-            "DormFriendLike",
-            "DormFriendBattery",
-            "DormFriendNext"
+            "DormFriend_BatteryButtonNo",
+            "DormFriend_Like",
+            "DormFriend_Battery",
+            "DormFriend_Next"
         ]
     },
-    "DormFriendBatteryButtonNo": {
+    "DormFriend_BatteryButtonNo": {
         "pre_delay": 2000,
         "pre_wait_freezes": 100,
         "post_wait_freezes": 100,
@@ -346,12 +346,12 @@
             "type": "Click"
         },
         "next": [
-            "DormFriendLike",
-            "DormFriendBattery",
-            "DormFriendNext"
+            "DormFriend_Like",
+            "DormFriend_Battery",
+            "DormFriend_Next"
         ]
     },
-    "DormFriendNext": {
+    "DormFriend_Next": {
         "pre_delay": 1000,
         "pre_wait_freezes": 100,
         "post_wait_freezes": 100,
@@ -374,14 +374,14 @@
             "type": "Click"
         },
         "next": [
-            "DormFriendClickCenter",
-            "DormFriendBattery",
-            "DormFriendStop",
-            "DormFriendLike",
-            "DormFriendNext"
+            "DormFriend_ClickCenter",
+            "DormFriend_Battery",
+            "DormFriend_Stop",
+            "DormFriend_Like",
+            "DormFriend_Next"
         ]
     },
-    "DormFriendClickCenter": {
+    "DormFriend_ClickCenter": {
         "doc": "点击中心",
         "action": {
         "type": "Click",
@@ -395,13 +395,13 @@
             }
         },
         "next": [
-            "DormFriendBattery",
-            "DormFriendStop",
-            "DormFriendLike",
-            "DormFriendNext"
+            "DormFriend_Battery",
+            "DormFriend_Stop",
+            "DormFriend_Like",
+            "DormFriend_Next"
         ]
     },
-    "DormFriendStop": {
+    "DormFriend_Stop": {
         "pre_wait_freezes":1000,
         "recognition": {
             "type": "OCR",
@@ -431,12 +431,12 @@
             }
         },
         "next": [
-            "DormButtonCancel",
-            "DormFriendStop",
+            "DormFriend_ButtonCancel",
+            "DormFriend_Stop",
             "EnterHome"
         ]
     },
-    "DormButtonCancel": {
+    "DormFriend_ButtonCancel": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -456,8 +456,8 @@
             "type": "Click"
         },
         "next": [
-            "DormButtonCancel",
-            "DormFriendStop",
+            "DormFriend_ButtonCancel",
+            "DormFriend_Stop",
             "EnterHome"
         ]
     }

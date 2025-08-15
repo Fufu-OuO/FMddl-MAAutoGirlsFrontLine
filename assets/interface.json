@@ -1173,7 +1173,7 @@
                 {
                     "name": "最新消息",
                     "pipeline_override": {
-                        "ChooseFriendOrder": {
+                        "DormFriend_ChooseFriendOrder": {
                             "recognition": {
                                 "type": "OCR",
                                 "param": {
@@ -1197,7 +1197,7 @@
                 {
                     "name": "最近登陆",
                     "pipeline_override": {
-                        "ChooseFriendOrder": {
+                        "DormFriend_ChooseFriendOrder": {
                             "recognition": {
                                 "type": "OCR",
                                 "param": {
@@ -1221,7 +1221,7 @@
                 {
                     "name": "指挥官等级",
                     "pipeline_override": {
-                        "ChooseFriendOrder": {
+                        "DormFriend_ChooseFriendOrder": {
                             "recognition": {
                                 "type": "OCR",
                                 "param": {
@@ -1245,7 +1245,7 @@
                 {
                     "name": "宿舍数量",
                     "pipeline_override": {
-                        "ChooseFriendOrder": {
+                        "DormFriend_ChooseFriendOrder": {
                             "recognition": {
                                 "type": "OCR",
                                 "param": {
@@ -1273,7 +1273,7 @@
                 {
                     "name": "10个人",
                     "pipeline_override": {
-                        "DormFriendStop": {
+                        "DormFriend_Stop": {
                             "recognition": {
                                 "type": "OCR",
                                 "param": {
@@ -1307,7 +1307,7 @@
                 {
                     "name": "所有人",
                     "pipeline_override": {
-                        "DormFriendStop": {
+                        "DormFriend_Stop": {
                             "recognition": {
                                 "type": "OCR",
                                 "param": {

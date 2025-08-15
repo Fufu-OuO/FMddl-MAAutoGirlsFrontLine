@@ -13,7 +13,7 @@
         },
         "next": [
             "EnterRoomDorm",
-            "DormLove",
+            "DormWork_Love",
             "DormFriend",
             "EnterHome"
         ],
