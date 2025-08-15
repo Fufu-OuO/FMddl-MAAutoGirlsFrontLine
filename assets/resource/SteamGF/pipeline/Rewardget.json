@@ -30,15 +30,15 @@
             }
         },
         "next": [
-            "RewardgetMenuBtoA",
-            "ButtonMail"
+            "Rewardget_MenuBtoA",
+            "Rewardget_ButtonMail"
         ],
         "interrupt": [
             "Assignment_Again",
             "Reward"
         ]
     },
-    "MenuAtoB": {
+    "Rewardget_MenuAtoB": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -69,7 +69,7 @@
             "Reward"
         ]
     },
-    "RewardgetMenuBtoA": {
+    "Rewardget_MenuBtoA": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -96,8 +96,8 @@
             }
         },
         "next": [
-            "RewardgetMenuBtoA",
-            "ButtonMail"
+            "Rewardget_MenuBtoA",
+            "Rewardget_ButtonMail"
         ],
         "interrupt": [
             "Assignment_Again",
@@ -105,7 +105,7 @@
             "GetGirl"
         ]
     },
-    "ButtonMail": {
+    "Rewardget_ButtonMail": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -124,11 +124,11 @@
             "type": "Click"
         },
         "next": [
-            "ButtonMail",
-            "RewardgetMail"
+            "Rewardget_ButtonMail",
+            "Rewardget_Mail"
         ]
     },
-    "RewardgetMail": {
+    "Rewardget_Mail": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -147,14 +147,14 @@
             "type": "Click"
         },
         "next": [
-            "MailOut",
-            "ButtonTask"
+            "Rewardget_MailOut",
+            "Rewardget_ButtonTask"
         ],
         "interrupt": [
             "Reward"
         ]
     },
-    "MailOut": {
+    "Rewardget_MailOut": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -182,14 +182,14 @@
             }
         },
         "next": [
-            "MailOut",
-            "ButtonTask"
+            "Rewardget_MailOut",
+            "Rewardget_ButtonTask"
         ],
         "interrupt": [
             "Reward"
         ]
     },
-    "ButtonTask": {
+    "Rewardget_ButtonTask": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -208,7 +208,7 @@
             "type": "Click"
         },
         "next": [
-            "DailyQuest",
+            "Rewardget_DailyQuest",
             "EnterHome"
         ],
         "interrupt": [
@@ -216,7 +216,7 @@
             "Reward"
         ]
     },
-    "DailyQuest": {
+    "Rewardget_DailyQuest": {
         "post_delay": 2000,
         "recognition": {
             "type": "OCR",
@@ -237,14 +237,14 @@
             "type": "Click"
         },
         "next": [
-            "TaskFinish",
-            "TaskGift",
-            "TaskVitality",
-            "TaskToPass",
+            "Rewardget_TaskFinish",
+            "Rewardget_TaskGift",
+            "Rewardget_TaskVitality",
+            "Rewardget_TaskToPass",
             "EnterHome"
         ]
     },
-    "TaskFinish": {
+    "Rewardget_TaskFinish": {
         "post_delay": 2000,
         "recognition": {
             "type": "OCR",
@@ -266,12 +266,12 @@
             "type": "Click"
         },
         "next": [
-            "TaskReward",
-            "TaskFinish",
-            "DailyQuest"
+            "Rewardget_TaskReward",
+            "Rewardget_TaskFinish",
+            "Rewardget_DailyQuest"
         ]
     },
-    "TaskGift": {
+    "Rewardget_TaskGift": {
         "post_delay": 5000,        
         "recognition": {
             "type": "TemplateMatch",
@@ -294,12 +294,12 @@
             "type": "Click"
         },
         "next": [
-            "TaskReward",
-            "TaskGift",
-            "DailyQuest"
+            "Rewardget_TaskReward",
+            "Rewardget_TaskGift",
+            "Rewardget_DailyQuest"
         ]
     },
-    "TaskVitality": {
+    "Rewardget_TaskVitality": {
         "post_delay": 2000,
         "recognition": {
             "type": "TemplateMatch",
@@ -321,12 +321,12 @@
             "type": "Click"
         },
         "next": [
-            "TaskReward",
-            "TaskVitality",
-            "DailyQuest"
+            "Rewardget_TaskReward",
+            "Rewardget_TaskVitality",
+            "Rewardget_DailyQuest"
         ]
     },
-    "TaskReward": {
+    "Rewardget_TaskReward": {
         "pre_delay": 1000,
         "post_delay": 1000,
         "rate_limit": 200,
@@ -362,11 +362,11 @@
             }
         },
         "next": [
-            "DailyQuest",
-            "TaskReward"
+            "Rewardget_DailyQuest",
+            "Rewardget_TaskReward"
         ]
     },
-    "TaskToPass": {
+    "Rewardget_TaskToPass": {
         "post_delay": 2000,
         "recognition": {
             "type": "TemplateMatch",
@@ -389,11 +389,11 @@
             "type": "Click"
         },
         "next": [
-            "RewardgetPass",
+            "Rewardget_Pass",
             "EnterHome"
         ]
     },
-    "RewardgetPass": {
+    "Rewardget_Pass": {
         "recognition": {
             "type": "OCR",
             "param": {
