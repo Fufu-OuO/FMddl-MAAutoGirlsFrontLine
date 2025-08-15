@@ -613,8 +613,8 @@
                     256
                 ],
                 "expected": [
-                    "终止作",
-                    "止作战"
+                    "重新作",
+                    "新作战"
                 ]
             }
         },
@@ -624,6 +624,7 @@
         "next": [
             "BorrowFriendTeam_FightStop",
             "BorrowFriendTeam_FightShutup",
+            "BorrowFriendTeam_StartFight",
             "BorrowFriendTeam_Combat"
         ]
     },
