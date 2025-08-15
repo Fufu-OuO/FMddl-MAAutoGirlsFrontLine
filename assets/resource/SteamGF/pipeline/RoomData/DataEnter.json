@@ -12,10 +12,10 @@
             }
         },
         "next": [
-            "RoomData_EnterTeam",
-            "RoomData_OpenMenu",
-            "RoomData_SwipeBackMenu",
-            "RoomData_EnterRoom"
+            "DataEnter_EnterTeam",
+            "DataEnter_OpenMenu",
+            "DataEnter_SwipeBackMenu",
+            "DataEnter_EnterRoom"
         ],
         "interrupt": [
             "Assignment_Again",
@@ -23,7 +23,7 @@
             "ReturnHome"
         ]
     },
-    "RoomData_EnterTeam": {
+    "DataEnter_EnterTeam": {
         "doc":"组合任务",
         "recognition": {
         "type": "TemplateMatch",
@@ -46,17 +46,17 @@
         },
         "post_delay":1000,
         "next": [
-            "RoomData_EnterTeam",
-            "RoomData_OpenMenu",
-            "RoomData_SwipeBackMenu",
-            "RoomData_EnterRoom"
+            "DataEnter_EnterTeam",
+            "DataEnter_OpenMenu",
+            "DataEnter_SwipeBackMenu",
+            "DataEnter_EnterRoom"
         ],
         "interrupt": [
             "Assignment_Again",
             "Reward"
         ]
     },
-    "RoomData_OpenMenu": {
+    "DataEnter_OpenMenu": {
         "doc":"尚未点击的Home",
         "recognition": {
             "type": "TemplateMatch",
@@ -86,12 +86,12 @@
             }
         },
         "next": [
-            "RoomData_EnterRoom",
-            "RoomData_EnterTeam",
-            "RoomData_SwipeBackMenu"
+            "DataEnter_EnterRoom",
+            "DataEnter_EnterTeam",
+            "DataEnter_SwipeBackMenu"
         ]
     },
-    "RoomData_SwipeBackMenu": {
+    "DataEnter_SwipeBackMenu": {
         "doc":"拖动导航菜单至左",
         "recognition": {
             "type": "OCR",
@@ -126,12 +126,12 @@
             }
         },
         "next": [
-            "RoomData_EnterRoom",
-            "RoomData_EnterTeam",
-            "RoomData_OpenMenu"
+            "DataEnter_EnterRoom",
+            "DataEnter_EnterTeam",
+            "DataEnter_OpenMenu"
         ]
     },
-    "RoomData_EnterRoom": {
+    "DataEnter_EnterRoom": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -150,8 +150,8 @@
             "type": "Click"
         },
         "next": [
-            "RoomData_EnterRoom",
-            "RoomData_SwipeBackMenu",
+            "DataEnter_EnterRoom",
+            "DataEnter_SwipeBackMenu",
             "DataWork_RewardClose",
             "DataWork_RoomSwipe"
         ]

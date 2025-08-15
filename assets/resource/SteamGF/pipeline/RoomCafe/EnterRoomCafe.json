@@ -13,8 +13,8 @@
         },
         "next": [
             "CafeEnter_Team",
-            "CafeEnter_OpenTeamMenu",
-            "CafeEnter_SwipeBackTeamMenu",
+            "CafeEnter_OpenMenu",
+            "CafeEnter_SwipeBackMenu",
             "CafeEnter_ButtonCafe"
         ],
         "interrupt": [
@@ -49,8 +49,8 @@
         "post_delay":1000,
         "next": [
             "CafeEnter_Team",
-            "CafeEnter_OpenTeamMenu",
-            "CafeEnter_SwipeBackTeamMenu",
+            "CafeEnter_OpenMenu",
+            "CafeEnter_SwipeBackMenu",
             "CafeEnter_ButtonCafe"
         ],
         "interrupt": [
@@ -58,7 +58,7 @@
             "Reward"
         ]
     },
-    "CafeEnter_OpenTeamMenu": {
+    "CafeEnter_OpenMenu": {
         "doc":"尚未点击的Home",
         "recognition": {
             "type": "TemplateMatch",
@@ -90,10 +90,10 @@
         "next": [
             "CafeEnter_ButtonCafe",
             "CafeEnter_Team",
-            "CafeEnter_SwipeBackTeamMenu"
+            "CafeEnter_SwipeBackMenu"
         ]
     },
-    "CafeEnter_SwipeBackTeamMenu": {
+    "CafeEnter_SwipeBackMenu": {
         "doc":"拖动导航菜单至右",
         "recognition": {
             "type": "OCR",
@@ -130,7 +130,7 @@
         "next": [
             "CafeEnter_ButtonCafe",
             "CafeEnter_Team",
-            "CafeEnter_OpenTeamMenu"
+            "CafeEnter_OpenMenu"
         ]
     },
     "CafeEnter_ButtonCafe": {
@@ -153,7 +153,7 @@
         },
         "next": [
             "CafeEnter_ButtonCafe",
-            "CafeEnter_SwipeBackTeamMenu",
+            "CafeEnter_SwipeBackMenu",
             "CafeWork_Machine"
         ]
     }
