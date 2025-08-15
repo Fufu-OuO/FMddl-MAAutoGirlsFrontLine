@@ -24,7 +24,6 @@
         ]
     },
     "RoomExplore_EnterTeam": {
-        "doc":"组合任务",
         "recognition": {
         "type": "TemplateMatch",
             "param": {

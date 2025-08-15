@@ -1,7 +1,7 @@
 {
     "EnterRoomDorm": {
         "next": [
-            "DormEnterTeam",
+            "RoomDorm_EnterTeam",
             "DormOpenTeamMenu",
             "ButtonRoomDorm",
             "DormLove"
@@ -11,7 +11,7 @@
             "Reward"
         ]
     },
-    "DormEnterTeam": {
+    "RoomDorm_EnterTeam": {
         "post_wait_freezes": 1000,
         "doc":"组合任务",
         "recognition": {
@@ -36,7 +36,7 @@
             "type": "Click"
         },
         "next": [
-            "DormEnterTeam",
+            "RoomDorm_EnterTeam",
             "DormOpenTeamMenu",
             "ButtonRoomDorm",
             "DormLove"
@@ -75,7 +75,7 @@
             }
         },
         "next": [
-            "DormEnterTeam",
+            "RoomDorm_EnterTeam",
             "ButtonRoomDorm",
             "DormLove"
         ]

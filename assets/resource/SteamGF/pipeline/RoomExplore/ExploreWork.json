@@ -1,6 +1,5 @@
 {
     "ExploreWork_RoomSwipe": {
-        "doc": "拉到房间最右侧",
         "recognition": {
             "type": "OCR",
             "param": {
@@ -11,7 +10,8 @@
                     246
                 ],
                 "expected": [
-                    "前进营地"
+                    "前进营",
+                    "进营地"
                 ]
             }
         },
