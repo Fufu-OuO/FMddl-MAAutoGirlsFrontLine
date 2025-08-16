@@ -103,15 +103,14 @@
         ]
     },
     "DataWork_ChooseBook": {
-        "enabled": false,
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi" : [
-                    64,
-                    178,
-                    1091,
-                    198
+                    0,
+                    170,
+                    1900,
+                    100
                 ],
                 "expected": [
                     "特种"
@@ -119,7 +118,7 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "DoNothing"
         },
         "next": [
             "DataWork_ButtonYes",
