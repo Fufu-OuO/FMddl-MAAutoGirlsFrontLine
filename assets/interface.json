@@ -1348,7 +1348,9 @@
                     "name": "[人形经验] 作战报告",
                     "pipeline_override": {
                         "DataWork_ChooseBook": {
-                            "enabled": false
+                            "action": {
+                                "type": "DoNothing"
+                            }
                         }
                     }
                 },
@@ -1356,7 +1358,9 @@
                     "name": "[重装经验] 特种作战报告",
                     "pipeline_override": {
                         "DataWork_ChooseBook": {
-                            "enabled": true
+                            "action": {
+                                "type": "Click"
+                            }
                         }
                     }
                 }
