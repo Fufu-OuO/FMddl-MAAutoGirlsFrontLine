@@ -32,6 +32,7 @@
             }
         },
         "next": [
+            "DataWork_RewardClose",
             "DataWork_ClickKalina"
         ]
     },
