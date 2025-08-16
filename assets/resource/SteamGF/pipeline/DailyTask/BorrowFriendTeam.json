@@ -503,6 +503,32 @@
             "type": "Click"
         },
         "next": [
+            "BorrowFriendTeam_PileUp",
+            "BorrowFriendTeam_BorrowTeam",
+            "BorrowFriendTeam_FriendTeam"
+        ]
+    },
+    "BorrowFriendTeam_PileUp": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    928,
+                    50,
+                    204,
+                    196
+                ],
+                "template": [
+                    "DailyTask/PileDown.png",
+                    "DailyTask/PileDown_720p.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "BorrowFriendTeam_PileUp",
             "BorrowFriendTeam_BorrowTeam",
             "BorrowFriendTeam_FriendTeam"
         ]
