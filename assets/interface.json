@@ -1348,8 +1348,20 @@
                     "name": "[人形经验] 作战报告",
                     "pipeline_override": {
                         "DataWork_ChooseBook": {
-                            "action": {
-                                "type": "DoNothing"
+                            "recognition": {
+                                "type": "TemplateMatch",
+                                "param": {
+                                    "roi" : [
+                                        0,
+                                        100,
+                                        1900,
+                                        300
+                                    ],
+                                    "template": [
+                                        "Room/DataExpReport_Common.png",
+                                        "Room/DataExpReport_Common_720p.png"
+                                    ]
+                                }
                             }
                         }
                     }
@@ -1358,8 +1370,20 @@
                     "name": "[重装经验] 特种作战报告",
                     "pipeline_override": {
                         "DataWork_ChooseBook": {
-                            "action": {
-                                "type": "Click"
+                            "recognition": {
+                                "type": "TemplateMatch",
+                                "param": {
+                                    "roi" : [
+                                        0,
+                                        100,
+                                        1900,
+                                        300
+                                    ],
+                                    "template": [
+                                        "Room/DataExpReport_Fushion.png",
+                                        "Room/DataExpReport_Fushion_720p.png"
+                                    ]
+                                }
                             }
                         }
                     }

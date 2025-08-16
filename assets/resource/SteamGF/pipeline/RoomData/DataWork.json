@@ -105,21 +105,22 @@
     },
     "DataWork_ChooseBook": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi" : [
                     0,
-                    170,
+                    100,
                     1900,
-                    100
+                    300
                 ],
-                "expected": [
-                    "特种"
+                "template": [
+                    "Room/DataExpReport_Common.png",
+                    "Room/DataExpReport_Common_720p.png"
                 ]
             }
         },
         "action": {
-            "type": "DoNothing"
+            "type": "Click"
         },
         "next": [
             "DataWork_ButtonYes",
