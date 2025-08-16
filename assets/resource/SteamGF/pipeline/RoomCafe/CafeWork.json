@@ -1,6 +1,7 @@
 {
     "CafeWork_Machine": {
-        "doc": "识别咖啡图标，点击咖啡机",
+        "pre_wait_freeze": 200,
+        "post_wait_freezes": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
