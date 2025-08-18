@@ -595,9 +595,9 @@
         ]
     },
     "EventSalvage_Fighting": {
-        "pre_wait_freezes": 200,
-        "post_wait_freezes": 200,
-        "rate_limit": 500,
+        "pre_wait_freezes": 100,
+        "post_wait_freezes": 100,
+        "rate_limit": 200,
         "recognition": {
             "type": "OCR",
             "param": {

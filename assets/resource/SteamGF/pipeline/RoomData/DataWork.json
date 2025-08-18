@@ -103,6 +103,33 @@
             "DataWork_ButtonCancel"
         ]
     },
+    "DataWork_StartWrite": {
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    790,
+                    328,
+                    565,
+                    147
+                ],
+            "template": [
+                "Room/DataWorkA.png",
+                "Room/DataWorkB.png"
+            ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay":1000,
+        "next": [
+            "DataWork_ChooseBook",
+            "DataWork_ButtonYes",
+            "DataWork_ButtonCancel",
+            "EnterHome"
+        ]
+    },
     "DataWork_ChooseBook": {
         "recognition": {
             "type": "TemplateMatch",
@@ -126,32 +153,6 @@
             "DataWork_ButtonYes",
             "DataWork_StartWrite",
             "DataWork_ButtonCancel"
-        ]
-    },
-    "DataWork_StartWrite": {
-        "recognition": {
-        "type": "TemplateMatch",
-            "param": {
-                "roi" : [
-                    790,
-                    328,
-                    565,
-                    147
-                ],
-            "template": [
-                "Room/DataWorkA.png",
-                "Room/DataWorkB.png"
-            ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_delay":1000,
-        "next": [
-            "DataWork_ButtonYes",
-            "DataWork_ButtonCancel",
-            "EnterHome"
         ]
     },
     "DataWork_ButtonYes": {

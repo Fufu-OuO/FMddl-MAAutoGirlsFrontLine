@@ -1,0 +1,135 @@
+{
+    "Screenshot": {
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    0,
+                    100,
+                    300,
+                    300
+                ],
+                "template": [
+                    "DailyTask/Screenshot.png"
+                ],
+                "threshold": 0.7
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "Screenshot_Already",
+            "Screenshot_ButtonYes",
+            "Screenshot_Reward",
+            "Screenshot"
+        ],
+        "interrupt": [
+            "Assignment_Again",
+            "Reward",
+            "GetGirl"
+        ]
+    },
+    "Screenshot_ButtonYes": {
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    610,
+                    300,
+                    500,
+                    300
+                ],
+                "expected": [
+                    "确定",
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    30,
+                    4,
+                    -30,
+                    -4
+                ]
+            }
+        },
+        "next": [
+            "Screenshot_Reward",
+            "Screenshot_ButtonYes"
+        ]
+    },
+    "Screenshot_Reward": {
+        "rate_limit": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    100,
+                    1900,
+                    350
+                ],
+                "expected": [
+                    "分享成",
+                    "享成功",
+                    "REW",
+                    "REV",
+                    "ARD",
+                    "ARB",
+                    "V公",
+                    "公B"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    231,
+                    102,
+                    218,
+                    109
+                ]
+            }
+        },
+        "next": [
+            "DailyTask_MenuBtoA",
+            "KalinaLove",
+            "Screenshot_Reward"
+        ]
+    },
+    "Screenshot_Already": {
+        "recognition": {
+        "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    800,
+                    100,
+                    300,
+                    200
+                ],
+                "template": [
+                    "DailyTask/Screenshot_Already.png"
+                ],
+                "threshold": 0.7
+            }
+        },
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": 27
+            }
+        },
+        "next": [
+            "DailyTask_MenuBtoA",
+            "KalinaLove",
+            "Screenshot_Already"
+        ]
+    }
+}

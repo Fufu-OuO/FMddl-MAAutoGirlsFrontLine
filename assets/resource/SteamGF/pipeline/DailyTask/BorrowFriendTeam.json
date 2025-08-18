@@ -513,9 +513,9 @@
             "type": "TemplateMatch",
             "param": {
                 "roi" : [
-                    928,
+                    900,
                     50,
-                    204,
+                    1000,
                     196
                 ],
                 "template": [
@@ -525,7 +525,15 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    5,
+                    0,
+                    -5,
+                    0
+                ]
+            }
         },
         "next": [
             "BorrowFriendTeam_PileUp",
