@@ -1352,15 +1352,16 @@
                                 "type": "TemplateMatch",
                                 "param": {
                                     "roi" : [
-                                        0,
+                                        200,
                                         100,
-                                        1900,
+                                        1700,
                                         300
                                     ],
                                     "template": [
                                         "Room/DataExpReport_Common.png",
                                         "Room/DataExpReport_Common_720p.png"
-                                    ]
+                                    ],
+                                    "threshold":0.85
                                 }
                             }
                         }
@@ -1374,15 +1375,16 @@
                                 "type": "TemplateMatch",
                                 "param": {
                                     "roi" : [
-                                        0,
+                                        200,
                                         100,
-                                        1900,
+                                        1700,
                                         300
                                     ],
                                     "template": [
                                         "Room/DataExpReport_Fushion.png",
                                         "Room/DataExpReport_Fushion_720p.png"
-                                    ]
+                                    ],
+                                    "threshold":0.85
                                 }
                             }
                         }
