@@ -365,7 +365,7 @@
             "type": "Click"
         },
         "next": [
-            "DailyA_ButtonCancel",
+            "DailyB_ButtonCancel",
             "EnterHome"
         ]
     },
@@ -380,7 +380,8 @@
                     585
                 ],
                 "expected": [
-                    "道具不足，不可扫荡"
+                    "道具不足，不可扫荡",
+                    "未通过"
                 ]
             }
         },
