@@ -134,6 +134,7 @@
         ]
     },
     "CafeEnter_ButtonCafe": {
+        "post_delay": 8000,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -154,7 +155,8 @@
         "next": [
             "CafeEnter_ButtonCafe",
             "CafeEnter_SwipeBackMenu",
-            "CafeWork_Machine"
+            "CafeWork_Machine",
+            "ReturnHome"
         ]
     }
 }
