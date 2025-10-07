@@ -1,6 +1,6 @@
 {
     "name": "FMddl-MAA",
-    "version": "v0.2.7",
+    "version": "v0.3.0",
     "message": "欢迎使用费马喵，感谢支持喵 ᨐᵉᵒʷ",
     "mirrorchyan_rid":  "FMddl-MAAutoGirlsFrontLine",
     "mirrorchyan_multiplatform":  false, 
@@ -107,8 +107,14 @@
             "doc": "请从主界面开始本任务，目前支持无补给海盗妖精8-1N！<br>如果突然中断任务则为超时，<br>如果捞错枪、点到敌人详情、拖动到无人处则是ym抽风，请重启游戏后再次尝试",
             "option": [
                 "战役拖尸关卡",
-                "战役拖尸出战梯队"
+                "战役拖尸出战梯队",
+                "战役拖尸补给梯队"
             ]
+        },
+        {
+            "name": "[静默沙盘] 兔洞",
+            "doc": "请从“确认出击”界面开始本任务，速刷58000PT，<br>建议任务结束后手动校正以防漏领，并可与开发者联系",
+            "entry": "RabbitHole"
         }
     ],
     "option": {
@@ -1776,7 +1782,7 @@
         "战役拖尸关卡": {
             "cases": [
                 {
-                    "name": "[海盗妖精] 8-1N",
+                    "name": "[单队 海盗&空袭] 8-1N",
                         "pipeline_override": {
                             "ExpEnter_Ep": {
                                 "recognition": {
@@ -1810,101 +1816,41 @@
                                         ]
                                     }
                                 }
-                            },
-                            "ExpEnter_Stage": {
+                            }
+                        }
+                },
+                {
+                    "name": "[双打手 5战] 13-4",
+                        "pipeline_override": {
+                            "ExpEnter_Ep": {
                                 "recognition": {
-                                    "type": "TemplateMatch",
+                                    "type": "OCR",
                                     "param": {
                                         "roi" : [
-                                            349,
-                                            179,
-                                            867,
-                                            540
+                                            75,
+                                            33,
+                                            293,
+                                            687
                                         ],
-                                        "template": [
-                                            "Fight/Stage8.1n.png"
+                                        "expected": [
+                                            "第十三"
                                         ]
                                     }
                                 }
                             },
-                            "ExpFight_SwipetoMark": {
-                                "action": {
-                                    "type": "Swipe",
-                                    "param": {
-                                        "duration": 100,
-                                        "begin" : [641,62,1,1],
-                                        "end" : [641,625,1,1]
-                                    }
-                                }
-                            },
-                            "ExpFight_SwipetoTeam": {
-                                "action": {
-                                    "type": "Swipe",
-                                    "param": {
-                                        "duration": 100,
-                                        "begin" : [641,545,1,1],
-                                        "end" : [641,342,1,1]
-                                    }
-                                }
-                            },
-                            "ExpFight_ClickTarget1": {
+                            "ExpEnter_Difficulty": {
                                 "recognition": {
-                                    "type": "TemplateMatch",
+                                    "type": "OCR",
                                     "param": {
                                         "roi" : [
-                                            0,
-                                            60,
-                                            1900,
-                                            660
+                                            350,
+                                            101,
+                                            1550,
+                                            618
                                         ],
-                                        "template": [
-                                            "Fight/AirportOpenA.png",
-                                            "Fight/AirportOpenB.png",
-                                            "Fight/AirportOpenA_720p.png",
-                                            "Fight/AirportOpenB_720p.png"
-                                        ],
-                                        "threshold": 0.7
-                                    }
-                                },
-                                "action": {
-                                    "type": "Click",
-                                    "param": {
-                                        "target_offset": [
-                                            -172,
-                                            317,
-                                            0,
-                                            1
-                                        ]
-                                    }
-                                }
-                            },
-                            "ExpFight_ClickTarget2": {
-                                "recognition": {
-                                    "type": "TemplateMatch",
-                                    "param": {
-                                        "roi" : [
-                                            0,
-                                            60,
-                                            1900,
-                                            660
-                                        ],
-                                        "template": [
-                                            "Fight/AirportOpenA.png",
-                                            "Fight/AirportOpenB.png",
-                                            "Fight/AirportOpenA_720p.png",
-                                            "Fight/AirportOpenB_720p.png"
-                                        ],
-                                        "threshold": 0.7
-                                    }
-                                },
-                                "action": {
-                                    "type": "Click",
-                                    "param": {
-                                        "target_offset": [
-                                            157,
-                                            248,
-                                            0,
-                                            1
+                                        "expected": [
+                                            "普通",
+                                            "NORMAL"
                                         ]
                                     }
                                 }
@@ -1918,7 +1864,7 @@
                 {
                     "name": "1",
                         "pipeline_override": {
-                            "ExpFight_ChooseTeam": {
+                            "8.1nFairy_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -1941,13 +1887,54 @@
                                         "threshold": 0.85
                                     }
                                 }
+                            },
+                            "13.4_Prepare_ChooseFightTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution1A.png",
+                                            "Fight/TeamCaution1B.png",
+                                            "Fight/TeamEchelon1A.png",
+                                            "Fight/TeamEchelon1B.png",
+                                            "Fight/TeamCaution1A_720p.png",
+                                            "Fight/TeamCaution1B_720p.png",
+                                            "Fight/TeamEchelon1A_720p.png",
+                                            "Fight/TeamEchelon1B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickFightTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第一"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
                             }
                         }
                 },
                 {
                     "name": "2",
                         "pipeline_override": {
-                            "ExpFight_ChooseTeam": {
+                            "8.1nFairy_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -1970,13 +1957,54 @@
                                         "threshold": 0.85
                                     }
                                 }
+                            },
+                            "13.4_Prepare_ChooseFightTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution2A.png",
+                                            "Fight/TeamCaution2B.png",
+                                            "Fight/TeamEchelon2A.png",
+                                            "Fight/TeamEchelon2B.png",
+                                            "Fight/TeamCaution2A_720p.png",
+                                            "Fight/TeamCaution2B_720p.png",
+                                            "Fight/TeamEchelon2A_720p.png",
+                                            "Fight/TeamEchelon2B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickFightTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第二"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
                             }
                         }
                 },
                 {
                     "name": "3",
                         "pipeline_override": {
-                            "ExpFight_ChooseTeam": {
+                            "8.1nFairy_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -1999,13 +2027,54 @@
                                         "threshold": 0.85
                                     }
                                 }
+                            },
+                            "13.4_Prepare_ChooseFightTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution3A.png",
+                                            "Fight/TeamCaution3B.png",
+                                            "Fight/TeamEchelon3A.png",
+                                            "Fight/TeamEchelon3B.png",
+                                            "Fight/TeamCaution3A_720p.png",
+                                            "Fight/TeamCaution3B_720p.png",
+                                            "Fight/TeamEchelon3A_720p.png",
+                                            "Fight/TeamEchelon3B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickFightTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第三"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
                             }
                         }
                 },
                 {
                     "name": "4",
                         "pipeline_override": {
-                            "ExpFight_ChooseTeam": {
+                            "8.1nFairy_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -2028,13 +2097,54 @@
                                         "threshold": 0.85
                                     }
                                 }
+                            },
+                            "13.4_Prepare_ChooseFightTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution4A.png",
+                                            "Fight/TeamCaution4B.png",
+                                            "Fight/TeamEchelon4A.png",
+                                            "Fight/TeamEchelon4B.png",
+                                            "Fight/TeamCaution4A_720p.png",
+                                            "Fight/TeamCaution4B_720p.png",
+                                            "Fight/TeamEchelon4A_720p.png",
+                                            "Fight/TeamEchelon4B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickFightTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第四"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
                             }
                         }
                 },
                 {
                     "name": "5",
                         "pipeline_override": {
-                            "ExpFight_ChooseTeam": {
+                            "8.1nFairy_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -2057,13 +2167,54 @@
                                         "threshold": 0.85
                                     }
                                 }
+                            },
+                            "13.4_Prepare_ChooseFightTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution5A.png",
+                                            "Fight/TeamCaution5B.png",
+                                            "Fight/TeamEchelon5A.png",
+                                            "Fight/TeamEchelon5B.png",
+                                            "Fight/TeamCaution5A_720p.png",
+                                            "Fight/TeamCaution5B_720p.png",
+                                            "Fight/TeamEchelon5A_720p.png",
+                                            "Fight/TeamEchelon5B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickFightTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第四"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
                             }
                         }
                 },
                 {
                     "name": "6",
                         "pipeline_override": {
-                            "ExpFight_ChooseTeam": {
+                            "8.1nFairy_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -2086,13 +2237,54 @@
                                         "threshold": 0.85
                                     }
                                 }
+                            },
+                            "13.4_Prepare_ChooseFightTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution6A.png",
+                                            "Fight/TeamCaution6B.png",
+                                            "Fight/TeamEchelon6A.png",
+                                            "Fight/TeamEchelon6B.png",
+                                            "Fight/TeamCaution6A_720p.png",
+                                            "Fight/TeamCaution6B_720p.png",
+                                            "Fight/TeamEchelon6A_720p.png",
+                                            "Fight/TeamEchelon6B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickFightTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第四"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
                             }
                         }
                 },
                 {
                     "name": "7",
                         "pipeline_override": {
-                            "ExpFight_ChooseTeam": {
+                            "8.1nFairy_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -2115,13 +2307,54 @@
                                         "threshold": 0.85
                                     }
                                 }
+                            },
+                            "13.4_Prepare_ChooseFightTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution7A.png",
+                                            "Fight/TeamCaution7B.png",
+                                            "Fight/TeamEchelon7A.png",
+                                            "Fight/TeamEchelon7B.png",
+                                            "Fight/TeamCaution7A_720p.png",
+                                            "Fight/TeamCaution7B_720p.png",
+                                            "Fight/TeamEchelon7A_720p.png",
+                                            "Fight/TeamEchelon7B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickFightTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第四"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
                             }
                         }
                 },
                 {
                     "name": "8",
                         "pipeline_override": {
-                            "ExpFight_ChooseTeam": {
+                            "8.1nFairy_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -2144,13 +2377,54 @@
                                         "threshold": 0.85
                                     }
                                 }
+                            },
+                            "13.4_Prepare_ChooseFightTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution8A.png",
+                                            "Fight/TeamCaution8B.png",
+                                            "Fight/TeamEchelon8A.png",
+                                            "Fight/TeamEchelon8B.png",
+                                            "Fight/TeamCaution8A_720p.png",
+                                            "Fight/TeamCaution8B_720p.png",
+                                            "Fight/TeamEchelon8A_720p.png",
+                                            "Fight/TeamEchelon8B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickFightTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第四"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
                             }
                         }
                 },
                 {
                     "name": "9",
                         "pipeline_override": {
-                            "ExpFight_ChooseTeam": {
+                            "8.1nFairy_ChooseTeam": {
                                 "recognition": {
                                     "type": "TemplateMatch",
                                     "param": {
@@ -2171,6 +2445,465 @@
                                             "Fight/TeamEchelon9B_720p.png"
                                         ],
                                         "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Prepare_ChooseFightTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution9A.png",
+                                            "Fight/TeamCaution9B.png",
+                                            "Fight/TeamEchelon9A.png",
+                                            "Fight/TeamEchelon9B.png",
+                                            "Fight/TeamCaution9A_720p.png",
+                                            "Fight/TeamCaution9B_720p.png",
+                                            "Fight/TeamEchelon9A_720p.png",
+                                            "Fight/TeamEchelon9B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickFightTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第九"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
+                            }
+                        }
+                }
+            ]
+        },
+        "战役拖尸补给梯队": {
+            "cases": [
+                {
+                    "name": "1",
+                        "pipeline_override": {
+                            "13.4_Prepare_ChooseSupplyTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution1A.png",
+                                            "Fight/TeamCaution1B.png",
+                                            "Fight/TeamEchelon1A.png",
+                                            "Fight/TeamEchelon1B.png",
+                                            "Fight/TeamCaution1A_720p.png",
+                                            "Fight/TeamCaution1B_720p.png",
+                                            "Fight/TeamEchelon1A_720p.png",
+                                            "Fight/TeamEchelon1B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickSupplyTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第一"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "2",
+                        "pipeline_override": {
+                            "13.4_Prepare_ChooseSupplyTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution2A.png",
+                                            "Fight/TeamCaution2B.png",
+                                            "Fight/TeamEchelon2A.png",
+                                            "Fight/TeamEchelon2B.png",
+                                            "Fight/TeamCaution2A_720p.png",
+                                            "Fight/TeamCaution2B_720p.png",
+                                            "Fight/TeamEchelon2A_720p.png",
+                                            "Fight/TeamEchelon2B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickSupplyTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第二"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "3",
+                        "pipeline_override": {
+                            "13.4_Prepare_ChooseSupplyTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution3A.png",
+                                            "Fight/TeamCaution3B.png",
+                                            "Fight/TeamEchelon3A.png",
+                                            "Fight/TeamEchelon3B.png",
+                                            "Fight/TeamCaution3A_720p.png",
+                                            "Fight/TeamCaution3B_720p.png",
+                                            "Fight/TeamEchelon3A_720p.png",
+                                            "Fight/TeamEchelon3B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickSupplyTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第三"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "4",
+                        "pipeline_override": {
+                            "13.4_Prepare_ChooseSupplyTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution4A.png",
+                                            "Fight/TeamCaution4B.png",
+                                            "Fight/TeamEchelon4A.png",
+                                            "Fight/TeamEchelon4B.png",
+                                            "Fight/TeamCaution4A_720p.png",
+                                            "Fight/TeamCaution4B_720p.png",
+                                            "Fight/TeamEchelon4A_720p.png",
+                                            "Fight/TeamEchelon4B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickSupplyTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第四"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "5",
+                        "pipeline_override": {
+                            "13.4_Prepare_ChooseSupplyTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution5A.png",
+                                            "Fight/TeamCaution5B.png",
+                                            "Fight/TeamEchelon5A.png",
+                                            "Fight/TeamEchelon5B.png",
+                                            "Fight/TeamCaution5A_720p.png",
+                                            "Fight/TeamCaution5B_720p.png",
+                                            "Fight/TeamEchelon5A_720p.png",
+                                            "Fight/TeamEchelon5B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickSupplyTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第五"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "6",
+                        "pipeline_override": {
+                            "13.4_Prepare_ChooseSupplyTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution6A.png",
+                                            "Fight/TeamCaution6B.png",
+                                            "Fight/TeamEchelon6A.png",
+                                            "Fight/TeamEchelon6B.png",
+                                            "Fight/TeamCaution6A_720p.png",
+                                            "Fight/TeamCaution6B_720p.png",
+                                            "Fight/TeamEchelon6A_720p.png",
+                                            "Fight/TeamEchelon6B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickSupplyTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第六"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "7",
+                        "pipeline_override": {
+                            "13.4_Prepare_ChooseSupplyTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution7A.png",
+                                            "Fight/TeamCaution7B.png",
+                                            "Fight/TeamEchelon7A.png",
+                                            "Fight/TeamEchelon7B.png",
+                                            "Fight/TeamCaution7A_720p.png",
+                                            "Fight/TeamCaution7B_720p.png",
+                                            "Fight/TeamEchelon7A_720p.png",
+                                            "Fight/TeamEchelon7B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickSupplyTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第七"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "8",
+                        "pipeline_override": {
+                            "13.4_Prepare_ChooseSupplyTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution8A.png",
+                                            "Fight/TeamCaution8B.png",
+                                            "Fight/TeamEchelon8A.png",
+                                            "Fight/TeamEchelon8B.png",
+                                            "Fight/TeamCaution8A_720p.png",
+                                            "Fight/TeamCaution8B_720p.png",
+                                            "Fight/TeamEchelon8A_720p.png",
+                                            "Fight/TeamEchelon8B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickSupplyTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第八"
+                                        ],
+                                        "threshold": 0.6
+                                    }
+                                }
+                            }
+                        }
+                },
+                {
+                    "name": "9",
+                        "pipeline_override": {
+                            "13.4_Prepare_ChooseSupplyTeam": {
+                                "recognition": {
+                                    "type": "TemplateMatch",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            225,
+                                            720
+                                        ],
+                                        "template": [
+                                            "Fight/TeamCaution9A.png",
+                                            "Fight/TeamCaution9B.png",
+                                            "Fight/TeamEchelon9A.png",
+                                            "Fight/TeamEchelon9B.png",
+                                            "Fight/TeamCaution9A_720p.png",
+                                            "Fight/TeamCaution9B_720p.png",
+                                            "Fight/TeamEchelon9A_720p.png",
+                                            "Fight/TeamEchelon9B_720p.png"
+                                        ],
+                                        "threshold": 0.85
+                                    }
+                                }
+                            },
+                            "13.4_Battle_ClickSupplyTeam": {
+                                "recognition": {
+                                    "type": "OCR",
+                                    "param": {
+                                        "roi" : [
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "expected": [
+                                            "第九"
+                                        ],
+                                        "threshold": 0.6
                                     }
                                 }
                             }

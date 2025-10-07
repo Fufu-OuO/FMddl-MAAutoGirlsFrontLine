@@ -41,7 +41,6 @@
             "type": "Click"
         },
         "next": [
-            "ExpEnter_Stage",
             "ExpEnter_Ep",
             "ExpEnter_EpReset",
             "ExpEnter_Combat",
@@ -68,7 +67,6 @@
             "type": "Click"
         },
         "next": [
-            "ExpEnter_Stage",
             "ExpEnter_Ep",
             "ExpEnter_EpReset"
         ]
@@ -108,7 +106,6 @@
             }
         },
         "next": [
-            "ExpEnter_Stage",
             "ExpEnter_Ep",
             "ExpEnter_EpSwipe",
             "ExpEnter_EpReset",
@@ -150,7 +147,6 @@
             }
         },
         "next": [
-            "ExpEnter_Stage",
             "ExpEnter_Ep",
             "ExpEnter_EpSwipe",
             "ExpEnter_EpReset",
@@ -168,7 +164,7 @@
                     687
                 ],
                 "expected": [
-"第八"
+"第十三"
                 ]
             }
         },
@@ -176,7 +172,6 @@
             "type": "Click"
         },
         "next": [
-            "ExpEnter_Stage",
             "ExpEnter_Difficulty",
             "ExpEnter_Ep",
             "ExpEnter_EpReset",
@@ -194,8 +189,8 @@
                     618
                 ],
                 "expected": [
-"夜战",
-"MIDNIGHT"
+"普通",
+"NORMAL"
                 ]
             }
         },
@@ -203,13 +198,13 @@
             "type": "Click"
         },
         "next": [
-            "ExpEnter_EnterStage",
-            "ExpEnter_Stage",
+            "ExpEnter_Stage8.1n",
+            "ExpEnter_Stage13.4",
             "ExpEnter_Difficulty",
             "ExpEnter_Combat"
         ]
     },
-    "ExpEnter_Stage": {
+    "ExpEnter_Stage8.1n": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -220,7 +215,7 @@
                     540
                 ],
                 "template": [
-"Fight/Stage8.1n.png"
+                    "Fight/Stage8.1n.png"
                 ]
             }
         },
@@ -228,12 +223,12 @@
             "type": "Click"
         },
         "next": [
-            "ExpEnter_EnterStage",
-            "ExpEnter_Stage",
+            "ExpEnter_EnterStage8.1n",
+            "ExpEnter_Stage8.1n",
             "ExpEnter_Combat"
         ]
     },
-    "ExpEnter_EnterStage": {
+    "ExpEnter_EnterStage8.1n": {
         "post_delay": 5000,
         "recognition": {
             "type": "OCR",
@@ -254,9 +249,62 @@
             "type": "Click"
         },
         "next": [
-            "ExpFight_Prepare",
-            "ExpFight_SwipetoAirport",
-            "ExpEnter_EnterStage"
+            "8.1nFairy_Prepare",
+            "8.1nFairy_SwipetoAirport",
+            "ExpEnter_EnterStage8.1n",
+            "ExpEnter_Stage8.1n",
+            "ExpRecycle"
+        ]
+    },
+    "ExpEnter_Stage13.4": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    349,
+                    179,
+                    867,
+                    540
+                ],
+                "template": [
+                    "Fight/Stage13.4.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ExpEnter_EnterStage13.4",
+            "ExpEnter_Stage13.4",
+            "ExpEnter_Combat"
+        ]
+    },
+    "ExpEnter_EnterStage13.4": {
+        "post_delay": 5000,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    429,
+                    188,
+                    787,
+                    531
+                ],
+                "expected": [
+                    "普通作",
+                    "通作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "13.4_Prepare_ClickHeadquarters",
+            "ExpEnter_EnterStage13.4",
+            "ExpEnter_Stage13.4",
+            "ExpRecycle"
         ]
     }
 }

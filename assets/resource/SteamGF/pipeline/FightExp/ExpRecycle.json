@@ -74,10 +74,12 @@
         },
         "next": [
             "ExpRecycle_AutoChooseCharacter",
-            "ExpRecycle_YesCharacter"
+            "ExpRecycle_YesCharacter",
+            "ExpRecycle_RemainCharacter"
         ]
     },
     "ExpRecycle_YesCharacter": {
+        "post_delay": 2000,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -88,7 +90,8 @@
                     220
                 ],
                 "expected": [
-                    "回收"
+                    "回收",
+                    "确定"
                 ]
             }
         },
@@ -100,6 +103,33 @@
             "ExpRecycle_ESC"
         ]
     },
+    "ExpRecycle_RemainCharacter": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    900,
+                    500,
+                    600,
+                    220
+                ],
+                "expected": [
+                    "智能"
+                ]
+            }
+        },
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": 27
+            }
+        },
+        "next": [
+            "ExpRecycle_AutoChooseCharacter",
+            "ExpRecycle_YesCharacter",
+            "ExpRecycle_RemainCharacter"
+        ]
+    },
     "ExpRecycle_Equipment": {
         "recognition": {
             "type": "OCR",
@@ -107,7 +137,7 @@
                 "roi" : [
                     191,
                     93,
-                    317,
+                    600,
                     238
                 ],
                 "expected": [
@@ -133,8 +163,7 @@
                     220
                 ],
                 "expected": [
-                    "智能",
-                    "确定"
+                    "智能"
                 ]
             }
         },
@@ -147,6 +176,7 @@
         ]
     },
     "ExpRecycle_YesEquipment": {
+        "post_delay": 2000,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -157,7 +187,8 @@
                     220
                 ],
                 "expected": [
-                    "回收"
+                    "回收",
+                    "确定"
                 ]
             }
         },
@@ -166,18 +197,59 @@
         },
         "next": [
             "ExpRecycle_EmptyClick",
+            "ExpRecycle_YesEquipment",
             "ExpRecycle_ESC"
         ]
     },
+    "ExpRecycle_RemainEquipment": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    900,
+                    500,
+                    600,
+                    220
+                ],
+                "expected": [
+                    "智能"
+                ]
+            }
+        },
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": 27
+            }
+        },
+        "next": [
+            "ExpRecycle_YesEquipment",
+            "ExpRecycle_RemainEquipment"
+        ]
+    },
     "ExpRecycle_EmptyClick": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    191,
+                    93,
+                    317,
+                    238
+                ],
+                "expected": [
+                    "角色"
+                ]
+            }
+        },
         "action": {
             "type": "Click",
             "param": {
                 "target" : [
-                    444,
-                    172,
-                    127,
-                    130
+                    1068,
+                    30,
+                    135,
+                    32
                 ]
             }
         },
