@@ -1,0 +1,260 @@
+{   
+    "RabbitHole": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    300,
+                    96,
+                    1400,
+                    503
+                ],
+                "expected": [
+                    "认出击"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RabbitHole",
+            "RabbitHole_Skip",
+            "RabbitHole_ClickAirport"
+        ]
+    },
+    "RabbitHole_Skip": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1600,
+                    0,
+                    300,
+                    100
+                ],
+                "expected": [
+                    "跳过"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RabbitHole_Skip",
+            "RabbitHole_ClickAirport",
+            "RabbitHole_FightStart"
+        ]
+    },
+    "RabbitHole_ClickAirport": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi" : [
+                    100,
+                    200,
+                    1800,
+                    600
+                ],
+                "template": [
+                    "Fight/AirportHeavyOpenA.png",
+                    "Fight/AirportHeavyOpenB.png"
+                ],
+                "threshold": 0.5
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RabbitHole_TeamYes",
+            "RabbitHole_ClickAirport",
+            "RabbitHole_FightStart"
+        ]
+    },
+    "RabbitHole_TeamYes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    800,
+                    600,
+                    400,
+                    200
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RabbitHole_TeamYes",
+            "RabbitHole_FightStart"
+        ]
+    },
+    "RabbitHole_FightStart": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1300,
+                    900,
+                    400,
+                    100
+                ],
+                "expected": [
+                    "开始作",
+                    "始作战",
+                    "进行部署"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RabbitHole_FightStart",
+            "RabbitHole_SkipAgian"
+        ]
+    },
+    "RabbitHole_SkipAgian": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    1600,
+                    0,
+                    300,
+                    100
+                ],
+                "expected": [
+                    "跳",
+                    "过"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RabbitHole_SkipAgian",
+            "RabbitHole_ESC"
+        ]
+    },
+    "RabbitHole_ESC": {
+        "post_delay": 2000,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    20,
+                    800,
+                    600
+                ],
+                "expected": [
+                    "简报",
+                    "报酬"
+                ]
+            }
+        },
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": 27
+            }
+        },
+        "next": [
+            "RabbitHole_ESC",
+            "RabbitHole_Finish"
+        ]
+    },
+    "RabbitHole_Finish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    100,
+                    0,
+                    600,
+                    400
+                ],
+                "expected": [
+                    "役结",
+                    "结算"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RabbitHole_FinishYes",
+            "RabbitHole_Finish"
+        ]
+    },
+    "RabbitHole_FinishYes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    400,
+                    300,
+                    1400,
+                    400
+                ],
+                "expected": [
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "RabbitHole_FinishYes",
+            "RabbitHole_Again"
+        ]
+    },
+    "RabbitHole_Again": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi" : [
+                    0,
+                    0,
+                    1400,
+                    1000
+                ],
+                "expected": [
+                    "获得",
+                    "战利品",
+                    "结算",
+                    "再次",
+                    "枪种"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target" : [
+                    336,
+                    606,
+                    32,
+                    37
+                ]
+            }
+        },
+        "next": [
+            "RabbitHole_Again",
+            "RabbitHole_Skip"
+        ]    
+    }
+}
